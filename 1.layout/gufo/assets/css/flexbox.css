@@ -35,9 +35,9 @@
   margin-right: 0;
 }
 
-.conteudoPrincipal-cursos-link:nth-child(4n + 1) {
+/* .conteudoPrincipal-cursos-link:nth-child(4n + 1) {
   margin-left: 0;
-}
+} */
 
 /*parte mobile*/
 @media (max-width: 768px) {
