@@ -67,7 +67,6 @@ body {
 }
 
 .conteudoPrincipal-cursos-titulo:after {
-  background: none repeat scroll 0 0 #83bedf;
   bottom: -10px;
   content: "";
   display: block;
@@ -76,12 +75,43 @@ body {
   width: 70px;
 }
 
+.titulo-azul:after {
+  background: none repeat scroll 0 0 #83bedf;
+}
+
+.titulo-verde:after {
+  background: none repeat scroll 0 0 #81df99;
+}
+
+.titulo-roxo:after {
+  background: none repeat scroll 0 0 #9981df;
+}
+
+.titulo-vermelho:after {
+  background: none repeat scroll 0 0 #df8181;
+}
+
 .conteudoPrincipal-icone-azul {
   color: #83bedf;
   margin-left: 20px;
 }
 
-.conteudoPrincipal-icone-azul-span {
+.conteudoPrincipal-icone-verde {
+  color: #81df99;
+  margin-left: 20px;
+}
+
+.conteudoPrincipal-icone-roxo {
+  color: #9981df;
+  margin-left: 20px;
+}
+
+.conteudoPrincipal-icone-vermelho {
+  color: #df8181;
+  margin-left: 20px;
+}
+
+.conteudoPrincipal-icone-span {
   font-size: 32px;
   margin-left: 20px;
 }
