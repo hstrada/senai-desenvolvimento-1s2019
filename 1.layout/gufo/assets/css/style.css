@@ -1,6 +1,7 @@
 body {
   background-color: #f2f5f7;
   font-family: "Raleway", Arial, sans-serif;
+  color: #808080;
 }
 
 .container {
@@ -18,8 +19,13 @@ body {
 
 .cabecalhoPrincipal-titulo {
   font-weight: bold;
-  font-size: 2em;
+  font-size: 20px;
   margin-bottom: 20px;
+  letter-spacing: 7px;
+}
+
+.cabecalhoPrincipal img {
+  width: 50px;
 }
 
 .cabecalhoPrincipal-titulo a {
@@ -40,22 +46,62 @@ body {
 }
 
 .conteudoPrincipal {
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
   min-height: 80vh;
 }
 
 .subtitulo {
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 32px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   text-align: center;
+}
+
+.conteudoPrincipal-cursos-titulo {
+  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-left: 20px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.conteudoPrincipal-cursos-titulo:after {
+  background: none repeat scroll 0 0 #83bedf;
+  bottom: -10px;
+  content: "";
+  display: block;
+  height: 3px;
+  position: relative;
+  width: 70px;
+}
+
+.conteudoPrincipal-icone-azul {
+  color: #83bedf;
+  margin-left: 20px;
+}
+
+.conteudoPrincipal-icone-azul-span {
+  font-size: 32px;
+  margin-left: 20px;
+}
+
+.subtitulo:after {
+  background: none repeat scroll 0 0 #808080;
+  bottom: -10px;
+  content: "";
+  display: block;
+  height: 5px;
+  position: relative;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .conteudoPrincipal-cursos-link {
   height: 170px;
   background-color: #fff;
-  text-align: center;
+  text-align: left;
   margin: 1%;
   transition: 0.3s;
   box-shadow: 2px 2px 2px #ccc;
@@ -142,7 +188,7 @@ body {
   }
 
   .subtitulo {
-    text-align: left;
+    text-align: center;
   }
 
   .cabecalhoPrincipal-nav-link {
