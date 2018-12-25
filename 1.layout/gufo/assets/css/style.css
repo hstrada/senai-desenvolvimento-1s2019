@@ -1,161 +1,200 @@
-/* Ajustes gerais da página */
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Raleway;
-}
-
-html,
 body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
+  background-color: #f2f5f7;
+  font-family: "Raleway", Arial, sans-serif;
 }
 
 .container {
-  width: 100vw;
+  width: 94%;
   margin: 0 auto;
 }
 
-.flex {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.cabecalhoPrincipal {
+  background-color: #fff;
+  padding: 20px 0;
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(128, 128, 128, 0.21);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(128, 128, 128, 0.21);
+  box-shadow: 0px 2px 2px 0px rgba(128, 128, 128, 0.21);
 }
 
-/* Itens da Tela de Login */
-.img__login {
-  width: 50vw;
-  height: 100vh;
-  background-image: url("../img/abstract-login.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-}
-
-.img__overlay {
-  background: rgba(0, 178, 231, 0.31);
-  overflow: hidden;
-  height: 100vh;
-  z-index: 2;
-}
-
-/* Media query login imagem */
-@media only screen and (max-width: 768px) {
-  .img__login {
-    display: none;
-  }
-  .container {
-    width: 100%;
-  }
-  .item__login {
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-/* Ícones e Inputs de Login */
-
-.item__login {
-  width: 50vw;
-  background: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
-.row {
-  width: auto;
-}
-
-.icone__login {
-  width: 130px;
-  margin-bottom: 10px;
-}
-
-.item {
-  padding: 5px;
-  margin: 10px;
-  text-align: center;
-}
-
-/* Textos tela de login */
-.text__login {
-  font-size: 12px;
-  opacity: 0.6;
+.cabecalhoPrincipal-titulo {
+  font-weight: bold;
+  font-size: 2em;
   margin-bottom: 20px;
 }
 
-.senha__login {
-  font-size: 9px;
-  margin-top: 10px;
-  opacity: 0.5;
-}
-
-.input__login {
-  border: 0;
-  width: 350px;
-  border-bottom: 1px solid #e6e6e6;
-  text-align: center;
-  padding: 10px;
-  background: transparent;
-  color: #808080;
-  text-align: left;
-}
-
-.input__login:hover,
-.input__login:focus {
-  border: 0;
-  border-bottom: 1px solid #00b2e7;
-  text-align: center;
-  background: transparent;
-  color: #595959;
-  text-align: left;
-}
-
-/* webkit solution */
-::-webkit-input-placeholder {
-  text-align: left;
-}
-/* mozilla solution */
-input:-moz-placeholder {
-  text-align: left;
-}
-
-/* Botões de login */
-
-.btn {
-  margin-top: 10px;
-  border: none;
-  color: white;
-  border-radius: 3px;
-  width: 70%;
-  padding: 10px 52px;
-  text-align: center;
+.cabecalhoPrincipal-titulo a {
   text-decoration: none;
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 10px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
+  color: inherit;
 }
 
-.btn__login {
-  background-color: white;
-  color: black;
-  border: 1px solid #008cba;
+.cabecalhoPrincipal-nav-link {
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #9799a6;
+  background-color: #fff;
+  text-decoration: none;
+  transition: 0.5s;
+  display: block;
+
+  border-bottom: 1px solid #9799a6;
 }
 
-.btn__login:hover {
-  background-color: #008cba;
-  color: white;
+.conteudoPrincipal {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  min-height: 80vh;
+}
+
+.subtitulo {
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.conteudoPrincipal-cursos-link {
+  height: 170px;
+  background-color: #fff;
+  text-align: center;
+  margin: 1%;
+  transition: 0.3s;
+  box-shadow: 2px 2px 2px #ccc;
+  position: relative;
+}
+
+.conteudoPrincipal-cursos-link a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.conteudoPrincipal-cursos-link:hover {
+  box-shadow: 4px 4px 4px #ccc;
+}
+
+.conteudoPrincipal-cursos-link a:before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 10px auto;
+}
+
+.conteudoPrincipal-cursos-link:nth-child(even) a:before {
+  background: url(../img/background1.svg) no-repeat;
+}
+
+.conteudoPrincipal-cursos-link:nth-child(odd) a:before {
+  background: url(../img/background2.svg) no-repeat;
+}
+
+.rodapePrincipal {
+  padding-top: 20px;
+}
+
+.rodapePrincipal .subtitulo {
+  color: #fff;
+}
+
+.navmap-list-title {
+  font-weight: 700;
+  font-size: 1.3em;
+  margin: 0.9em 0;
+  padding-left: 0.3em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+.navmap-list-title-bancoDeDados {
+  color: #ec6e5a;
+  border-left: 4px solid #ec6e5a;
+}
+.navmap-list-title-framework {
+  color: #ad85bf;
+  border-left: 4px solid #ad85bf;
+}
+.navmap-list-title-frontend {
+  color: #5ec6f3;
+  border-left: 4px solid #5ec6f3;
+}
+.navmap-list-title-backend {
+  color: #25d285;
+  border-left: 4px solid #25d285;
+}
+
+.rodapePrincipal-patrocinadores {
+  margin-top: 30px;
+  background: #ffffff;
+  padding: 20px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 769px) {
+  .container {
+    width: 85%;
+  }
+
+  .subtitulo {
+    text-align: left;
+  }
+
+  .cabecalhoPrincipal-nav-link {
+    border-radius: 5px;
+    border: 1px solid #9799a6;
+  }
+
+  .cabecalhoPrincipal-nav-link:hover {
+    color: #fff;
+    background-color: #9799a6;
+  }
+
+  .cabecalhoPrincipal-titulo {
+    margin: 0;
+  }
+
+  .cabecalhoPrincipal-nav {
+    width: auto;
+  }
+
+  .cabecalhoPrincipal-nav-link {
+    width: auto;
+    margin: 0 0 0 10px;
+  }
+
+  .conteudoPrincipal-cursos-link:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  .conteudoPrincipal-cursos-link:nth-child(3n + 1) {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .conteudoPrincipal-cursos-link {
+    margin: 1.333%;
+  }
+
+  .conteudoPrincipal-cursos-link:nth-child(3n) {
+    margin-right: 1.33%;
+  }
+
+  .conteudoPrincipal-cursos-link:nth-child(3n + 1) {
+    margin-left: 1.333%;
+  }
+
+  .conteudoPrincipal-cursos-link:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  .conteudoPrincipal-cursos-link:nth-child(4n + 1) {
+    margin-left: 0;
+  }
 }
