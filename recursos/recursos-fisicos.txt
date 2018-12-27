@@ -2,5 +2,5 @@ brModelo
 SQLDBM
 Visio
 SQL Server Express
-SQL Operations Studio
+Azure Data Studio
 Microsoft SQL Server Management Studio
