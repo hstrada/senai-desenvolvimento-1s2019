@@ -4,3 +4,5 @@ Visio
 SQL Server Express
 Azure Data Studio
 Microsoft SQL Server Management Studio
+Visual Studio - Community 2017
+Azure DevOps - conta online
