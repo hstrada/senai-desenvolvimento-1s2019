@@ -1,0 +1,6 @@
+brModelo
+SQLDBM
+Visio
+SQL Server Express
+SQL Operations Studio
+Microsoft SQL Server Management Studio
