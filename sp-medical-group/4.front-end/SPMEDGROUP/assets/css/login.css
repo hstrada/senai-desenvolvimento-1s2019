@@ -52,9 +52,11 @@ body {
   .img__login {
     display: none;
   }
+
   .container {
     width: 100%;
   }
+
   .item__login {
     width: 100vw;
     height: 100vh;
@@ -125,6 +127,7 @@ body {
 ::-webkit-input-placeholder {
   text-align: left;
 }
+
 /* mozilla solution */
 input:-moz-placeholder {
   text-align: left;
@@ -144,7 +147,8 @@ input:-moz-placeholder {
   display: inline-block;
   text-transform: uppercase;
   font-size: 10px;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
 }
@@ -158,4 +162,16 @@ input:-moz-placeholder {
 .btn__login:hover {
   background-color: #008cba;
   color: white;
+}
+
+.img__overlay::after {
+  content: '';
+  display: block;
+  background-color: white;
+  width: 194px;
+  height: 111vh;
+  left: 41%;
+  position: fixed;
+  transform: rotate(+7deg);
+  transform-origin: bottom;
 }
