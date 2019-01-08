@@ -63,6 +63,32 @@ body {
   }
 }
 
+/* .img__overlay::after {
+  content: '';
+  display: block;
+  background-color: white;
+  width: 194px;
+  height: 111vh;
+  left: 41%;
+  position: fixed;
+  transform: rotate(+7deg);
+  transform-origin: bottom;
+} */
+
+.img__login::after {
+  content: "";
+  position: fixed;
+  background-color: white;
+  z-index: 10000;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 74px;
+  height: 100vh;
+  transform: rotate(2deg);
+  transform-origin: 0% 0%;
+}
+
 /* Ícones e Inputs de Login */
 
 .item__login {
@@ -162,16 +188,4 @@ input:-moz-placeholder {
 .btn__login:hover {
   background-color: #008cba;
   color: white;
-}
-
-.img__overlay::after {
-  content: '';
-  display: block;
-  background-color: white;
-  width: 194px;
-  height: 111vh;
-  left: 41%;
-  position: fixed;
-  transform: rotate(+7deg);
-  transform-origin: bottom;
 }

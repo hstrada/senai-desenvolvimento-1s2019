@@ -1,6 +1,6 @@
 body {
   background-color: #f2f5f7;
-  font-family: "Raleway", Arial, sans-serif;
+  font-family: "Raleway", "Open Sans", Arial, sans-serif;
   color: #808080;
 }
 
@@ -41,10 +41,90 @@ body {
   text-decoration: none;
   transition: 0.5s;
   display: block;
-
   border-bottom: 1px solid #9799a6;
 }
 
+/* IMagem Home */
+.conteudoImagem {
+  /* Sizing */
+  height: 100vh;
+
+  /* Flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Text styles */
+  text-align: center;
+  color: white;
+
+  /* Background styles */
+  background-image: linear-gradient(
+      rgba(111, 71, 255, 0.5),
+      rgba(111, 71, 255, 0.5)
+    ),
+    url("../img/abstract-login.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.conteudoImagem h1 {
+  /* Text styles */
+  font-size: 4em;
+  text-transform: uppercase;
+  letter-spacing: 21px;
+
+  /* Margins */
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+/* .conteudoImagem .h1::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 20px;
+  border: 2px solid #d0d0d0;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  transform: translateX(-50%);
+} */
+.conteudoImagem h1::after {
+  background: #ffffff;
+  content: "";
+  display: block;
+  height: 3px;
+  position: absolute;
+  margin-top: 10px;
+  width: 190px;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.conteudoImagem h2 {
+  /* Text styles */
+  font-style: italic;
+}
+
+/* Navbar */
+.cabecalhoPrincipal-nav a {
+  padding: 10px;
+}
+
+nav .cabecalhoPrincipal-nav-login {
+  border: 3px solid;
+  border-image: linear-gradient(to right, rgb(183, 39, 255), rgb(69, 90, 255));
+  border-image-slice: 1;
+  margin: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-decoration: none;
+}
+
+/* Conteúdo principal da página */
 .conteudoPrincipal {
   margin-top: 30px;
   margin-bottom: 20px;

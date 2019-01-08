@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Raleway;
+  font-family: "Raleway", "Open Sans", Arial, Helvetica, sans-serif;
 }
 
 html,
@@ -34,14 +34,15 @@ body {
   width: 50vw;
   height: 100vh;
   background-image: url("../img/abstract-login.jpg");
-  background-position: center;
+  background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
 }
 
 .img__overlay {
-  background: rgba(0, 178, 231, 0.31);
+  /* rgb(111,71,255) */
+  background: rgba(111, 71, 255, 0.41);
   overflow: hidden;
   height: 100vh;
   z-index: 2;
@@ -52,13 +53,41 @@ body {
   .img__login {
     display: none;
   }
+
   .container {
     width: 100%;
   }
+
   .item__login {
     width: 100vw;
     height: 100vh;
   }
+}
+
+/* .img__overlay::after {
+  content: '';
+  display: block;
+  background-color: white;
+  width: 194px;
+  height: 111vh;
+  left: 41%;
+  position: fixed;
+  transform: rotate(+7deg);
+  transform-origin: bottom;
+} */
+
+.img__login::after {
+  content: "";
+  position: fixed;
+  background-color: white;
+  z-index: 10000;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 74px;
+  height: 100vh;
+  transform: rotate(2deg);
+  transform-origin: 0% 0%;
 }
 
 /* Ícones e Inputs de Login */
@@ -125,6 +154,7 @@ body {
 ::-webkit-input-placeholder {
   text-align: left;
 }
+
 /* mozilla solution */
 input:-moz-placeholder {
   text-align: left;
@@ -144,18 +174,24 @@ input:-moz-placeholder {
   display: inline-block;
   text-transform: uppercase;
   font-size: 10px;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
 }
 
 .btn__login {
-  background-color: white;
-  color: black;
-  border: 1px solid #008cba;
+  background-color: #6f47ff;
+  color: #fff;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(184, 184, 184, 1);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(184, 184, 184, 1);
+  box-shadow: 2px 2px 5px 0px rgba(184, 184, 184, 1);
 }
 
 .btn__login:hover {
-  background-color: #008cba;
-  color: white;
+  background-color: #fff;
+  color: #6f47ff;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(184, 184, 184, 1);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(184, 184, 184, 1);
+  box-shadow: 2px 2px 5px 0px rgba(184, 184, 184, 1);
 }
