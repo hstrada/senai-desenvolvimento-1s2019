@@ -1,0 +1,14 @@
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo\Senai.Svigufo\bin\Debug\netcoreapp2.1\Senai.Svigufo.deps.json
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo\Senai.Svigufo\bin\Debug\netcoreapp2.1\Senai.Svigufo.runtimeconfig.json
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo\Senai.Svigufo\bin\Debug\netcoreapp2.1\Senai.Svigufo.runtimeconfig.dev.json
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo\Senai.Svigufo\bin\Debug\netcoreapp2.1\Senai.Svigufo.dll
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo\Senai.Svigufo\obj\Debug\netcoreapp2.1\Senai.Svigufo.csprojAssemblyReference.cache
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo\Senai.Svigufo\obj\Debug\netcoreapp2.1\Senai.Svigufo.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo\Senai.Svigufo\obj\Debug\netcoreapp2.1\Senai.Svigufo.RazorAssemblyInfo.cache
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo\Senai.Svigufo\obj\Debug\netcoreapp2.1\Senai.Svigufo.RazorAssemblyInfo.cs
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo\Senai.Svigufo\obj\Debug\netcoreapp2.1\Senai.Svigufo.AssemblyInfoInputs.cache
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo\Senai.Svigufo\obj\Debug\netcoreapp2.1\Senai.Svigufo.AssemblyInfo.cs
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo\Senai.Svigufo\obj\Debug\netcoreapp2.1\Senai.Svigufo.RazorTargetAssemblyInfo.cache
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo\Senai.Svigufo\bin\Debug\netcoreapp2.1\Senai.Svigufo.pdb
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo\Senai.Svigufo\obj\Debug\netcoreapp2.1\Senai.Svigufo.dll
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo\Senai.Svigufo\obj\Debug\netcoreapp2.1\Senai.Svigufo.pdb
