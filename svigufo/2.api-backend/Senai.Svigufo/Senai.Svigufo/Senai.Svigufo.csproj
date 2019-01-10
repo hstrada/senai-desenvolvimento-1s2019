@@ -5,11 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\" />
     <Folder Include="Infra.Data\Interfaces\" />
-    <Folder Include="Infra.Data\Context\" />
-    <Folder Include="Infra.Data\Repositories\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="Util\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
@@ -18,6 +14,7 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
   </ItemGroup>
 
 </Project>
