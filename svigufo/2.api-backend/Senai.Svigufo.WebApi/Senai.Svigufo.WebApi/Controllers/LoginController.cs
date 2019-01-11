@@ -58,5 +58,6 @@ namespace Senai.Svigufo.WebApi.Controllers
                 token = new JwtSecurityTokenHandler().WriteToken(token)
             });
         }
+
     }
 }
