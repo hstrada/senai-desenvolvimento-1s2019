@@ -1,18 +1,27 @@
-﻿using Senai.Svigufo.WebApi.Infra.Data.Interfaces;
+﻿using Microsoft.Extensions.Configuration;
+using Senai.Svigufo.WebApi.Infra.Data.Interfaces;
 using Senai.Svigufo.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai.Svigufo.WebApi.Repositories
 {
     public class TipoEventoRepository : ITipoEventoRepository
     {
 
-        private readonly string stringDeConexao = @"Data Source=DESKTOP-NI0NFG1;Initial Catalog=SVIGUFO;Integrated Security=True;";
+        private readonly string stringDeConexao;
+
+        public TipoEventoRepository(IConfiguration configuration)
+        {
+            Configuration = configuration;
+            stringDeConexao = Configuration.GetConnectionString("DefaultConnection");
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // private readonly string stringDeConexao = @"Data Source=DESKTOP-NI0NFG1;Initial Catalog=SVIGUFO;Integrated Security=True;";
 
         public void Cadastrar(TipoEventoViewModel tipoEventoViewModel)
         {
