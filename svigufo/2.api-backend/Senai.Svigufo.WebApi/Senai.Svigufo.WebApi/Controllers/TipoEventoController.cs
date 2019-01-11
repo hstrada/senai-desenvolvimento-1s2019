@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Senai.Svigufo.WebApi.Domains;
 using Senai.Svigufo.WebApi.Infra.Data.Interfaces;
 using Senai.Svigufo.WebApi.ViewModels;
 
@@ -14,6 +16,8 @@ namespace Senai.Svigufo.WebApi.Controllers
     [ApiController]
     public class TipoEventoController : ControllerBase
     {
+        // private readonly IMapper _mapper;
+
         private readonly ITipoEventoRepository _tipoEventoRepository;
         public TipoEventoController(ITipoEventoRepository tipoEventoRepository)
         {
@@ -21,6 +25,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult GetTiposEventos()
         {
             return Ok(_tipoEventoRepository.Listar().ToList());
@@ -33,6 +38,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         /// <response code="200">Retorna o tipo de evento buscado.</response>
         /// <response code="404">Caso o tipo de evento buscado não seja encontrado.</response>           
         [HttpGet("{id}")]
+        [Authorize(Roles = "ADMINISTRADOR")]
         public IActionResult GetTipoEvento(int id)
         {
             TipoEventoViewModel tipoEvento = _tipoEventoRepository.BuscarPorId(id);
@@ -44,6 +50,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "ADMINISTRADOR")]
         public IActionResult PostTipoEvento([FromBody] TipoEventoViewModel viewModel)
         {
             try
@@ -58,6 +65,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "ADMINISTRADOR")]
         public IActionResult PutTipoEvento([FromBody] TipoEventoViewModel viewModel)
         {
             try
@@ -72,6 +80,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "ADMINISTRADOR")]
         public IActionResult DeleteTipoEvento(int id)
         {
             try

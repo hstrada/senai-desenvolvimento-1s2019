@@ -1,4 +1,5 @@
-﻿using Senai.Svigufo.WebApi.ViewModels;
+﻿using Senai.Svigufo.WebApi.Domains;
+using Senai.Svigufo.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
