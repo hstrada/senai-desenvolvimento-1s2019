@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Senai.Svigufo.WebApi.Domains;
 using Senai.Svigufo.WebApi.Infra.Data.Interfaces;
 using Senai.Svigufo.WebApi.ViewModels;
 using System;
@@ -23,7 +24,7 @@ namespace Senai.Svigufo.WebApi.Repositories
 
         // private readonly string stringDeConexao = @"Data Source=DESKTOP-NI0NFG1;Initial Catalog=SVIGUFO;Integrated Security=True;";
 
-        public void Cadastrar(TipoEventoViewModel tipoEventoViewModel)
+        public void Cadastrar(TipoEventoDomain tipoEventoDomain)
         {
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
@@ -32,16 +33,16 @@ namespace Senai.Svigufo.WebApi.Repositories
                 {
                     CommandType = CommandType.Text
                 };
-                cmd.Parameters.AddWithValue("@Titulo", tipoEventoViewModel.Titulo);
+                cmd.Parameters.AddWithValue("@Titulo", tipoEventoDomain.Titulo);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
         }
 
-        public IEnumerable<TipoEventoViewModel> Listar()
+        public IEnumerable<TipoEventoDomain> Listar()
         {
-            List<TipoEventoViewModel> listaTiposEventos = new List<TipoEventoViewModel>();
+            List<TipoEventoDomain> listaTiposEventos = new List<TipoEventoDomain>();
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
                 SqlCommand cmd = new SqlCommand("SELECT * from Tipos_Eventos", con);
@@ -50,7 +51,7 @@ namespace Senai.Svigufo.WebApi.Repositories
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    TipoEventoViewModel tipoEvento = new TipoEventoViewModel
+                    TipoEventoDomain tipoEvento = new TipoEventoDomain
                     {
                         Id = Convert.ToInt32(rdr["Id"]),
                         Titulo = rdr["Titulo"].ToString()
@@ -65,9 +66,9 @@ namespace Senai.Svigufo.WebApi.Repositories
             return listaTiposEventos;
         }
 
-        public TipoEventoViewModel BuscarPorId(int id)
+        public TipoEventoDomain BuscarPorId(int id)
         {
-            TipoEventoViewModel tipoEvento = new TipoEventoViewModel();
+            TipoEventoDomain tipoEvento = new TipoEventoDomain();
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
                 string comandoSQL = "Select * From Tipos_Eventos Where Id = @Id";
@@ -90,7 +91,7 @@ namespace Senai.Svigufo.WebApi.Repositories
             return null;
         }
 
-        public void Atualizar(TipoEventoViewModel tipoEventoViewModel)
+        public void Atualizar(TipoEventoDomain tipoEventoDomain)
         {
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
@@ -99,8 +100,8 @@ namespace Senai.Svigufo.WebApi.Repositories
                 {
                     CommandType = CommandType.Text
                 };
-                cmd.Parameters.AddWithValue("@Titulo", tipoEventoViewModel.Titulo);
-                cmd.Parameters.AddWithValue("@Id", tipoEventoViewModel.Id);
+                cmd.Parameters.AddWithValue("@Titulo", tipoEventoDomain.Titulo);
+                cmd.Parameters.AddWithValue("@Id", tipoEventoDomain.Id);
 
                 con.Open();
                 cmd.ExecuteNonQuery();

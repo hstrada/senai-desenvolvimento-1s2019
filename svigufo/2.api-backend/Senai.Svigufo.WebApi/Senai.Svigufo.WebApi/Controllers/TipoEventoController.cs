@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,12 +17,13 @@ namespace Senai.Svigufo.WebApi.Controllers
     [ApiController]
     public class TipoEventoController : ControllerBase
     {
-        // private readonly IMapper _mapper;
+        private readonly IMapper _mapper;
 
         private readonly ITipoEventoRepository _tipoEventoRepository;
-        public TipoEventoController(ITipoEventoRepository tipoEventoRepository)
+        public TipoEventoController(ITipoEventoRepository tipoEventoRepository, IMapper mapper)
         {
             _tipoEventoRepository = tipoEventoRepository;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -41,7 +43,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         [Authorize(Roles = "ADMINISTRADOR")]
         public IActionResult GetTipoEvento(int id)
         {
-            TipoEventoViewModel tipoEvento = _tipoEventoRepository.BuscarPorId(id);
+            TipoEventoViewModel tipoEvento = _mapper.Map<TipoEventoViewModel>(_tipoEventoRepository.BuscarPorId(id));
             if (tipoEvento == null)
             {
                 return NotFound();
@@ -55,7 +57,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         {
             try
             {
-                _tipoEventoRepository.Cadastrar(viewModel);
+                _tipoEventoRepository.Cadastrar(_mapper.Map<TipoEventoDomain>(viewModel));
                 return Ok(viewModel);
             }
             catch (Exception ex)
@@ -70,7 +72,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         {
             try
             {
-                _tipoEventoRepository.Atualizar(viewModel);
+                _tipoEventoRepository.Atualizar(_mapper.Map<TipoEventoDomain>(viewModel));
                 return Ok();
             }
             catch (Exception ex)
