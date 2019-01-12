@@ -56,7 +56,8 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
             InstituicaoDomain instituicao = new InstituicaoDomain();
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
-                string comandoSQL = "Select * From Instituicoes Where Id = @Id";
+                //string comandoSQL = "Select * From Instituicoes Where Id = @Id";
+                string comandoSQL = "Select TOP 1 * From Instituicoes Where Id = @Id ORDER BY Id ASC";
                 SqlCommand cmd = new SqlCommand(comandoSQL, con);
                 cmd.Parameters.AddWithValue("@Id", id);
                 con.Open();
@@ -70,6 +71,7 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
                         instituicao.NomeFantasia = lerOsRegistros["Nome_Fantasia"].ToString();
                         instituicao.Cnpj = lerOsRegistros["Cnpj"].ToString();
                         instituicao.Cep = lerOsRegistros["Cep"].ToString();
+                        instituicao.Logradouro = lerOsRegistros["Logradouro"].ToString();
                         instituicao.Uf = lerOsRegistros["Uf"].ToString();
                         instituicao.Cidade = lerOsRegistros["Cidade"].ToString();
                     }

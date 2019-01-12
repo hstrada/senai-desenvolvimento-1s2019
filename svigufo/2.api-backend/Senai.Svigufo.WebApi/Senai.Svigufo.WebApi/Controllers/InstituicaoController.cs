@@ -12,6 +12,9 @@ using Senai.Svigufo.WebApi.ViewModels.Instituicao;
 
 namespace Senai.Svigufo.WebApi.Controllers
 {
+
+    // https://docs.microsoft.com/pt-br/aspnet/core/web-api/action-return-types?view=aspnetcore-2.2
+
     [Route("api/[controller]")]
     [ApiController]
     public class InstituicaoController : ControllerBase
@@ -47,7 +50,7 @@ namespace Senai.Svigufo.WebApi.Controllers
             try
             {
                 _instituicaoRepository.Atualizar(_mapper.Map<InstituicaoDomain>(viewModel));
-                return Ok("Instituição inserida com sucesso.");
+                return Ok("Instituição atualizada com sucesso.");
             }
             catch (Exception ex)
             {

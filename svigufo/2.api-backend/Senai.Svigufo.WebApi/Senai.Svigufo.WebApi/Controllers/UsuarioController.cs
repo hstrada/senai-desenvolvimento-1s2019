@@ -27,6 +27,7 @@ namespace Senai.Svigufo.WebApi.Controllers
 
         [AllowAnonymous]
         [HttpPost]
+        [Authorize(Roles = "ADMINISTRADOR")]
         public IActionResult Cadastrar([FromBody] UsuarioViewModel usuario)
         {
             try
@@ -40,10 +41,20 @@ namespace Senai.Svigufo.WebApi.Controllers
         }
 
         [HttpGet]
-        // [Authorize]
+        [Authorize]
         public IActionResult GetUsuarios()
         {
             return Ok(_usuarioRepository.Listar().ToList());
+        }
+
+        /// <summary>
+        /// Retorna as permissões dos usuários
+        /// </summary>
+        [HttpGet("tipos")]
+        [Authorize(Roles = "ADMINISTRADOR")]
+        public IActionResult GetTiposUsuarios()
+        {
+            return Ok(Enum.GetNames(typeof(UsuarioDomain.TiposUsuario)));
         }
     }
 }

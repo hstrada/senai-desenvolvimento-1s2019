@@ -26,9 +26,7 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
 
             string inserirEndereco = "Insert into Enderecos (Logradouro, CEP, UF, Cidade, Latitude, Longitude) OUTPUT Inserted.ID VALUES (@Logradouro, @CEP, @UF, @Cidade, @Latitude, @Longitude);";
             string inserirUsuario = "Insert into Usuarios (Nome, Email, Senha, Tipo_Usuario, ID_Endereco) Values(@Nome, @Email, @Senha, @Tipo_Usuario, @ID_Endereco)";
-
             
-
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
                 SqlTransaction transaction = null;
@@ -123,7 +121,11 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
                     {
                         usuario.Id = Int32.Parse(lerOsRegistros["Id"].ToString());
                         usuario.Email = lerOsRegistros["Email"].ToString();
-                        usuario.TipoUsuario = lerOsRegistros["TIPO_USUARIO"].ToString();
+                        // usuario.TipoUsuario = lerOsRegistros["TIPO_USUARIO"].ToString();
+                        if (lerOsRegistros["TIPO_USUARIO"].ToString() == "ADMINISTRADOR")
+                            usuario.TipoUsuario = UsuarioDomain.TiposUsuario.ADMINISTRADOR;
+                        else
+                            usuario.TipoUsuario = UsuarioDomain.TiposUsuario.COMUM;
                     }
                     return usuario;
                 }
