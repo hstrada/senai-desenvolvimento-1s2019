@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Svigufo.WebApi.Domains;
 using Senai.Svigufo.WebApi.Infra.Data.Interfaces;
+using Senai.Svigufo.WebApi.ViewModels.Convite;
 using Senai.Svigufo.WebApi.ViewModels.Evento;
 
 namespace Senai.Svigufo.WebApi.Controllers
@@ -46,5 +47,21 @@ namespace Senai.Svigufo.WebApi.Controllers
                 throw new Exception(ex.Message);
             }
         }
+
+        [HttpPost("palestrante")]
+        [Authorize(Roles = "ADMINISTRADOR")]
+        public IActionResult PostEventoPalestrante([FromBody] PalestranteViewModel viewModel)
+        {
+            try
+            {
+                _eventoRepository.CadastrarPalestrante(viewModel);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 }

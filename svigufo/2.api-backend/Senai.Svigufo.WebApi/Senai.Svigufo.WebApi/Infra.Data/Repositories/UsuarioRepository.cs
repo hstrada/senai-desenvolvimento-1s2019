@@ -29,17 +29,18 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
             
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
-                SqlTransaction transaction = null;
+                con.Open();
+                SqlTransaction transaction = con.BeginTransaction();
 
                 try
                 {
-
-                    con.Open();
-                    transaction = con.BeginTransaction();
+                    
+                    // transaction = con.BeginTransaction();
 
                     int idEndereco;
 
-                    using (SqlCommand cmdEndereco = new SqlCommand(inserirEndereco, con))
+                    //using (SqlCommand cmdEndereco = new SqlCommand(inserirEndereco, con))
+                    using (SqlCommand cmdEndereco = new SqlCommand(inserirEndereco, con, transaction))
                     {
                         cmdEndereco.Parameters.AddWithValue("@Logradouro", usuario.Logradouro);
                         cmdEndereco.Parameters.AddWithValue("@Cep", usuario.Cep);
@@ -48,11 +49,12 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
                         cmdEndereco.Parameters.AddWithValue("@Latitude", usuario.Latitude);
                         cmdEndereco.Parameters.AddWithValue("@Longitude", usuario.Longitude);
 
-                        idEndereco = (Int32)cmdEndereco.ExecuteScalar();
+                        idEndereco = (Int32) cmdEndereco.ExecuteScalar();
                         cmdEndereco.Dispose();
                     }
-
-                    using (SqlCommand cmdUsuario = new SqlCommand(inserirUsuario, con))
+                    
+                    // using (SqlCommand cmdUsuario = new SqlCommand(inserirUsuario, con))
+                    using (SqlCommand cmdUsuario = new SqlCommand(inserirUsuario, con, transaction))
                     {
                         cmdUsuario.Parameters.AddWithValue("@Nome", usuario.Nome);
                         cmdUsuario.Parameters.AddWithValue("@Email", usuario.Email);
@@ -65,12 +67,16 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
 
                     transaction.Commit();
 
-                    con.Close();
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex.Message);
                     transaction.Rollback();
                     throw new Exception("Ocorreu um erro ao realizar a inserção do usuário");
+                }
+                finally
+                {
+                    con.Close();
                 }
             }
 

@@ -44,6 +44,23 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
             }
         }
 
+        public void CadastrarPalestrante(PalestranteViewModel viewModel)
+        {
+            using (SqlConnection con = new SqlConnection(stringDeConexao))
+            {
+                string comandoSQL = "Insert into convites (Id_Usuario, Id_EVento, Palestrante, Aprovado) VALUES" +
+                " (@Id_Usuario, @Id_Evento, @Palestrante, @Aprovado) ";
+                SqlCommand cmd = new SqlCommand(comandoSQL, con);
+                cmd.Parameters.AddWithValue("@Id_Usuario", viewModel.IdUsuario);
+                cmd.Parameters.AddWithValue("@Id_Evento", viewModel.IdEvento);
+                cmd.Parameters.AddWithValue("@Palestrante", viewModel.Palestrante);
+                cmd.Parameters.AddWithValue("@Aprovado", viewModel.Aprovado);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+
         public IEnumerable<EventosViewModel> Listar()
         {
             List<EventosViewModel> listaEventos = new List<EventosViewModel>();

@@ -4,20 +4,17 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Senai.Svigufo.WebApi.ViewModels.Convite
+namespace Senai.Svigufo.WebApi.ViewModels.Evento
 {
-    public class ConviteViewModel
+    public class PalestranteViewModel
     {
-        public int Id { get; set; }
-
         [Required]
         public int IdUsuario { get; set; }
 
         [Required]
         public int IdEvento { get; set; }
 
-        public bool Palestrante { get; set; } = false;
-
-        public bool Aprovado { get; set; }
+        public bool Palestrante { get; set; } = true;
+        public bool Aprovado { get; set; } = true;
     }
 }

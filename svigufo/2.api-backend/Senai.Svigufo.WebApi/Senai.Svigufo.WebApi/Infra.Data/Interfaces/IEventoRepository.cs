@@ -12,6 +12,7 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Interfaces
     {
         #region Gravação
         void Cadastrar(EventoDomain eventoDomain);
+        void CadastrarPalestrante(PalestranteViewModel viewModel);
         #endregion
 
         #region Leitura

@@ -40,6 +40,7 @@ namespace Senai.Svigufo.WebApi
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IEventoRepository, EventoRepository>();
             services.AddTransient<IInstituicaoRepository, InstituicaoRepository>();
+            services.AddTransient<IConviteRepository, ConviteRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddAutoMapper();

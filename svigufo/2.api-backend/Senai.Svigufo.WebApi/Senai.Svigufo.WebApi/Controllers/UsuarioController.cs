@@ -36,6 +36,7 @@ namespace Senai.Svigufo.WebApi.Controllers
                 return Ok(usuario);
             } catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return BadRequest("Ocorreu um erro ao realizar a inserção do usuário.");
             }
         }
