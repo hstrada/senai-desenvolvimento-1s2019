@@ -8,6 +8,7 @@ namespace Senai.Svigufo.WebApi.ViewModels.Usuario
 {
     public class UsuarioViewModel
     {
+      
         [Key]
         public int Id { get; set; }
 
@@ -22,7 +23,7 @@ namespace Senai.Svigufo.WebApi.ViewModels.Usuario
         [Required]
         public string Senha { get; set; }
 
-        [Required]
+        // [Required]
         public string TipoUsuario { get; set; }
 
         [Required]

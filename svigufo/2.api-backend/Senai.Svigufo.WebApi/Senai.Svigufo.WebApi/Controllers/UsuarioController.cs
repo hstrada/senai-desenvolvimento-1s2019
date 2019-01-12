@@ -29,8 +29,14 @@ namespace Senai.Svigufo.WebApi.Controllers
         [HttpPost]
         public IActionResult Cadastrar([FromBody] UsuarioViewModel usuario)
         {
-            _usuarioRepository.Cadastrar(usuario);
-            return Ok(usuario);
+            try
+            {
+                _usuarioRepository.Cadastrar(usuario);
+                return Ok(usuario);
+            } catch (Exception ex)
+            {
+                return BadRequest("Ocorreu um erro ao realizar a inserção do usuário.");
+            }
         }
 
         [HttpGet]

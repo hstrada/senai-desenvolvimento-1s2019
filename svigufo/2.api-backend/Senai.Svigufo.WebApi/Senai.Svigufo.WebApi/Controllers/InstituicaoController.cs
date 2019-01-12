@@ -19,13 +19,28 @@ namespace Senai.Svigufo.WebApi.Controllers
         {
             try
             {
-                return Ok(viewModel);
+                return Ok("Instituição inserida com sucesso.");
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
+
+        [HttpPut]
+        [Authorize(Roles = "ADMINISTRADOR")]
+        public IActionResult PutInstituicao([FromBody] InstituicaoViewModel viewModel)
+        {
+            try
+            {
+                return Ok("Instituição inserida com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
 
     }
 }
