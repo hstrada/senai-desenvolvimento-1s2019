@@ -73,7 +73,7 @@ namespace Senai.Svigufo.WebApi.Controllers
             try
             {
                 _tipoEventoRepository.Atualizar(_mapper.Map<TipoEventoDomain>(viewModel));
-                return Ok();
+                return Ok("Tipo do Evento atualizado com sucesso.");
             }
             catch (Exception ex)
             {

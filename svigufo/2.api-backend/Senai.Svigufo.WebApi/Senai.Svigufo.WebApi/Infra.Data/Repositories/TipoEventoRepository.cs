@@ -90,16 +90,13 @@ namespace Senai.Svigufo.WebApi.Repositories
 
             return null;
         }
-
+        
         public void Atualizar(TipoEventoDomain tipoEventoDomain)
         {
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
                 string comandoSQL = "Update Tipos_Eventos set Titulo = @Titulo Where Id = @Id";
-                SqlCommand cmd = new SqlCommand(comandoSQL, con)
-                {
-                    CommandType = CommandType.Text
-                };
+                SqlCommand cmd = new SqlCommand(comandoSQL, con);
                 cmd.Parameters.AddWithValue("@Titulo", tipoEventoDomain.Titulo);
                 cmd.Parameters.AddWithValue("@Id", tipoEventoDomain.Id);
 
