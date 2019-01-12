@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Svigufo.WebApi.Domains;
@@ -28,6 +29,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         // GET
         // /convite
         [HttpGet]
+        [Authorize]
         public IActionResult GetConvites()
         {
             return Ok();
@@ -39,11 +41,13 @@ namespace Senai.Svigufo.WebApi.Controllers
         // POST
         // /convite/entrar
         [HttpPost("entrar")]
+        [Authorize]
         public IActionResult PostEntrarEvento([FromBody] ConviteViewModel viewModel)
         {
             try
             {
-                // precisa alterar para pegar o id do usuário logado
+                // precisa alterar para que neste caso, o id do usuário, 
+                // seja o id do usuário logado pois ele estará entrando no evento
                 _conviteRepository.EntrarEvento(_mapper.Map<ConviteDomain>(viewModel));
                 return Ok("Você entrou no evento.");
             }
@@ -54,13 +58,17 @@ namespace Senai.Svigufo.WebApi.Controllers
         }
 
         // /convite/convidar
+        /// <summary>
+        /// Enviar um convite para um amigo
+        /// </summary>
         [HttpPost("convidar")]
+        [Authorize]
         public IActionResult PostConvidarEvento([FromBody] ConviteViewModel viewModel)
         {
 
             try
             {
-                // precisa alterar para pegar o id do usuário logado
+                // o id do usuário aqui, será o id do usuário do amigo
                 _conviteRepository.EntrarEvento(_mapper.Map<ConviteDomain>(viewModel));
                 return Ok("Você entrou no evento.");
             }
@@ -73,6 +81,16 @@ namespace Senai.Svigufo.WebApi.Controllers
 
         // PUT
         // /convite/restrito/aprovar
+        [HttpPut("aprovar/{id}")]
+        [Authorize(Roles = "ADMINISTRADOR")]
+        public IActionResult PutAprovarEventoRestrito(int id)
+        {
+
+            _conviteRepository.AprovarConvite(id);
+            return Ok();
+
+        }
+
         // /convite/aprovar
 
     }

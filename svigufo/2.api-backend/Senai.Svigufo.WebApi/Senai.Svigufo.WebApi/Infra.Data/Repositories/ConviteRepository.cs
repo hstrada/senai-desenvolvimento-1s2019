@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Senai.Svigufo.WebApi.Domains;
 using Senai.Svigufo.WebApi.Infra.Data.Interfaces;
+using Senai.Svigufo.WebApi.ViewModels.Convite;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -21,6 +22,19 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
         }
 
         public IConfiguration Configuration { get; }
+
+        public void AprovarConvite(int idConvite)
+        {
+            using (SqlConnection con = new SqlConnection(stringDeConexao))
+            {
+                string aprovarEntrada = "UPDATE Convites SET Aprovado = 1 Where Id = @Id";
+                SqlCommand cmd = new SqlCommand(aprovarEntrada, con);
+                cmd.Parameters.AddWithValue("@Id", idConvite);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
 
         public void EntrarEvento(ConviteDomain domain)
         {

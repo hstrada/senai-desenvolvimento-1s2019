@@ -29,10 +29,7 @@ namespace Senai.Svigufo.WebApi.Repositories
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
                 string comandoSQL = "Insert into Tipos_Eventos (Titulo) Values(@Titulo)";
-                SqlCommand cmd = new SqlCommand(comandoSQL, con)
-                {
-                    CommandType = CommandType.Text
-                };
+                SqlCommand cmd = new SqlCommand(comandoSQL, con);
                 cmd.Parameters.AddWithValue("@Titulo", tipoEventoDomain.Titulo);
                 con.Open();
                 cmd.ExecuteNonQuery();

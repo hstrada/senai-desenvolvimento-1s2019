@@ -4,6 +4,11 @@
         <name>Senai.Svigufo.WebApi</name>
     </assembly>
     <members>
+        <member name="M:Senai.Svigufo.WebApi.Controllers.ConviteController.PostConvidarEvento(Senai.Svigufo.WebApi.ViewModels.Convite.ConviteViewModel)">
+            <summary>
+            Enviar um convite para um amigo
+            </summary>
+        </member>
         <member name="M:Senai.Svigufo.WebApi.Controllers.TipoEventoController.GetTipoEvento(System.Int32)">
             <summary>
             Busca um tipo de evento por Id
