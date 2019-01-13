@@ -14,7 +14,6 @@ namespace Senai.Svigufo.WebApi.Util
         private const string JwtKey = "abcdefghijklmnopqrstuvwxyz";
         private const string TokenIssuer = "svigufo";
 
-
         public JwtSecurityToken GenerateToken(string email, string id, string permissao)
         {
             var claims = new[]
@@ -34,5 +33,20 @@ namespace Senai.Svigufo.WebApi.Util
                 signingCredentials: creds);
             return token;
         }
+
+        public int GetIdFromToken(string token)
+        {
+           
+            return Int32.Parse(new JwtSecurityToken(token).Id);
+        }
+
+        public string GetPermissaoFromToken(string token)
+        {
+            var claims = new JwtSecurityToken(token).Claims;
+            IEnumerable<Claim> permissao = claims.Where(x => x.Type == ClaimTypes.Role);
+            var tipoPermissao = permissao.FirstOrDefault().Value;
+            return tipoPermissao;
+        }
+        
     }
 }

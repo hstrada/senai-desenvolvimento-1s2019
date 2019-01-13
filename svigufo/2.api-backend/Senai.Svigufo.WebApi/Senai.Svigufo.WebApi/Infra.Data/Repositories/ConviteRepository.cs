@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Senai.Svigufo.WebApi.Domains;
 using Senai.Svigufo.WebApi.Infra.Data.Interfaces;
+using Senai.Svigufo.WebApi.ViewModels;
 using Senai.Svigufo.WebApi.ViewModels.Convite;
 using System;
 using System.Collections.Generic;
@@ -97,6 +98,63 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
                 }
             }
 
+        }
+
+        public IEnumerable<ConvitesViewModel> MeusEventos(int idUsuario)
+        {
+            string meusEventos = "SELECT C.ID, C.APROVADO, E.TITULO, E.DATA_EVENTO, T.TITULO AS TIPO_EVENTO FROM CONVITES C INNER JOIN EVENTOS E ON C.ID_EVENTO = E.ID INNER JOIN TIPOS_EVENTOS T ON E.ID_TIPO_EVENTO = T.ID AND C.ID_USUARIO = @Id;";
+            List<ConvitesViewModel> listaEventos = new List<ConvitesViewModel>();
+            using (SqlConnection con = new SqlConnection(stringDeConexao))
+            {
+                SqlCommand cmd = new SqlCommand(meusEventos, con);
+                cmd.Parameters.AddWithValue("@Id", idUsuario);
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    ConvitesViewModel convite = new ConvitesViewModel
+                    {
+                        Id = Convert.ToInt32(rdr["Id"]),
+                        Aprovado = (bool)rdr["Aprovado"],
+                        Titulo = rdr["Titulo"].ToString(),
+                        DataEvento = (DateTime)rdr["DATA_EVENTO"],
+                        TipoEvento = rdr["Tipo_Evento"].ToString(),
+                    };
+
+                    listaEventos.Add(convite);
+                }
+                con.Close();
+            }
+            return listaEventos;
+        }
+
+        public IEnumerable<ConvitesViewModel> TodosOsEventos()
+        {
+
+            List<ConvitesViewModel> listaEventos = new List<ConvitesViewModel>();
+            using (SqlConnection con = new SqlConnection(stringDeConexao))
+            {
+                string eventosSQL = "SELECT C.ID, C.APROVADO, E.TITULO, E.DATA_EVENTO, T.TITULO AS TIPO_EVENTO FROM CONVITES C INNER JOIN EVENTOS E ON C.ID_EVENTO = E.ID INNER JOIN TIPOS_EVENTOS T ON E.ID_TIPO_EVENTO = T.ID";
+                SqlCommand cmd = new SqlCommand(eventosSQL, con);
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    ConvitesViewModel convite = new ConvitesViewModel
+                    {
+                        Id = Convert.ToInt32(rdr["Id"]),
+                        Aprovado = (bool) rdr["Aprovado"],
+                        Titulo = rdr["Titulo"].ToString(),
+                        DataEvento = (DateTime) rdr["DATA_EVENTO"],
+                        TipoEvento = rdr["Tipo_Evento"].ToString(),
+                    };
+                    
+                    listaEventos.Add(convite);
+                }
+                con.Close();
+            }
+            return listaEventos;
+            
         }
     }
 }

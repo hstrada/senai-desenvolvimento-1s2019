@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Svigufo.WebApi.Domains;
 using Senai.Svigufo.WebApi.Infra.Data.Interfaces;
+using Senai.Svigufo.WebApi.Util;
 using Senai.Svigufo.WebApi.ViewModels.Convite;
 
 namespace Senai.Svigufo.WebApi.Controllers
@@ -30,9 +32,26 @@ namespace Senai.Svigufo.WebApi.Controllers
         // /convite
         [HttpGet]
         [Authorize]
-        public IActionResult GetConvites()
+        public async Task<IActionResult> GetConvitesAsync()
         {
-            return Ok();
+            IEnumerable<ConvitesViewModel> convites = new List<ConvitesViewModel>();
+
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            var token = new TokenUtil();
+            string permissaoUsuario = token.GetPermissaoFromToken(accessToken);
+            if (permissaoUsuario == UsuarioDomain.TiposUsuario.ADMINISTRADOR.ToString())
+            {
+                // busca todos
+                convites = _conviteRepository.TodosOsEventos();
+            }
+            else
+            {
+                // busca somente seus próprios convites
+                int idUsuario = token.GetIdFromToken(accessToken);
+                convites = _conviteRepository.MeusEventos(idUsuario);
+            }
+            
+            return Ok(convites);
         }
 
         // /convite/aprovados
