@@ -143,7 +143,7 @@ body {
 .input__login:hover,
 .input__login:focus {
   border: 0;
-  border-bottom: 1px solid #00b2e7;
+  border-bottom: 1px solid #6f47ff;
   text-align: center;
   background: transparent;
   color: #595959;
