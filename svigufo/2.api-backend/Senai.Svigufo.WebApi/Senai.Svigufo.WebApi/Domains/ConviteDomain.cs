@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Senai.Svigufo.WebApi.Domains.Enum;
 
 namespace Senai.Svigufo.WebApi.Domains
 {
@@ -15,6 +12,6 @@ namespace Senai.Svigufo.WebApi.Domains
 
         public bool Palestrante { get; set; }
 
-        public bool Aprovado { get; set; }
+        public EnStatusConvite Status { get; set; }
     }
 }

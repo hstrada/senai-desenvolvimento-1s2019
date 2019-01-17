@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Senai.Svigufo.WebApi.Domains;
+using Senai.Svigufo.WebApi.Domains.Enum;
 using Senai.Svigufo.WebApi.Infra.Data.Interfaces;
 using Senai.Svigufo.WebApi.ViewModels;
 using Senai.Svigufo.WebApi.ViewModels.Convite;
@@ -28,7 +29,7 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
         {
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
-                string aprovarEntrada = "UPDATE Convites SET Aprovado = 1 Where Id = @Id";
+                string aprovarEntrada = "UPDATE Convites SET Status = 2 Where Id = @Id";
                 SqlCommand cmd = new SqlCommand(aprovarEntrada, con);
                 cmd.Parameters.AddWithValue("@Id", idConvite);
                 con.Open();
@@ -41,8 +42,8 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
         {
 
             string buscarEvento = "Select Acesso_Livre from Eventos Where Id = @Id";
-            string entrarEvento = "INSERT INTO CONVITES(ID_USUARIO, ID_EVENTO, PALESTRANTE, APROVADO) VALUES " +
-                "(@Id_usuario, @Id_Evento, @Palestrante, @Aprovado)";
+            string entrarEvento = "INSERT INTO CONVITES(ID_USUARIO, ID_EVENTO, PALESTRANTE, Status) VALUES " +
+                "(@Id_usuario, @Id_Evento, @Palestrante, @Status)";
 
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
@@ -73,11 +74,11 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
                         cmdEntrarEvento.Parameters.AddWithValue("@Palestrante", false);
                         if (acessoLivreEvento == false)
                         {
-                            cmdEntrarEvento.Parameters.AddWithValue("@Aprovado", false);
+                            cmdEntrarEvento.Parameters.AddWithValue("@Status", EnStatusConvite.AGUARDANDO);
                         }
                         else
                         {
-                            cmdEntrarEvento.Parameters.AddWithValue("@Aprovado", true);
+                            cmdEntrarEvento.Parameters.AddWithValue("@Status", EnStatusConvite.APROVADO);
                         }
                         
                         cmdEntrarEvento.ExecuteNonQuery();
@@ -102,7 +103,7 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
 
         public IEnumerable<ConvitesViewModel> MeusEventos(int idUsuario)
         {
-            string meusEventos = "SELECT C.ID, C.APROVADO, E.TITULO, E.DATA_EVENTO, T.TITULO AS TIPO_EVENTO FROM CONVITES C INNER JOIN EVENTOS E ON C.ID_EVENTO = E.ID INNER JOIN TIPOS_EVENTOS T ON E.ID_TIPO_EVENTO = T.ID AND C.ID_USUARIO = @Id;";
+            string meusEventos = "SELECT C.ID, C.STATUS, E.TITULO, E.DATA_EVENTO, T.TITULO AS TIPO_EVENTO FROM CONVITES C INNER JOIN EVENTOS E ON C.ID_EVENTO = E.ID INNER JOIN TIPOS_EVENTOS T ON E.ID_TIPO_EVENTO = T.ID AND C.ID_USUARIO = @Id;";
             List<ConvitesViewModel> listaEventos = new List<ConvitesViewModel>();
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
@@ -115,7 +116,7 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
                     ConvitesViewModel convite = new ConvitesViewModel
                     {
                         Id = Convert.ToInt32(rdr["Id"]),
-                        Aprovado = (bool)rdr["Aprovado"],
+                        Status = (EnStatusConvite)rdr["Status"],
                         Titulo = rdr["Titulo"].ToString(),
                         DataEvento = (DateTime)rdr["DATA_EVENTO"],
                         TipoEvento = rdr["Tipo_Evento"].ToString(),
@@ -134,7 +135,7 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
             List<ConvitesViewModel> listaEventos = new List<ConvitesViewModel>();
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
-                string eventosSQL = "SELECT C.ID, C.APROVADO, E.TITULO, E.DATA_EVENTO, T.TITULO AS TIPO_EVENTO FROM CONVITES C INNER JOIN EVENTOS E ON C.ID_EVENTO = E.ID INNER JOIN TIPOS_EVENTOS T ON E.ID_TIPO_EVENTO = T.ID";
+                string eventosSQL = "SELECT C.ID, C.STATUS, E.TITULO, E.DATA_EVENTO, T.TITULO AS TIPO_EVENTO FROM CONVITES C INNER JOIN EVENTOS E ON C.ID_EVENTO = E.ID INNER JOIN TIPOS_EVENTOS T ON E.ID_TIPO_EVENTO = T.ID WHERE C.STATUS = 1 and E.ACESSO_LIVRE = 0";
                 SqlCommand cmd = new SqlCommand(eventosSQL, con);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -143,7 +144,7 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
                     ConvitesViewModel convite = new ConvitesViewModel
                     {
                         Id = Convert.ToInt32(rdr["Id"]),
-                        Aprovado = (bool) rdr["Aprovado"],
+                        Status = (EnStatusConvite)rdr["Status"],
                         Titulo = rdr["Titulo"].ToString(),
                         DataEvento = (DateTime) rdr["DATA_EVENTO"],
                         TipoEvento = rdr["Tipo_Evento"].ToString(),

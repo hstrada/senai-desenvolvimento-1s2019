@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Svigufo.WebApi.Domains;
+using Senai.Svigufo.WebApi.Domains.Enum;
 using Senai.Svigufo.WebApi.Infra.Data.Interfaces;
 using Senai.Svigufo.WebApi.Util;
 using Senai.Svigufo.WebApi.ViewModels.Convite;
@@ -39,7 +40,7 @@ namespace Senai.Svigufo.WebApi.Controllers
             var accessToken = await HttpContext.GetTokenAsync("access_token");
             var token = new TokenUtil();
             string permissaoUsuario = token.GetPermissaoFromToken(accessToken);
-            if (permissaoUsuario == UsuarioDomain.TiposUsuario.ADMINISTRADOR.ToString())
+            if (permissaoUsuario == EnTiposUsuario.ADMINISTRADOR.ToString())
             {
                 // busca todos
                 convites = _conviteRepository.TodosOsEventos();

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Senai.Svigufo.WebApi.Domains;
+using Senai.Svigufo.WebApi.Domains.Enum;
 using Senai.Svigufo.WebApi.Infra.Data.Interfaces;
 using Senai.Svigufo.WebApi.ViewModels.Usuario;
 using System;
@@ -129,9 +130,9 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
                         usuario.Email = lerOsRegistros["Email"].ToString();
                         // usuario.TipoUsuario = lerOsRegistros["TIPO_USUARIO"].ToString();
                         if (lerOsRegistros["TIPO_USUARIO"].ToString() == "ADMINISTRADOR")
-                            usuario.TipoUsuario = UsuarioDomain.TiposUsuario.ADMINISTRADOR;
+                            usuario.TipoUsuario = EnTiposUsuario.ADMINISTRADOR;
                         else
-                            usuario.TipoUsuario = UsuarioDomain.TiposUsuario.COMUM;
+                            usuario.TipoUsuario = EnTiposUsuario.COMUM;
                     }
                     return usuario;
                 }

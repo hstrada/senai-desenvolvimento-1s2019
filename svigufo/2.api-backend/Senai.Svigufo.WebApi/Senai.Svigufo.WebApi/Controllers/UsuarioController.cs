@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Svigufo.WebApi.Domains;
+using Senai.Svigufo.WebApi.Domains.Enum;
 using Senai.Svigufo.WebApi.Infra.Data.Interfaces;
 using Senai.Svigufo.WebApi.ViewModels.Usuario;
 
@@ -55,7 +56,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         [Authorize(Roles = "ADMINISTRADOR")]
         public IActionResult GetTiposUsuarios()
         {
-            return Ok(Enum.GetNames(typeof(UsuarioDomain.TiposUsuario)));
+            return Ok(Enum.GetNames(typeof(EnTiposUsuario)));
         }
     }
 }

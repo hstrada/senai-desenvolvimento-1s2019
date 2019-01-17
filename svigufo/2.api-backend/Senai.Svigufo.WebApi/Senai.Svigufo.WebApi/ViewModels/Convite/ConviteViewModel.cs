@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Senai.Svigufo.WebApi.Domains.Enum;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -18,6 +19,6 @@ namespace Senai.Svigufo.WebApi.ViewModels.Convite
 
         public bool Palestrante { get; set; } = false;
 
-        public bool Aprovado { get; set; }
+        public EnStatusConvite Status { get; set; }
     }
 }

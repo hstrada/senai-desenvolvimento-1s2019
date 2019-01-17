@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Senai.Svigufo.WebApi.Domains;
 using Senai.Svigufo.WebApi.Infra.Data.Interfaces;
-using Senai.Svigufo.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
