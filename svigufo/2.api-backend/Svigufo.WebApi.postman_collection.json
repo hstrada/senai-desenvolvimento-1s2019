@@ -1,0 +1,596 @@
+{
+	"info": {
+		"_postman_id": "d5ba0d3d-7b06-405f-85f6-a34f57029550",
+		"name": "Svigufo.WebApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TiposEventos",
+			"item": [
+				{
+					"name": "TiposEventos.Listar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/tipoevento",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"tipoevento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TipoEvento.BuscarUm",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/tipoevento/1",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"tipoevento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TipoEvento.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/tipoevento",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"tipoevento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TipoEvento.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/tipoevento",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"tipoevento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TipoEvento.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/tipoevento/5",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"tipoevento",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/login",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/usuario",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/usuario",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario.Listar.Tipos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/usuario/tipos",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"usuario",
+								"tipos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario.Cadastrar.Comum",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/usuario",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ee3502d8-4d83-4e63-bb59-deaf3d053666",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a0ca2d2f-fa2f-44a5-aa4d-5c601c9e9b8a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Instituicao",
+			"item": [
+				{
+					"name": "Instituicao.Salvar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/instituicao",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"instituicao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Instituicao.Buscar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/instituicao/2",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"instituicao",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Instituicao.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/instituicao",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"instituicao"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Eventos",
+			"item": [
+				{
+					"name": "Evento.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/evento",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"evento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Evento.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/evento",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"evento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Evento.Palestrante.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/evento/palestrante",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"evento",
+								"palestrante"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Convites",
+			"item": [
+				{
+					"name": "Convite.Entrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/convite/entrar",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"convite",
+								"entrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Convite.Listar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost.netcore}}/api/convite",
+							"host": [
+								"{{localhost.netcore}}"
+							],
+							"path": [
+								"api",
+								"convite"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
