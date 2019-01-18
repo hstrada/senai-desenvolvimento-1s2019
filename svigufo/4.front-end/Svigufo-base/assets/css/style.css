@@ -474,14 +474,72 @@ nav .cabecalhoPrincipal-nav-login {
 
 /* CADASTROS - EVENTOS */
 
-#conteudoPrincipal-lista-eventos {
-  background-color: #ffffff;
-  min-height: 500px;
+#conteudoPrincipal-lista {
+  /* background-color: #ffffff; */
+  min-height: 100px;
+  text-align: center;
 }
 
-#conteudoPrincipal-cadastro-eventos {
+#tabela-lista {
+  font-weight: lighter;
+  border-collapse: collapse;
+  text-align: left;
+  table-layout: fixed;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+#tabela-lista td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+}
+
+#tabela-lista td,
+#tabela-lista th {
+  text-align: left;
+  border: 1px solid #f6f6f6;
+  padding: 8px;
+}
+
+#tabela-lista tr:nth-child(even) {
+  background-color: #fff;
+}
+
+#tabela-lista tr:hover {
+  background-color: #ddd;
+}
+
+#tabela-lista th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #6f47ff;
+  color: white;
+}
+
+.paginacao {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.paginacao a {
+  font-size: 12px;
+  color: #868686;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.paginacao a.active {
+  border: 1px solid #6f47ff;
+}
+
+#conteudoPrincipal-cadastro {
   background-color: #ffffff;
-  min-height: 500px;
+  min-height: 400px;
   margin-top: 30px;
   display: flex;
   align-content: center;
@@ -489,13 +547,13 @@ nav .cabecalhoPrincipal-nav-login {
   flex-flow: column;
 }
 
-#conteudoPrincipal-cadastro-eventos .container {
+#conteudoPrincipal-cadastro .container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#conteudoPrincipal-cadastro-eventos input {
+#conteudoPrincipal-cadastro input {
   width: 50%;
   margin: 10px;
   text-align: center;
@@ -504,11 +562,26 @@ nav .cabecalhoPrincipal-nav-login {
   font-weight: lighter;
   border: none;
   height: 34px;
+  font-size: 12px;
   box-shadow: 1px 1px 1px #ccc;
 }
 
-#conteudoPrincipal-cadastro-eventos textarea {
+#conteudoPrincipal-cadastro select {
+  width: 50%;
+  margin: 10px;
   text-align: center;
+  background-color: #F8F8F8;
+  font-family: 'Open Sans';
+  font-weight: lighter;
+  border: none;
+  height: 34px;
+  font-size: 12px;
+  box-shadow: 1px 1px 1px #ccc;
+}
+
+#conteudoPrincipal-cadastro textarea {
+  text-align: center;
+  font-size: 12px;
   resize: none;
   width: 50%;
   background-color: #F8F8F8;
