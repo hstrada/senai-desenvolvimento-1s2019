@@ -485,9 +485,39 @@ nav .cabecalhoPrincipal-nav-login {
   margin-top: 30px;
   display: flex;
   align-content: center;
-  flex-direction: column;
+  justify-content: center;
+  flex-flow: column;
 }
 
+#conteudoPrincipal-cadastro-eventos .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#conteudoPrincipal-cadastro-eventos input {
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+  background-color: #F8F8F8;
+  font-family: 'Open Sans';
+  font-weight: lighter;
+  border: none;
+  height: 34px;
+  box-shadow: 1px 1px 1px #ccc;
+}
+
+#conteudoPrincipal-cadastro-eventos textarea {
+  text-align: center;
+  resize: none;
+  width: 50%;
+  background-color: #F8F8F8;
+  font-family: 'Open Sans';
+  font-weight: lighter;
+  border: none;
+  margin: 10px;
+  box-shadow: 1px 1px 1px #ccc;
+}
 
 /* MEDIA QUERY */
 
@@ -530,6 +560,7 @@ nav .cabecalhoPrincipal-nav-login {
   .conteudoPrincipal-dados-link:nth-child(3n + 1) {
     margin-left: 0;
   }
+
 }
 
 @media (min-width: 1000px) {
@@ -556,4 +587,5 @@ nav .cabecalhoPrincipal-nav-login {
   .conteudoPrincipal-btn {
     width: 20%;
   }
+
 }
