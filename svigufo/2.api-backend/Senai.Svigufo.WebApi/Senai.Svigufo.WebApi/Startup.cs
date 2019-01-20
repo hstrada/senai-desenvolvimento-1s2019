@@ -41,7 +41,10 @@ namespace Senai.Svigufo.WebApi
             services.AddTransient<IEventoRepository, EventoRepository>();
             services.AddTransient<IInstituicaoRepository, InstituicaoRepository>();
             services.AddTransient<IConviteRepository, ConviteRepository>();
+            services.AddTransient<IDashboardRepository, DashboardRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddCors();
 
             services.AddAutoMapper();
 
@@ -94,6 +97,8 @@ namespace Senai.Svigufo.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseAuthentication();
             app.UseSwagger();

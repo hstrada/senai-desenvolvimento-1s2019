@@ -2,7 +2,6 @@ C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Se
 C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\bin\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.runtimeconfig.json
 C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\bin\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.runtimeconfig.dev.json
 C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\bin\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.dll
-C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.csprojAssemblyReference.cache
 C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.csproj.CoreCompileInputs.cache
 C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.RazorAssemblyInfo.cache
 C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.RazorAssemblyInfo.cs
@@ -30,3 +29,4 @@ C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svig
 C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.dll
 C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.xml
 C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.pdb
+C:\Users\Administrador\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.csprojResolveAssemblyReference.cache
