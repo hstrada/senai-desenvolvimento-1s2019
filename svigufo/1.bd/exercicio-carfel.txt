@@ -1,4 +1,4 @@
-1. Modelar o carfel que contém duas estruturas. Uma de usuário, com os campos: nome, email, senha e se ele é ou não administrador e a data de criação. 
+﻿1. Modelar o carfel que contém duas estruturas. Uma de usuário, com os campos: nome, email, senha e se ele é ou não administrador e a data de criação. 
 E outra de depoimentos com o próprio depoimento, o status do depoimento (Em espera, Aprovado e Rejeitado), o usuário que realizou e a data de criação.
 
 2. Deve-se criar o banco de dados e suas respectivas tabelas.
@@ -29,5 +29,3 @@ selecione todos os usuários (obrigatoriamente) e traga seu depoimentos caso ele
 7. delete todos os depoimentos em que o status seja igual a rejeitado
 
 8. atualize todos os depoimentos de 'em espera' para aprovado
-
-9. faça um procedimento em que o usuário insira um status e ele traga os depoimentos e seus usuários
