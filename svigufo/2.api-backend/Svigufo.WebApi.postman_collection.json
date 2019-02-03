@@ -87,7 +87,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\n\t\"titulo\" : \"Jogos\"\n}"
 						},
 						"url": {
 							"raw": "{{localhost.netcore}}/api/tipoevento",
@@ -121,7 +121,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\n\t\"id\" : 4\n\t,\"titulo\" : \"JOGOS\"\n}"
 						},
 						"url": {
 							"raw": "{{localhost.netcore}}/api/tipoevento",
@@ -152,14 +152,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{localhost.netcore}}/api/tipoevento/5",
+							"raw": "{{localhost.netcore}}/api/tipoevento/4",
 							"host": [
 								"{{localhost.netcore}}"
 							],
 							"path": [
 								"api",
 								"tipoevento",
-								"5"
+								"4"
 							]
 						}
 					},
@@ -184,7 +184,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\n\t\"email\" : \"admin@admin.com\",\n\t\"senha\" : \"123456\"\n}"
 						},
 						"url": {
 							"raw": "{{localhost.netcore}}/api/login",
@@ -202,6 +202,16 @@
 				{
 					"name": "Usuario.Cadastrar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -213,7 +223,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\n\t\"nome\" : \"comum\"\n\t,\"email\" : \"comum@comum.com\"\n\t,\"senha\" : \"123456\"\n\t,\"tipousuario\" : \"COMUM\"\n}"
 						},
 						"url": {
 							"raw": "{{localhost.netcore}}/api/usuario",
@@ -231,6 +241,16 @@
 				{
 					"name": "Usuario.Listar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -253,6 +273,16 @@
 				{
 					"name": "Usuario.Listar.Tipos",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -348,7 +378,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\n\t\"nomefantasia\" : \"Nome Fantasia A\"\n\t,\"razaosocial\" : \"Razao Social A\"\n\t,\"cnpj\" : \"01234567891234\"\n\t,\"logradouro\" : \"Rua Cinco Pontas, 8\"\n\t,\"cep\" : \"02252020\"\n\t,\"uf\" : \"SP\"\n\t,\"cidade\" : \"São Paulo\"\n}"
 						},
 						"url": {
 							"raw": "{{localhost.netcore}}/api/instituicao",
@@ -379,14 +409,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{localhost.netcore}}/api/instituicao/2",
+							"raw": "{{localhost.netcore}}/api/instituicao/1",
 							"host": [
 								"{{localhost.netcore}}"
 							],
 							"path": [
 								"api",
 								"instituicao",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -411,7 +441,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\n\t\"id\" : 1\n\t,\"nomefantasia\" : \"Nome Fantasia A\"\n\t,\"razaosocial\" : \"Razao Social A\"\n\t,\"cnpj\" : \"01234567891234\"\n\t,\"logradouro\" : \"Rua Cinco Pontas, 8\"\n\t,\"cep\" : \"02252020\"\n\t,\"uf\" : \"SP\"\n\t,\"cidade\" : \"São Paulo\"\n}"
 						},
 						"url": {
 							"raw": "{{localhost.netcore}}/api/instituicao",
@@ -472,7 +502,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\n\t\"titulo\" : \"Titulo Evento A\"\n\t,\"descricao\" : \"Descricao Evento A\"\n\t,\"dataevento\" : \"2019/03/03 18:00:00\"\n\t,\"acessolivre\" : 1\n\t,\"tipoevento\" : {\n\t\t\"id\" : 1\n\t}\n}"
 						},
 						"url": {
 							"raw": "{{localhost.netcore}}/api/evento",
@@ -482,41 +512,6 @@
 							"path": [
 								"api",
 								"evento"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Evento.Palestrante.Cadastrar",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{token}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{localhost.netcore}}/api/evento/palestrante",
-							"host": [
-								"{{localhost.netcore}}"
-							],
-							"path": [
-								"api",
-								"evento",
-								"palestrante"
 							]
 						}
 					},
