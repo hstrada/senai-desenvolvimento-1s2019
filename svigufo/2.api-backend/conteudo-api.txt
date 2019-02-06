@@ -20,3 +20,9 @@ hcursos - categorias
 cors
 
 brotli
+
+async/await
+
+https://medium.com/@renato.groffe/asp-net-core-dicas-%C3%BAteis-para-o-dia-a-dia-de-um-desenvolvedor-parte-3-9e5ddc1283b0
+
+devops
