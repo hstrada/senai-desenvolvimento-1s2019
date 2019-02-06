@@ -1,0 +1,22 @@
+api - conceitualmente/http2
+
+novo projeto
+
+controller - verbos http
+domínio
+repositório - sqlclient - addtransient/scoped / injeção de dependência
+automapper - viewmodel
+
+iactionresult
+startup
+
+tipo de evento
+instituicao
+
+swagger - documentação
+
+hcursos - categorias
+
+cors
+
+brotli
