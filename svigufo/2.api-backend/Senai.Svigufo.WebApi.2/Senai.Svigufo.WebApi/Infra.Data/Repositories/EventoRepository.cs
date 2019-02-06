@@ -29,14 +29,36 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
                 //CONVERT(DATETIME, @Data_Cadastro,120)
-                string comandoSQL = "Insert into Eventos (Titulo, Descricao, DAta_Evento, Acesso_Livre, ID_Tipo_Evento) " +
-                    "Values(@Titulo, @Descricao, CONVERT(DATETIME, @Data_Evento,120), @Acesso_Livre, @Id_Tipo_Evento)";
+                string comandoSQL = "Insert into Eventos (Titulo, Descricao, DAta_Evento, Acesso_Livre, ID_Tipo_Evento, ID_INSTITUICAO) " +
+                    "Values(@Titulo, @Descricao, CONVERT(DATETIME, @Data_Evento,120), @Acesso_Livre, @Id_Tipo_Evento, @Id_Instituicao)";
                 SqlCommand cmd = new SqlCommand(comandoSQL, con);
                 cmd.Parameters.AddWithValue("@Titulo", eventoDomain.Titulo);
                 cmd.Parameters.AddWithValue("@Descricao", eventoDomain.Descricao);
                 cmd.Parameters.AddWithValue("@Data_Evento", eventoDomain.DataEvento);
                 cmd.Parameters.AddWithValue("@Acesso_Livre", eventoDomain.AcessoLivre);
                 cmd.Parameters.AddWithValue("@Id_Tipo_Evento", eventoDomain.TipoEvento.Id);
+                cmd.Parameters.AddWithValue("@Id_Instituicao", eventoDomain.Instituicao.Id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+
+        public void Atualizar(EventoDomain eventoDomain)
+        {
+            using (SqlConnection con = new SqlConnection(stringDeConexao))
+            {
+                //CONVERT(DATETIME, @Data_Cadastro,120)
+                string comandoSQL = "UPDATE EVENTOS SET Titulo = @Titulo, Id_Instituicao = @Id_Instituicao ,Descricao = @Descricao, DAta_Evento = CONVERT(DATETIME, @Data_Evento,120), Acesso_Livre = @Acesso_Livre, ID_Tipo_Evento" +
+                    " = @Id_Tipo_Evento WHERE ID = @Id ";
+                SqlCommand cmd = new SqlCommand(comandoSQL, con);
+                cmd.Parameters.AddWithValue("@Titulo", eventoDomain.Titulo);
+                cmd.Parameters.AddWithValue("@Descricao", eventoDomain.Descricao);
+                cmd.Parameters.AddWithValue("@Data_Evento", eventoDomain.DataEvento);
+                cmd.Parameters.AddWithValue("@Acesso_Livre", eventoDomain.AcessoLivre);
+                cmd.Parameters.AddWithValue("@Id_Tipo_Evento", eventoDomain.TipoEvento.Id);
+                cmd.Parameters.AddWithValue("@Id_Instituicao", eventoDomain.Instituicao.Id);
+                cmd.Parameters.AddWithValue("@Id", eventoDomain.Id);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();

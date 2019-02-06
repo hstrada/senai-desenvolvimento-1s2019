@@ -75,7 +75,7 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
                         }
                         else
                         {
-                            cmdEntrarEvento.Parameters.AddWithValue("@Status", EnSituacaoConvite.APROVADO);
+                            cmdEntrarEvento.Parameters.AddWithValue("@Status", EnSituacaoConvite.CONFIRMADO);
                         }
                         
                         cmdEntrarEvento.ExecuteNonQuery();

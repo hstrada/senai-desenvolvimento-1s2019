@@ -40,7 +40,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         /// <response code="200">Retorna o tipo de evento buscado.</response>
         /// <response code="404">Caso o tipo de evento buscado não seja encontrado.</response>           
         [HttpGet("{id}")]
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "ADMINISTRADOR")]
         public IActionResult GetTipoEvento(int id)
         {
             TipoEventoViewModel tipoEvento = _mapper.Map<TipoEventoViewModel>(_tipoEventoRepository.BuscarPorId(id));
@@ -52,7 +52,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         }
 
         [HttpPost]
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "ADMINISTRADOR")]
         public IActionResult PostTipoEvento([FromBody] TipoEventoViewModel viewModel)
         {
             try
@@ -67,7 +67,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         }
 
         [HttpPut]
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "ADMINISTRADOR")]
         public IActionResult PutTipoEvento([FromBody] TipoEventoViewModel viewModel)
         {
             try
@@ -82,7 +82,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "ADMINISTRADOR")]
         public IActionResult DeleteTipoEvento(int id)
         {
             try

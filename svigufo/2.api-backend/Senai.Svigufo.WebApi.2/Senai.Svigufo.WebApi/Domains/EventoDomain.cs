@@ -11,6 +11,7 @@ namespace Senai.Svigufo.WebApi.Domains
         public DateTime DataEvento { get; set; }
         public bool AcessoLivre { get; set; }
         public TipoEventoDomain TipoEvento { get; set; }
+        public InstituicaoDomain Instituicao { get; set; }
 
     }
 }

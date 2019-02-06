@@ -26,5 +26,8 @@ namespace Senai.Svigufo.WebApi.ViewModels.Evento
 
         [Required(ErrorMessage = "O tipo do evento não pode ser nulo.")]
         public TipoEventoDomain TipoEvento { get; set; }
+
+        [Required(ErrorMessage = "A instituição não pode ser nula.")]
+        public InstituicaoDomain Instituicao { get; set; }
     }
 }

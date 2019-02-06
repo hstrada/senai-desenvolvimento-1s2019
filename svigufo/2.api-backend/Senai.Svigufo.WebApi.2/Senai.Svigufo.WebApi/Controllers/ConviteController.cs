@@ -37,7 +37,10 @@ namespace Senai.Svigufo.WebApi.Controllers
         {
             IEnumerable<ConvitesViewModel> convites = new List<ConvitesViewModel>();
 
-            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            var authenticateInfo = await HttpContext.Authentication.GetAuthenticateInfoAsync("Bearer");
+            string accessToken = authenticateInfo.Properties.Items[".Token.access_token"];
+
+            // var accessToken = await HttpContext.GetTokenAsync("access_token");
             var token = new TokenUtil();
             string permissaoUsuario = token.GetPermissaoFromToken(accessToken);
             if (permissaoUsuario == EnTiposUsuario.ADMINISTRADOR.ToString())
@@ -110,8 +113,6 @@ namespace Senai.Svigufo.WebApi.Controllers
             return Ok();
 
         }
-
-        // /convite/aprovar
-
+        
     }
 }

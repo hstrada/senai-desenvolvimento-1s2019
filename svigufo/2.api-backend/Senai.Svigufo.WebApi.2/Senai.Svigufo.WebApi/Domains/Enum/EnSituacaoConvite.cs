@@ -4,6 +4,8 @@
     {
         AGUARDANDO = 1,
         APROVADO,
-        REPROVADO
+        CONFIRMADO,
+        REPROVADO,
+        CANCELADO
     }
 }

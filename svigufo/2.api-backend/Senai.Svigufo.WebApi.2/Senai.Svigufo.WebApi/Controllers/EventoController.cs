@@ -32,7 +32,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         {
             return Ok(_eventoRepository.Listar().ToList());
         }
-
+        
         [HttpPost]
         [Authorize(Roles = "ADMINISTRADOR")]
         public IActionResult PostEvento([FromBody] EventoViewModel viewModel)
@@ -48,5 +48,20 @@ namespace Senai.Svigufo.WebApi.Controllers
             }
         }
 
+        [HttpPut]
+        [Authorize(Roles = "ADMINISTRADOR")]
+        public IActionResult PuEvento([FromBody] EventoViewModel viewModel)
+        {
+            try
+            {
+                _eventoRepository.Atualizar(_mapper.Map<EventoDomain>(viewModel));
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        
     }
 }
