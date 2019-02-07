@@ -20,7 +20,8 @@ namespace Senai.Svigufo.WebApi.Util
             {
                 new Claim(JwtRegisteredClaimNames.Sub, email),
                 new Claim(ClaimTypes.Role, permissao),
-                new Claim(JwtRegisteredClaimNames.Jti, id)
+                new Claim(JwtRegisteredClaimNames.Jti, id),
+                new Claim("id", id)
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtKey));

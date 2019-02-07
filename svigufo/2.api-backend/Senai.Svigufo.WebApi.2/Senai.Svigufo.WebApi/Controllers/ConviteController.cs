@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
@@ -36,14 +38,12 @@ namespace Senai.Svigufo.WebApi.Controllers
         public async Task<IActionResult> GetConvitesAsync()
         {
             IEnumerable<ConvitesViewModel> convites = new List<ConvitesViewModel>();
-
-            var authenticateInfo = await HttpContext.Authentication.GetAuthenticateInfoAsync("Bearer");
-            string accessToken = authenticateInfo.Properties.Items[".Token.access_token"];
-
-            // var accessToken = await HttpContext.GetTokenAsync("access_token");
+            
+            var accessToken = HttpContext.User.Claims.First(c => c.Type == ClaimTypes.Role);
+            int idToken = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == "id").Value);
+            
             var token = new TokenUtil();
-            string permissaoUsuario = token.GetPermissaoFromToken(accessToken);
-            if (permissaoUsuario == EnTiposUsuario.ADMINISTRADOR.ToString())
+            if (accessToken.Value.ToString() == EnTiposUsuario.ADMINISTRADOR.ToString())
             {
                 // busca todos
                 convites = _conviteRepository.TodosOsEventos();
@@ -51,8 +51,7 @@ namespace Senai.Svigufo.WebApi.Controllers
             else
             {
                 // busca somente seus próprios convites
-                int idUsuario = token.GetIdFromToken(accessToken);
-                convites = _conviteRepository.MeusEventos(idUsuario);
+                convites = _conviteRepository.MeusEventos(idToken);
             }
             
             return Ok(convites);
