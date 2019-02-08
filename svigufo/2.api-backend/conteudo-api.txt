@@ -1,6 +1,71 @@
-api - conceitualmente/http2
+quarta - api - conceitualmente/http2/importância
+novo projeto - explicar os arquivos (pasta, solução)
 
-novo projeto
+JSON
+
+[application/json]
+TipoEventoController - rotas
+
+GET - "Requisição Recebida" - chrome, firefox
+	Response - return Ok()
+
+String - texto
+
+-------
+
+Domain - TipoEvento - new()
+	Lista Fixa
+
+get/{id} - parâmetros 
+
+sem repositórios
+
+Interação com o front-end
+
+ToDo List como exercício: id, descricao, situacao, data_entrega, data_criacao
+
+-------
+
+POST - "Requisição Recebida" - Postman - [FromBody]
+	IActionResult/tipos de retorno	
+	adicionando o valor na lista
+	no get, já retorna com o valor inserido
+
+rotas/endpoints
+
+-------
+
+PUT/DELETE - passar parâmetro errado e apresenta o try/catch
+
+Repositorio sem interface
+
+-------
+
+InstituicaoController
+get, post, put, delete
+repositorio -> interface/injeção de dependência -> new repositorio/configuração
+
+Swagger - Documentação
+
+-------
+
+UsuarioController
+todos os verbos - jwt - autenticação
+
+-------
+
+EventoController
+	Colocar as condições
+
+-------
+
+ConviteController
+
+-------
+
+Pesquisa - EntityFramework-Dapper (ORM) / Brotli / outros conteúdos
+
+-------
 
 controller - verbos http
 domínio
