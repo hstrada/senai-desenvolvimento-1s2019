@@ -29,7 +29,7 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
         {
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
-                string aprovarEntrada = "UPDATE Convites SET Status = 2 Where Id = @Id";
+                string aprovarEntrada = "UPDATE Convites SET Situacao = 2 Where Id = @Id";
                 SqlCommand cmd = new SqlCommand(aprovarEntrada, con);
                 cmd.Parameters.AddWithValue("@Id", idConvite);
                 con.Open();
@@ -71,11 +71,11 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
                         cmdEntrarEvento.Parameters.AddWithValue("@Id_Evento", domain.IdEvento);                        
                         if (acessoLivreEvento == false)
                         {
-                            cmdEntrarEvento.Parameters.AddWithValue("@Status", EnSituacaoConvite.AGUARDANDO);
+                            cmdEntrarEvento.Parameters.AddWithValue("@Situacao", EnSituacaoConvite.AGUARDANDO);
                         }
                         else
                         {
-                            cmdEntrarEvento.Parameters.AddWithValue("@Status", EnSituacaoConvite.CONFIRMADO);
+                            cmdEntrarEvento.Parameters.AddWithValue("@Situacao", EnSituacaoConvite.CONFIRMADO);
                         }
                         
                         cmdEntrarEvento.ExecuteNonQuery();
@@ -100,7 +100,7 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
 
         public IEnumerable<ConvitesViewModel> MeusEventos(int idUsuario)
         {
-            string meusEventos = "SELECT C.ID, C.SITUACAO, E.TITULO, E.DATA_EVENTO, T.TITULO AS TIPO_EVENTO FROM CONVITES C INNER JOIN EVENTOS E ON C.ID_EVENTO = E.ID INNER JOIN TIPOS_EVENTOS T ON E.ID_TIPO_EVENTO = T.ID AND C.ID_USUARIO = @Id;";
+            string meusEventos = "SELECT C.ID AS ID, C.SITUACAO AS SITUACAO, E.TITULO AS TITULO, E.DATA_EVENTO AS DATA_EVENTO, T.TITULO AS TIPO_EVENTO FROM CONVITES C INNER JOIN EVENTOS E ON C.ID_EVENTO = E.ID INNER JOIN TIPOS_EVENTOS T ON E.ID_TIPO_EVENTO = T.ID AND C.ID_USUARIO = @Id;";
             List<ConvitesViewModel> listaEventos = new List<ConvitesViewModel>();
             using (SqlConnection con = new SqlConnection(stringDeConexao))
             {
@@ -113,7 +113,7 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
                     ConvitesViewModel convite = new ConvitesViewModel
                     {
                         Id = Convert.ToInt32(rdr["Id"]),
-                        Situacao = (EnSituacaoConvite)rdr["Situacao"],
+                        // Situacao = (EnSituacaoConvite) rdr["Situacao"],
                         Titulo = rdr["Titulo"].ToString(),
                         DataEvento = (DateTime)rdr["DATA_EVENTO"],
                         TipoEvento = rdr["Tipo_Evento"].ToString(),
@@ -141,7 +141,7 @@ namespace Senai.Svigufo.WebApi.Infra.Data.Repositories
                     ConvitesViewModel convite = new ConvitesViewModel
                     {
                         Id = Convert.ToInt32(rdr["Id"]),
-                        Situacao = (EnSituacaoConvite)rdr["Situacao"],
+                        // Situacao = (EnSituacaoConvite)rdr["Situacao"],
                         Titulo = rdr["Titulo"].ToString(),
                         DataEvento = (DateTime) rdr["DATA_EVENTO"],
                         TipoEvento = rdr["Tipo_Evento"].ToString(),

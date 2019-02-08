@@ -43,6 +43,7 @@ namespace Senai.Svigufo.WebApi
             services.AddTransient<IInstituicaoRepository, InstituicaoRepository>();
             services.AddTransient<IConviteRepository, ConviteRepository>();
             services.AddTransient<IDashboardRepository, DashboardRepository>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddCors();

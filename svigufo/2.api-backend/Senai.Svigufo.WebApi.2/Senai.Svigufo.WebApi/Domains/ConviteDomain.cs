@@ -10,6 +10,6 @@ namespace Senai.Svigufo.WebApi.Domains
         
         public int IdEvento { get; set; }
 
-        public EnSituacaoConvite Status { get; set; }
+        public EnSituacaoConvite Situacao { get; set; }
     }
 }

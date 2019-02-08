@@ -70,6 +70,7 @@ namespace Senai.Svigufo.WebApi.Controllers
             {
                 // precisa alterar para que neste caso, o id do usuário, 
                 // seja o id do usuário logado pois ele estará entrando no evento
+                viewModel.IdUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == "id").Value);
                 _conviteRepository.EntrarEvento(_mapper.Map<ConviteDomain>(viewModel));
                 return Ok("Você entrou no evento.");
             }
