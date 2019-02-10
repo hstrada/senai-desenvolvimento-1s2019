@@ -20,7 +20,7 @@
   <header class="cabecalhoPrincipal">
     <div class="container">
       <img src="./assets/img/icon-login.png" />
-     
+
       <nav class="cabecalhoPrincipal-nav">
         Administrador <i class="fa fa-cog" style="margin-left: 10px" aria-hidden="true"></i>
       </nav>
@@ -41,8 +41,8 @@
             </tr>
           </thead>
 
-          <tbody>
-            <tr>
+          <tbody id="tabela-lista-corpo">
+            <!-- <tr>
               <td>1</td>
               <td>Tipo Evento A</td>
               <td>Editar/Excluir</td>
@@ -62,21 +62,65 @@
               <td>Tipo Evento D</td>
               <td>Editar/Excluir</td>
             </tr>
+            <tr>
+              <td>2</td>
+              <td>Tipo Evento B</td>
+              <td>Editar/Excluir</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Tipo Evento C</td>
+              <td>Editar/Excluir</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Tipo Evento D</td>
+              <td>Editar/Excluir</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>Tipo Evento B</td>
+              <td>Editar/Excluir</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Tipo Evento C</td>
+              <td>Editar/Excluir</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Tipo Evento D</td>
+              <td>Editar/Excluir</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>Tipo Evento B</td>
+              <td>Editar/Excluir</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Tipo Evento C</td>
+              <td>Editar/Excluir</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Tipo Evento D</td>
+              <td>Editar/Excluir</td>
+            </tr> -->
+
 
           </tbody>
 
         </table>
 
         <div class="paginacao">
-          <a href="#">&laquo;</a>
-          <a href="#">1</a>
-          <a class="active" href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#">6</a>
-          <a href="#">&raquo;</a>
+          <a href="javascript:prevPage()" id="btn_prev">&laquo;</a>
+          <a id="page"></a>
+          <a href="javascript:nextPage()" id="btn_next">&raquo;</a>
         </div>
+
 
       </div>
 
@@ -85,7 +129,7 @@
         <div class="container">
 
           <input type="text" placeholder="tipo do evento">
-         
+
         </div>
         <button class="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro">Cadastrar</button>
       </div>
@@ -99,6 +143,84 @@
       </div>
     </section>
   </footer>
+
+  <script>
+    var current_page = 1;
+    var records_per_page = 2;
+
+    var objJson = [];
+
+    const URL = `http://localhost:51422/api/tiposeventos`;
+    fetch(URL)
+      .then(resposta => resposta.json())
+      .then(data => objJson = data)
+      .catch(erro => console.error(erro));
+
+    console.log(objJson);
+
+    function prevPage() {
+      if (current_page > 1) {
+        current_page--;
+        changePage(current_page);
+      }
+    }
+
+    function nextPage() {
+      if (current_page < numPages()) {
+        current_page++;
+        changePage(current_page);
+      }
+    }
+
+    function changePage(page) {
+      var btn_next = document.getElementById("btn_next");
+      var btn_prev = document.getElementById("btn_prev");
+      var listing_table = document.getElementById("tabela-lista-corpo");
+      var page_span = document.getElementById("page");
+
+      // Validate page
+      if (page < 1) page = 1;
+      if (page > numPages()) page = numPages();
+
+      listing_table.innerHTML = "";
+
+      for (var i = (page - 1) * records_per_page; i < (page * records_per_page); i++) {
+        let linha = document.createElement("tr");
+        let itemDaLinhaId = document.createElement("td");
+        itemDaLinhaId.innerText = objJson[i].id;
+        let itemDaLinhaNome = document.createElement("td");
+        itemDaLinhaNome.innerText = objJson[i].nome;
+        let itemDaLinhaOpcao = document.createElement("td");
+        itemDaLinhaOpcao.innerText = "Edição";
+        linha.appendChild(itemDaLinhaId);
+        linha.appendChild(itemDaLinhaNome);
+        linha.appendChild(itemDaLinhaOpcao);
+        listing_table.appendChild(linha);
+        // listing_table.innerHTML += objJson[i].adName + "<br>";
+      }
+      page_span.innerHTML = page;
+
+      if (page == 1) {
+        btn_prev.style.visibility = "hidden";
+      } else {
+        btn_prev.style.visibility = "visible";
+      }
+
+      if (page == numPages()) {
+        btn_next.style.visibility = "hidden";
+      } else {
+        btn_next.style.visibility = "visible";
+      }
+    }
+
+    function numPages() {
+      return Math.ceil(objJson.length / records_per_page);
+    }
+
+    window.onload = function () {
+      changePage(1);
+    };
+  </script>
 
   <script src="https://use.fontawesome.com/6597eb2fde.js"></script>
 </body>

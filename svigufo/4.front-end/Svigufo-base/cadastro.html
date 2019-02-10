@@ -1,67 +1,54 @@
 <!DOCTYPE html>
+
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>GUFO - Educação e Tecnologia</title>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Svigufo - Eventos públicos e privados</title>
-  <!-- Estilos -->
-  <link rel="stylesheet" href="./assets/css/flexbox.css" />
-  <link rel="stylesheet" href="./assets/css/reset.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <body>
+    <section class="container flex">
+      <div class="img__login"><div class="img__overlay"></div></div>
+      <div class="item__login">
+        <div class="row">
+          <div class="item">
+            <img src="./assets/img/icon-login.png" class="icone__login" />
+          </div>
+          <div class="item">
+            <p class="text__login">
+              Bem-vindo! Faça login para acessar sua conta.
+            </p>
+          </div>
 
-  <!-- Fontes -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-    crossorigin="anonymous" />
-</head>
-
-<body>
-  <header class="cabecalhoPrincipal">
-    <div class="container">
-      <img src="./assets/img/icon-login.png" />
-      <!-- <h1 class="cabecalhoPrincipal-titulo">GUFO</h1> -->
-
-      <nav class="cabecalhoPrincipal-nav">
-        Administrador <i class="fa fa-cog" style="margin-left: 10px" aria-hidden="true"></i>
-      </nav>
-    </div>
-  </header>
-
-  <main class="conteudoPrincipal">
-    <section class="conteudoPrincipal-cadastro">
-      <h1 class="conteudoPrincipal-cadastro-titulo">Eventos</h1>
-      <div class="container" id="conteudoPrincipal-lista-eventos">
-        
-      </div>
-
-      <div class="container" id="conteudoPrincipal-cadastro-eventos">
-        <h2 class="conteudoPrincipal-cadastro-titulo">Cadastrar Evento</h2>
-        <div class="container">
-          <!-- <div class="container container-eventos-esquerda"> -->
-
-          <input type="text" placeholder="título do evento">
-          <input type="text" placeholder="dd/MM/yyyy">
-          <input type="text" placeholder="palestrante">
-          <textarea rows="7" cols="50" placeholder="descrição do evento"></textarea>
-
-          <!-- <div class="container container-eventos-direita">
-          </div> -->
+          <div class="item">
+            <input
+              class="input__login"
+              placeholder="username"
+              type="text"
+              name="username"
+            />
+          </div>
+          <div class="item">
+            <input
+              class="input__login"
+              placeholder="password"
+              type="password"
+              name="password"
+            />
+          </div>
+          <div class="item">
+            <p class="text__login senha__login">Esqueci a senha.</p>
+          </div>
+          <div class="item"><button class="btn btn__login">Login</button></div>
         </div>
-        <button class="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro">Cadastrar</button>
       </div>
     </section>
-  </main>
-
-  <footer class="rodapePrincipal">
-    <section class="rodapePrincipal-patrocinadores">
-      <div class="container">
-        <p>Escola SENAI de Informática - 2019</p>
-      </div>
-    </section>
-  </footer>
-
-  <script src="https://use.fontawesome.com/6597eb2fde.js"></script>
-</body>
-
+  </body>
 </html>

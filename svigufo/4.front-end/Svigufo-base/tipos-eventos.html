@@ -20,7 +20,7 @@
   <header class="cabecalhoPrincipal">
     <div class="container">
       <img src="./assets/img/icon-login.png" />
-     
+
       <nav class="cabecalhoPrincipal-nav">
         Administrador <i class="fa fa-cog" style="margin-left: 10px" aria-hidden="true"></i>
       </nav>
@@ -41,8 +41,8 @@
             </tr>
           </thead>
 
-          <tbody>
-            <tr>
+          <tbody id="tabela-lista-corpo">
+            <!-- <tr>
               <td>1</td>
               <td>Tipo Evento A</td>
               <td>Editar/Excluir</td>
@@ -62,21 +62,65 @@
               <td>Tipo Evento D</td>
               <td>Editar/Excluir</td>
             </tr>
+            <tr>
+              <td>2</td>
+              <td>Tipo Evento B</td>
+              <td>Editar/Excluir</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Tipo Evento C</td>
+              <td>Editar/Excluir</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Tipo Evento D</td>
+              <td>Editar/Excluir</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>Tipo Evento B</td>
+              <td>Editar/Excluir</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Tipo Evento C</td>
+              <td>Editar/Excluir</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Tipo Evento D</td>
+              <td>Editar/Excluir</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>Tipo Evento B</td>
+              <td>Editar/Excluir</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Tipo Evento C</td>
+              <td>Editar/Excluir</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Tipo Evento D</td>
+              <td>Editar/Excluir</td>
+            </tr> -->
+
 
           </tbody>
 
         </table>
 
         <div class="paginacao">
-          <a href="#">&laquo;</a>
-          <a href="#">1</a>
-          <a class="active" href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#">6</a>
-          <a href="#">&raquo;</a>
+          <a href="javascript:prevPage()" id="btn_prev">&laquo;</a>
+          <a id="page"></a>
+          <a href="javascript:nextPage()" id="btn_next">&raquo;</a>
         </div>
+
 
       </div>
 
@@ -85,7 +129,7 @@
         <div class="container">
 
           <input type="text" placeholder="tipo do evento">
-         
+
         </div>
         <button class="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro">Cadastrar</button>
       </div>
