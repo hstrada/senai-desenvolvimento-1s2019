@@ -15,5 +15,8 @@ namespace Senai.Svigufo.Api.Interfaces
         void Alterar(TipoEventoDomain tipoEvento);
         TipoEventoDomain BuscarPorId(int id);
         List<TipoEventoDomain> Listar();
+        #region Deleção
+        void Deletar(int id);
+        #endregion
     }
 }
