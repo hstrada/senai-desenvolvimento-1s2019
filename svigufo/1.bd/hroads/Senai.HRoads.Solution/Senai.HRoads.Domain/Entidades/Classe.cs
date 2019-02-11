@@ -1,6 +1,6 @@
 ﻿namespace Senai.HRoads.Domain.Entidades
 {
-    public class TiposHabilidadesDominio
+    public class Classe
     {
         public int Id { get; set; }
         public string Nome { get; set; }

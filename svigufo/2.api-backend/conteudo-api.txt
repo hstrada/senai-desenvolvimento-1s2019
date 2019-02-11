@@ -1,7 +1,14 @@
 quarta - api - conceitualmente/http2/importância
+	https://pt.wikipedia.org/wiki/API
+	https://pt.wikipedia.org/wiki/REST
+	https://pt.stackoverflow.com/questions/45783/o-que-%C3%A9-rest-e-restful
+	
 novo projeto - explicar os arquivos (pasta, solução)
 
-JSON
+JSON(JavaScript Object Notation)
+	- https://www.json.org/
+	- https://pt.wikipedia.org/wiki/JSON
+	- https://www.w3schools.com/js/js_json_intro.asp
 
 [application/json]
 TipoEventoController - rotas
@@ -87,6 +94,8 @@ cors
 brotli
 
 async/await
+
+Cache
 
 https://medium.com/@renato.groffe/asp-net-core-dicas-%C3%BAteis-para-o-dia-a-dia-de-um-desenvolvedor-parte-3-9e5ddc1283b0
 

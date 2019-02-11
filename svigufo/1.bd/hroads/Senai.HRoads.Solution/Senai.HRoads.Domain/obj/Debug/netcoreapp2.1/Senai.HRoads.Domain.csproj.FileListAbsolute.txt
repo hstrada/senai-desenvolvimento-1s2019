@@ -7,3 +7,12 @@ G:\Pessoal\Senai\Tecnico\2_Semestre\Projetos\Senai.HRoads.Solution\Senai.HRoads.
 G:\Pessoal\Senai\Tecnico\2_Semestre\Projetos\Senai.HRoads.Solution\Senai.HRoads.Domain\obj\Debug\netcoreapp2.1\Senai.HRoads.Domain.AssemblyInfo.cs
 G:\Pessoal\Senai\Tecnico\2_Semestre\Projetos\Senai.HRoads.Solution\Senai.HRoads.Domain\obj\Debug\netcoreapp2.1\Senai.HRoads.Domain.dll
 G:\Pessoal\Senai\Tecnico\2_Semestre\Projetos\Senai.HRoads.Solution\Senai.HRoads.Domain\obj\Debug\netcoreapp2.1\Senai.HRoads.Domain.pdb
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Domain\bin\Debug\netcoreapp2.1\Senai.HRoads.Domain.deps.json
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Domain\bin\Debug\netcoreapp2.1\Senai.HRoads.Domain.dll
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Domain\bin\Debug\netcoreapp2.1\Senai.HRoads.Domain.pdb
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Domain\obj\Debug\netcoreapp2.1\Senai.HRoads.Domain.csprojAssemblyReference.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Domain\obj\Debug\netcoreapp2.1\Senai.HRoads.Domain.csproj.CoreCompileInputs.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Domain\obj\Debug\netcoreapp2.1\Senai.HRoads.Domain.AssemblyInfoInputs.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Domain\obj\Debug\netcoreapp2.1\Senai.HRoads.Domain.AssemblyInfo.cs
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Domain\obj\Debug\netcoreapp2.1\Senai.HRoads.Domain.dll
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Domain\obj\Debug\netcoreapp2.1\Senai.HRoads.Domain.pdb

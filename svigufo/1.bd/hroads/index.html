@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<head>
+    <title>HRoads</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+</head>
+<body>
+
+    <div class="container">
+            <div class="row">
+                    <div class="col-4">
+                            <h3>Classes</h3><select id="ddl_classes" name="ddl_classes" class="dropdown"></select>
+                            <div id="classes"></div>
+                    </div>
+                    <div class="col-4">
+                            <h3>Tipos Habilidades</h3>
+                            <div id="tiposhabilidades"></div>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-12">
+                            <h3>Personagens</h3>
+                            <div id="personagens"></div>
+                    </div>
+            </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script>
+    var xhttpClasses = new XMLHttpRequest();
+   
+    xhttpClasses.open("GET", "http://localhost:54498/api/classes", true);
+
+    xhttpClasses.send();
+
+    xhttpClasses.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+         var response = JSON.parse(xhttpClasses.responseText);
+        console.log(response)
+        var select = document.getElementById("ddl_classes");
+
+        var html = '<table  class="table table-striped table-dark">';
+        html += "<thead><tr><th scope='col'>#</th><th scope='col'>Nome</th></tr></thead>";
+        html += "<tbody>";
+        response.forEach(element => {
+            html += "<tr><th scope='row'>" + element.Id +"</th><td>"+ element.Nome+"</td></tr>"; 
+
+                var option = document.createElement('option');
+                option.text = element.Nome;
+                option.value = element.Id;
+                select.add(option, 0);
+
+
+        });
+        html += "</tbody>";
+        html += '</table>';
+        var classes = document.getElementById('classes');
+        classes.innerHTML = html;
+      }
+    };
+
+    var xhttpTiposHabilidades = new XMLHttpRequest();
+
+    xhttpTiposHabilidades.open("GET", "http://localhost:54498/api/tiposhabilidades", true);
+
+    xhttpTiposHabilidades.send();
+
+    xhttpTiposHabilidades.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+         var response = JSON.parse(xhttpTiposHabilidades.responseText);
+        console.log(response)
+        var html = '<table  class="table table-striped table-dark">';
+        html += "<thead><tr><th scope='col'>#</th><th scope='col'>Nome</th></tr></thead>";
+        html += "<tbody>";
+        response.forEach(element => {
+            html += "<tr><th scope='row'>" + element.Id +"</th><td>"+ element.Nome+"</td></tr>" 
+        });
+        html += "</tbody>";
+        html += '</table>';
+        var tiposhabilidades = document.getElementById('tiposhabilidades');
+        tiposhabilidades.innerHTML = html;
+      }
+    };
+
+    var xhttpPersonagens = new XMLHttpRequest();
+
+    xhttpPersonagens.open("GET", "http://localhost:54498/api/personagens", true);
+
+    xhttpPersonagens.send();
+
+    xhttpPersonagens.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+         var response = JSON.parse(xhttpPersonagens.responseText);
+        console.log(response)
+        var html = '<table  class="table table-striped table-dark">';
+        html += "<thead><tr><th scope='col'>#</th><th scope='col'>Nome</th><th scope='col'>Capacidade Máxima Vida</th><th scope='col'>Capacidade Máxima Mana</th><th scope='col'>Data Criação</th><th scope='col'>Data Alteração</th><th scope='col'>Id_Classe</th></tr></thead>";
+        html += "<tbody>";
+        response.forEach(element => {
+            html += "<tr><th scope='row'>" + element.Id +"</th><td>"+ element.Nome+"</td><td>"+ element.Cap_Max_Vida+"</td><td>"+ element.Cap_Max_Mana+"</td><td>"+ element.DataCriacao+"</td><td>"+ element.DataAtualizacao+"</td><td>"+ element.Id_Classe+"</td></tr>" 
+        });
+        html += "</tbody>";
+        html += '</table>';
+        var personagens = document.getElementById('personagens');
+        personagens.innerHTML = html;
+      }
+    };
+
+
+    
+  </script>
+
+</body>
+</html>

@@ -9,13 +9,13 @@ namespace Senai.HRoads.Infra.Data.Repositorios
 {
     public class PersonagensRepositorio : IPersonagensRepositorio
     {
-        public void Atualizar(PersonagensDominio dados)
+        public void Atualizar(Personagem dados)
         {
             try
             {
                 using (SqlConnection conexao = new SqlConnection(@"Data Source=.\SqlExpress;Initial Catalog=SENAI_HROADS;Integrated Security=True"))
                 {
-                    conexao.Query<TiposHabilidadesDominio>("UPDATE [dbo].[PERSONAGENS] SET [NOME] = @NOME,[CAP_MAX_VIDA] = @CAP_MAX_VIDA,[CAP_MAX_MANA] = @CAP_MAX_MANA," + 
+                    conexao.Query<Tipo_Habilidade>("UPDATE [dbo].[PERSONAGENS] SET [NOME] = @NOME,[CAP_MAX_VIDA] = @CAP_MAX_VIDA,[CAP_MAX_MANA] = @CAP_MAX_MANA," + 
                                                                     "[DT_CRIACAO] = @DT_CRIACAO,[DT_ATUALIZACAO] = @DT_ATUALIZACAO, [ID_CLASSE] = @ID_CLASSE WHERE ID = @ID",
                                                                     new
                                                                     {   NOME = dados.Nome,
@@ -40,7 +40,7 @@ namespace Senai.HRoads.Infra.Data.Repositorios
             {
                 using (SqlConnection conexao = new SqlConnection(@"Data Source=.\SqlExpress;Initial Catalog=SENAI_HROADS;Integrated Security=True"))
                 {
-                    conexao.QueryFirstOrDefault<TiposHabilidadesDominio>("DELETE PERSONAGENS WHERE ID = @ID", new { ID = Id });
+                    conexao.QueryFirstOrDefault<Tipo_Habilidade>("DELETE PERSONAGENS WHERE ID = @ID", new { ID = Id });
                 }
             }
             catch (Exception ex)
@@ -49,13 +49,13 @@ namespace Senai.HRoads.Infra.Data.Repositorios
             }
         }
 
-        public void Inserir(PersonagensDominio dados)
+        public void Inserir(Personagem dados)
         {
             try
             {
                 using (SqlConnection conexao = new SqlConnection(@"Data Source=.\SqlExpress;Initial Catalog=SENAI_HROADS;Integrated Security=True"))
                 {
-                    conexao.Query<PersonagensDominio>("INSERT INTO[dbo].[PERSONAGENS]([NOME],[CAP_MAX_VIDA],[CAP_MAX_MANA],[DT_CRIACAO],[DT_ATUALIZACAO],[ID_CLASSE])" +
+                    conexao.Query<Personagem>("INSERT INTO[dbo].[PERSONAGENS]([NOME],[CAP_MAX_VIDA],[CAP_MAX_MANA],[DT_CRIACAO],[DT_ATUALIZACAO],[ID_CLASSE])" +
                                                             "VALUES(@NOME, @CAP_MAX_VIDA, @CAP_MAX_MANA, @DT_CRIACAO, @DT_ATUALIZACAO, @ID_CLASSE)",
                                                             new { NOME = dados.Nome
                                                                 , CAP_MAX_VIDA = dados.Cap_Max_Vida
@@ -71,13 +71,13 @@ namespace Senai.HRoads.Infra.Data.Repositorios
             }
         }
 
-        public IEnumerable<PersonagensDominio> Listar()
+        public IEnumerable<Personagem> Listar()
         {
             try
             {
                 using (SqlConnection conexao = new SqlConnection(@"Data Source=.\SqlExpress;Initial Catalog=SENAI_HROADS;Integrated Security=True"))
                 {
-                    return conexao.Query<PersonagensDominio>("SELECT [ID], [NOME], [CAP_MAX_VIDA], [CAP_MAX_MANA], [DT_CRIACAO] AS DATACRIACAO, [DT_ATUALIZACAO] AS DATAATUALIZACAO, [ID_CLASSE] FROM[dbo].[PERSONAGENS] GO");
+                    return conexao.Query<Personagem>("SELECT [ID], [NOME], [CAP_MAX_VIDA], [CAP_MAX_MANA], [DT_CRIACAO] AS DATACRIACAO, [DT_ATUALIZACAO] AS DATAATUALIZACAO, [ID_CLASSE] FROM[dbo].[PERSONAGENS] GO");
                 }
             }
             catch (Exception ex)
@@ -86,13 +86,13 @@ namespace Senai.HRoads.Infra.Data.Repositorios
             }
         }
 
-        public PersonagensDominio BuscarPorId(int Id)
+        public Personagem BuscarPorId(int Id)
         {
             try
             {
                 using (SqlConnection conexao = new SqlConnection(@"Data Source=.\SqlExpress;Initial Catalog=SENAI_HROADS;Integrated Security=True"))
                 {
-                    return conexao.QueryFirstOrDefault<PersonagensDominio>("SELECT [ID], [NOME], [CAP_MAX_VIDA], [CAP_MAX_MANA], [DT_CRIACAO] AS DATACRIACAO, [DT_ATUALIZACAO] AS DATAATUALIZACAO, [ID_CLASSE] FROM[dbo].[PERSONAGENS] WHERE ID = @ID",new { ID = Id });
+                    return conexao.QueryFirstOrDefault<Personagem>("SELECT [ID], [NOME], [CAP_MAX_VIDA], [CAP_MAX_MANA], [DT_CRIACAO] AS DATACRIACAO, [DT_ATUALIZACAO] AS DATAATUALIZACAO, [ID_CLASSE] FROM[dbo].[PERSONAGENS] WHERE ID = @ID",new { ID = Id });
                 }
             }
             catch (Exception ex)

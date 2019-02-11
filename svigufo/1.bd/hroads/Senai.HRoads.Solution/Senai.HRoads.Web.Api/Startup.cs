@@ -47,6 +47,8 @@ namespace Senai.HRoads.Web.Api
                 c.IncludeXmlComments(caminhoXmlDoc);
             });
 
+            services.AddCors();
+
             services.AddMvc()
                     .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                     .AddJsonOptions(options => {
@@ -63,7 +65,15 @@ namespace Senai.HRoads.Web.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(options =>
+                                options.AllowAnyOrigin()
+                                       .AllowAnyHeader()
+                                       .AllowAnyMethod()
+                        );
+
             app.UseMvc();
+
+            
 
             app.UseSwagger();
 

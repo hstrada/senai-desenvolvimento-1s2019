@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Senai.HRoads.Domain.Entidades;
 using Senai.HRoads.Domain.Interfaces;
@@ -26,11 +27,12 @@ namespace Senai.HRoads.Web.Api.Controllers
         /// <response code="200">Retorna as Classes se Ok</response>
         /// <response code="404">Retorna Erro caso algo de errado</response>
         [HttpGet]
-        public ActionResult Get()
+        public async IActionResult Get()
         {
             try
             {
-                return Ok(_classesRepositorio.Listar().ToList());
+                
+                return Ok("Get - Solicitação Recebida");
             }
             catch (System.Exception ex)
             {
@@ -53,7 +55,7 @@ namespace Senai.HRoads.Web.Api.Controllers
         {
             try
             {
-                ClassesDominio classes = _classesRepositorio.BuscarPorId(id);
+                Classe classes = _classesRepositorio.BuscarPorId(id);
 
                 if(classes == null)
                     return NotFound("Id inválido");
@@ -76,7 +78,7 @@ namespace Senai.HRoads.Web.Api.Controllers
         /// <response code="200">Retorna o texto se Ok</response>
         /// <response code="404">Retorna Erro caso algo de errado</response>
         [HttpPost]
-        public ActionResult Post([FromBody] ClassesDominio dados)
+        public ActionResult Post([FromBody] Classe dados)
         {
             try
             {
@@ -102,11 +104,11 @@ namespace Senai.HRoads.Web.Api.Controllers
         /// <response code="400">Retorna Not Found caso o id seja inválido</response>
         /// <response code="404">Retorna Erro caso algo de errado</response>
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] ClassesDominio dados)
+        public ActionResult Put(int id, [FromBody] Classe dados)
         {
             try
             {
-                ClassesDominio classes = _classesRepositorio.BuscarPorId(id);
+                Classe classes = _classesRepositorio.BuscarPorId(id);
 
                 if (classes == null)
                     return NotFound("Id inválido");
@@ -136,7 +138,7 @@ namespace Senai.HRoads.Web.Api.Controllers
         {
             try
             {
-                ClassesDominio classes = _classesRepositorio.BuscarPorId(id);
+                Classe classes = _classesRepositorio.BuscarPorId(id);
 
                 if (classes == null)
                     return NotFound("Id inválido");

@@ -516,10 +516,11 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.1.0": {
-      "sha512": "TT+QCi9LcxGTjBssH7S7n5+8DVcwfG4DYgXX7Dk7+BfZ4oVHj8Q0CbYk9glzAlHLsSt3bYzol+fOdra2iu6GOw==",
+      "sha512": "aSTPL94NloSiQVL5Len8wbjFKOnoAX/vOh3s3DF6g3c7GUUMLCDvnBhmA72M2iN2AedyA8hpr7m89kzSAKUnJQ==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.1.0",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
@@ -681,23 +682,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CorujasDev\\.nuget\\packages\\": {},
+    "C:\\Users\\fernando.henrique\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Pessoal\\Senai\\Tecnico\\2_Semestre\\Projetos\\Senai.HRoads.Solution\\Senai.HRoads.Domain\\Senai.HRoads.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\fernando.henrique\\Documents\\Senai\\1_Semestre_2019\\senai-dev-1s2019\\svigufo\\1.bd\\hroads\\Senai.HRoads.Solution\\Senai.HRoads.Domain\\Senai.HRoads.Domain.csproj",
       "projectName": "Senai.HRoads.Domain",
-      "projectPath": "G:\\Pessoal\\Senai\\Tecnico\\2_Semestre\\Projetos\\Senai.HRoads.Solution\\Senai.HRoads.Domain\\Senai.HRoads.Domain.csproj",
-      "packagesPath": "C:\\Users\\CorujasDev\\.nuget\\packages\\",
-      "outputPath": "G:\\Pessoal\\Senai\\Tecnico\\2_Semestre\\Projetos\\Senai.HRoads.Solution\\Senai.HRoads.Domain\\obj\\",
+      "projectPath": "C:\\Users\\fernando.henrique\\Documents\\Senai\\1_Semestre_2019\\senai-dev-1s2019\\svigufo\\1.bd\\hroads\\Senai.HRoads.Solution\\Senai.HRoads.Domain\\Senai.HRoads.Domain.csproj",
+      "packagesPath": "C:\\Users\\fernando.henrique\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fernando.henrique\\Documents\\Senai\\1_Semestre_2019\\senai-dev-1s2019\\svigufo\\1.bd\\hroads\\Senai.HRoads.Solution\\Senai.HRoads.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\CorujasDev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fernando.henrique\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

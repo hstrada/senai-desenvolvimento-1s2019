@@ -51,7 +51,7 @@ namespace Senai.HRoads.Web.Api.Controllers
         {
             try
             {
-                HabilidadesDominio Habilidades = _HabilidadesRepositorio.BuscarPorId(id);
+                Habilidade Habilidades = _HabilidadesRepositorio.BuscarPorId(id);
 
                 if (Habilidades == null)
                     return NotFound("Id inválido");
@@ -74,7 +74,7 @@ namespace Senai.HRoads.Web.Api.Controllers
         /// <response code="200">Retorna o texto se Ok</response>
         /// <response code="404">Retorna Erro caso algo de errado</response>
         [HttpPost]
-        public ActionResult Post([FromBody] HabilidadesDominio dados)
+        public ActionResult Post([FromBody] Habilidade dados)
         {
             try
             {
@@ -100,11 +100,11 @@ namespace Senai.HRoads.Web.Api.Controllers
         /// <response code="400">Retorna Not Found caso o id seja inválido</response>
         /// <response code="404">Retorna Erro caso algo de errado</response>
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] HabilidadesDominio dados)
+        public ActionResult Put(int id, [FromBody] Habilidade dados)
         {
             try
             {
-                HabilidadesDominio Habilidades = _HabilidadesRepositorio.BuscarPorId(id);
+                Habilidade Habilidades = _HabilidadesRepositorio.BuscarPorId(id);
 
                 if (Habilidades == null)
                     return NotFound("Id inválido");
@@ -134,7 +134,7 @@ namespace Senai.HRoads.Web.Api.Controllers
         {
             try
             {
-                HabilidadesDominio Habilidades = _HabilidadesRepositorio.BuscarPorId(id);
+                Habilidade Habilidades = _HabilidadesRepositorio.BuscarPorId(id);
 
                 if (Habilidades == null)
                     return NotFound("Id inválido");

@@ -1,0 +1,9 @@
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Infra.Data.EF\bin\Debug\netcoreapp2.1\Senai.HRoads.Infra.Data.EF.deps.json
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Infra.Data.EF\bin\Debug\netcoreapp2.1\Senai.HRoads.Infra.Data.EF.dll
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Infra.Data.EF\bin\Debug\netcoreapp2.1\Senai.HRoads.Infra.Data.EF.pdb
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Infra.Data.EF\obj\Debug\netcoreapp2.1\Senai.HRoads.Infra.Data.EF.csproj.CoreCompileInputs.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Infra.Data.EF\obj\Debug\netcoreapp2.1\Senai.HRoads.Infra.Data.EF.AssemblyInfoInputs.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Infra.Data.EF\obj\Debug\netcoreapp2.1\Senai.HRoads.Infra.Data.EF.AssemblyInfo.cs
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Infra.Data.EF\obj\Debug\netcoreapp2.1\Senai.HRoads.Infra.Data.EF.dll
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Infra.Data.EF\obj\Debug\netcoreapp2.1\Senai.HRoads.Infra.Data.EF.pdb
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\1.bd\hroads\Senai.HRoads.Solution\Senai.HRoads.Infra.Data.EF\obj\Debug\netcoreapp2.1\Senai.HRoads.Infra.Data.EF.csprojAssemblyReference.cache

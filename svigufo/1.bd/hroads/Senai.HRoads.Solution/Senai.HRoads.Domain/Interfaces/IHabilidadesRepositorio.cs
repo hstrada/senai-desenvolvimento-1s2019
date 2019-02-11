@@ -4,7 +4,7 @@ using System;
 
 namespace Senai.HRoads.Domain.Interfaces
 {
-    public interface IHabilidadesRepositorio : ILeituraRepository<HabilidadesDominio>, IGravacaoRepository<HabilidadesDominio>
+    public interface IHabilidadesRepositorio : ILeituraRepository<Habilidade>, IGravacaoRepository<Habilidade>
     {
     }
 }

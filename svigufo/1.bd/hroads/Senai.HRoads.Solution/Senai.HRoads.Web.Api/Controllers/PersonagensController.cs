@@ -51,7 +51,7 @@ namespace Senai.HRoads.Web.Api.Controllers
         {
             try
             {
-                PersonagensDominio Personagens = _PersonagensRepositorio.BuscarPorId(id);
+                Personagem Personagens = _PersonagensRepositorio.BuscarPorId(id);
 
                 if (Personagens == null)
                     return NotFound("Id inválido");
@@ -74,7 +74,7 @@ namespace Senai.HRoads.Web.Api.Controllers
         /// <response code="200">Retorna o texto se Ok</response>
         /// <response code="404">Retorna Erro caso algo de errado</response>
         [HttpPost]
-        public ActionResult Post([FromBody] PersonagensDominio dados)
+        public ActionResult Post([FromBody] Personagem dados)
         {
             try
             {
@@ -100,11 +100,11 @@ namespace Senai.HRoads.Web.Api.Controllers
         /// <response code="400">Retorna Not Found caso o id seja inválido</response>
         /// <response code="404">Retorna Erro caso algo de errado</response>
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] PersonagensDominio dados)
+        public ActionResult Put(int id, [FromBody] Personagem dados)
         {
             try
             {
-                PersonagensDominio Personagens = _PersonagensRepositorio.BuscarPorId(id);
+                Personagem Personagens = _PersonagensRepositorio.BuscarPorId(id);
 
                 if (Personagens == null)
                     return NotFound("Id inválido");
@@ -134,7 +134,7 @@ namespace Senai.HRoads.Web.Api.Controllers
         {
             try
             {
-                PersonagensDominio Personagens = _PersonagensRepositorio.BuscarPorId(id);
+                Personagem Personagens = _PersonagensRepositorio.BuscarPorId(id);
 
                 if (Personagens == null)
                     return NotFound("Id inválido");

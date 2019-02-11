@@ -22,7 +22,7 @@
             <response code="400">Retorna Not Found caso o id seja inválido</response>
             <response code="404">Retorna Erro caso algo de errado</response>
         </member>
-        <member name="M:Senai.HRoads.Web.Api.Controllers.ClassesController.Post(Senai.HRoads.Domain.Entidades.ClassesDominio)">
+        <member name="M:Senai.HRoads.Web.Api.Controllers.ClassesController.Post(Senai.HRoads.Domain.Entidades.Classe)">
             <summary>
             Insere uma nova classe
             </summary>
@@ -31,7 +31,7 @@
             <response code="200">Retorna o texto se Ok</response>
             <response code="404">Retorna Erro caso algo de errado</response>
         </member>
-        <member name="M:Senai.HRoads.Web.Api.Controllers.ClassesController.Put(System.Int32,Senai.HRoads.Domain.Entidades.ClassesDominio)">
+        <member name="M:Senai.HRoads.Web.Api.Controllers.ClassesController.Put(System.Int32,Senai.HRoads.Domain.Entidades.Classe)">
             <summary>
             Atualiza uma classe
             </summary>
@@ -71,7 +71,7 @@
             <response code="400">Retorna Not Found caso o id seja inválido</response>
             <response code="404">Retorna Erro caso algo de errado</response>
         </member>
-        <member name="M:Senai.HRoads.Web.Api.Controllers.ClassesHabilidadesController.Post(Senai.HRoads.Domain.Entidades.ClassesHabilidadesDominio)">
+        <member name="M:Senai.HRoads.Web.Api.Controllers.ClassesHabilidadesController.Post(Senai.HRoads.Domain.Entidades.Classe_Habilidade)">
             <summary>
             Insere uma novo personagem
             </summary>
@@ -80,7 +80,7 @@
             <response code="200">Retorna o texto se Ok</response>
             <response code="404">Retorna Erro caso algo de errado</response>
         </member>
-        <member name="M:Senai.HRoads.Web.Api.Controllers.ClassesHabilidadesController.Put(System.Int32,Senai.HRoads.Domain.Entidades.ClassesHabilidadesDominio)">
+        <member name="M:Senai.HRoads.Web.Api.Controllers.ClassesHabilidadesController.Put(System.Int32,Senai.HRoads.Domain.Entidades.Classe_Habilidade)">
             <summary>
             Atualiza umo personagem
             </summary>
@@ -120,7 +120,7 @@
             <response code="400">Retorna Not Found caso o id seja inválido</response>
             <response code="404">Retorna Erro caso algo de errado</response>
         </member>
-        <member name="M:Senai.HRoads.Web.Api.Controllers.HabilidadesController.Post(Senai.HRoads.Domain.Entidades.HabilidadesDominio)">
+        <member name="M:Senai.HRoads.Web.Api.Controllers.HabilidadesController.Post(Senai.HRoads.Domain.Entidades.Habilidade)">
             <summary>
             Insere um nova Habilidade
             </summary>
@@ -129,7 +129,7 @@
             <response code="200">Retorna o texto se Ok</response>
             <response code="404">Retorna Erro caso algo de errado</response>
         </member>
-        <member name="M:Senai.HRoads.Web.Api.Controllers.HabilidadesController.Put(System.Int32,Senai.HRoads.Domain.Entidades.HabilidadesDominio)">
+        <member name="M:Senai.HRoads.Web.Api.Controllers.HabilidadesController.Put(System.Int32,Senai.HRoads.Domain.Entidades.Habilidade)">
             <summary>
             Atualiza uma habilidade
             </summary>
@@ -168,7 +168,7 @@
             <response code="400">Retorna Not Found caso o id seja inválido</response>
             <response code="404">Retorna Erro caso algo de errado</response>
         </member>
-        <member name="M:Senai.HRoads.Web.Api.Controllers.PersonagensController.Post(Senai.HRoads.Domain.Entidades.PersonagensDominio)">
+        <member name="M:Senai.HRoads.Web.Api.Controllers.PersonagensController.Post(Senai.HRoads.Domain.Entidades.Personagem)">
             <summary>
             Insere uma novo personagem
             </summary>
@@ -177,7 +177,7 @@
             <response code="200">Retorna o texto se Ok</response>
             <response code="404">Retorna Erro caso algo de errado</response>
         </member>
-        <member name="M:Senai.HRoads.Web.Api.Controllers.PersonagensController.Put(System.Int32,Senai.HRoads.Domain.Entidades.PersonagensDominio)">
+        <member name="M:Senai.HRoads.Web.Api.Controllers.PersonagensController.Put(System.Int32,Senai.HRoads.Domain.Entidades.Personagem)">
             <summary>
             Atualiza umo personagem
             </summary>
@@ -216,7 +216,7 @@
             <response code="400">Retorna Not Found caso o id seja inválido</response>
             <response code="404">Retorna Erro caso algo de errado</response>
         </member>
-        <member name="M:Senai.HRoads.Web.Api.Controllers.TiposHabilidadesController.Post(Senai.HRoads.Domain.Entidades.TiposHabilidadesDominio)">
+        <member name="M:Senai.HRoads.Web.Api.Controllers.TiposHabilidadesController.Post(Senai.HRoads.Domain.Entidades.Tipo_Habilidade)">
             <summary>
             Insere um novo tipo de habilidade
             </summary>
@@ -225,7 +225,7 @@
             <response code="200">Retorna o texto se Ok</response>
             <response code="404">Retorna Erro caso algo de errado</response>
         </member>
-        <member name="M:Senai.HRoads.Web.Api.Controllers.TiposHabilidadesController.Put(System.Int32,Senai.HRoads.Domain.Entidades.TiposHabilidadesDominio)">
+        <member name="M:Senai.HRoads.Web.Api.Controllers.TiposHabilidadesController.Put(System.Int32,Senai.HRoads.Domain.Entidades.Tipo_Habilidade)">
             <summary>
             Atualiza um tipo de habilidade
             </summary>

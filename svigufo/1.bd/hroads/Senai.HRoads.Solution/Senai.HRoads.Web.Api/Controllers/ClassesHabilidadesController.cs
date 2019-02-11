@@ -52,7 +52,7 @@ namespace Senai.HRoads.Web.Api.Controllers
         {
             try
             {
-                ClassesHabilidadesDominio ClassesHabilidades =  _ClassesHabilidadesRepositorio.BuscarPorId(id_classe, id_habilidade);
+                Classe_Habilidade ClassesHabilidades =  _ClassesHabilidadesRepositorio.BuscarPorId(id_classe, id_habilidade);
 
                 if (ClassesHabilidades == null)
                     return NotFound("Id inválido");
@@ -75,7 +75,7 @@ namespace Senai.HRoads.Web.Api.Controllers
         /// <response code="200">Retorna o texto se Ok</response>
         /// <response code="404">Retorna Erro caso algo de errado</response>
         [HttpPost]
-        public ActionResult Post([FromBody] ClassesHabilidadesDominio dados)
+        public ActionResult Post([FromBody] Classe_Habilidade dados)
         {
             try
             {
@@ -101,11 +101,11 @@ namespace Senai.HRoads.Web.Api.Controllers
         /// <response code="400">Retorna Not Found caso o id seja inválido</response>
         /// <response code="404">Retorna Erro caso algo de errado</response>
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] ClassesHabilidadesDominio dados)
+        public ActionResult Put(int id, [FromBody] Classe_Habilidade dados)
         {
             try
             {
-                ClassesHabilidadesDominio ClassesHabilidades =  _ClassesHabilidadesRepositorio.BuscarPorId(id);
+                Classe_Habilidade ClassesHabilidades =  _ClassesHabilidadesRepositorio.BuscarPorId(id);
 
                 if (ClassesHabilidades == null)
                     return NotFound("Id inválido");
@@ -136,7 +136,7 @@ namespace Senai.HRoads.Web.Api.Controllers
         {
             try
             {
-                ClassesHabilidadesDominio ClassesHabilidades =  _ClassesHabilidadesRepositorio.BuscarPorId(id_classe, id_habilidade);
+                Classe_Habilidade ClassesHabilidades =  _ClassesHabilidadesRepositorio.BuscarPorId(id_classe, id_habilidade);
 
                 if (ClassesHabilidades == null)
                     return NotFound("Id inválido");

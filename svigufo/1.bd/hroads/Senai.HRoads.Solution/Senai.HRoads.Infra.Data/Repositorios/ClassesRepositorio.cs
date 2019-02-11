@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using Dapper;
+using Dapper.Contrib.Extensions;
 using Senai.HRoads.Domain.Entidades;
 using Senai.HRoads.Domain.Interfaces;
 
@@ -9,13 +11,14 @@ namespace Senai.HRoads.Infra.Data.Repositorios
 {
     public class ClassesRepositorio : IClassesRepositorio
     {
-        public void Atualizar(ClassesDominio dados)
+        public void Atualizar(Classe dados)
         {
             try
             {
                 using (SqlConnection conexao = new SqlConnection(@"Data Source=.\SqlExpress;Initial Catalog=SENAI_HROADS;Integrated Security=True"))
                 {
-                    conexao.Query<ClassesDominio>("UPDATE CLASSES SET NOME = @NOME WHERE ID = @ID", new { NOME = dados.Nome, ID = dados.Id });
+                    conexao.Update(new Classe { Id = dados.Id, Nome = dados.Nome });
+                    //conexao.Query<ClassesDominio>("UPDATE CLASSES SET NOME = @NOME WHERE ID = @ID", new { NOME = dados.Nome, ID = dados.Id });
                 }
             }
             catch (Exception ex)
@@ -32,7 +35,8 @@ namespace Senai.HRoads.Infra.Data.Repositorios
             {
                 using (SqlConnection conexao = new SqlConnection(@"Data Source=.\SqlExpress;Initial Catalog=SENAI_HROADS;Integrated Security=True"))
                 {
-                    conexao.QueryFirstOrDefault<ClassesDominio>("DELETE CLASSES WHERE ID = @ID", new { ID = Id });
+                    conexao.Delete(new Classe { Id = 1 });
+                    //conexao.QueryFirstOrDefault<ClassesDominio>("DELETE CLASSES WHERE ID = @ID", new { ID = Id });
                 }
             }
             catch (Exception ex)
@@ -41,13 +45,14 @@ namespace Senai.HRoads.Infra.Data.Repositorios
             }
         }
 
-        public void Inserir(ClassesDominio dados)
+        public void Inserir(Classe dados)
         {
             try
             {
                 using (SqlConnection conexao = new SqlConnection(@"Data Source=.\SqlExpress;Initial Catalog=SENAI_HROADS;Integrated Security=True"))
                 {
-                    conexao.Query<ClassesDominio>("INSERT INTO CLASSES VALUES(@NOME)", new { NOME = dados.Nome });
+                    conexao.Insert(new Classe { Nome =  dados.Nome});
+                    //conexao.Query<ClassesDominio>("INSERT INTO CLASSES VALUES(@NOME)", new { NOME = dados.Nome });
                 }
             }
             catch (Exception ex)
@@ -56,13 +61,14 @@ namespace Senai.HRoads.Infra.Data.Repositorios
             }
         }
 
-        public IEnumerable<ClassesDominio> Listar()
+        public IEnumerable<Classe> Listar()
         {
             try
             {
                 using (SqlConnection conexao = new SqlConnection(@"Data Source=.\SqlExpress;Initial Catalog=SENAI_HROADS;Integrated Security=True"))
                 {
-                    return conexao.Query<ClassesDominio>("SELECT ID, NOME FROM CLASSES ORDER BY ID");
+                    return conexao.GetAll<Classe>().ToList();
+                    //return conexao.Query<ClassesDominio>("SELECT ID, NOME FROM CLASSES ORDER BY ID");
                 }
             }
             catch (Exception ex)
@@ -71,13 +77,14 @@ namespace Senai.HRoads.Infra.Data.Repositorios
             }
         }
 
-        public ClassesDominio BuscarPorId(int Id)
+        public Classe BuscarPorId(int Id)
         {
             try
             {
                 using (SqlConnection conexao = new SqlConnection(@"Data Source=.\SqlExpress;Initial Catalog=SENAI_HROADS;Integrated Security=True"))
                 {
-                    return conexao.QueryFirstOrDefault<ClassesDominio>("SELECT ID, NOME FROM CLASSES WHERE ID = @ID ORDER BY ID", new { ID = Id });
+                    return conexao.Get<Classe>(Id);
+                    //return conexao.QueryFirstOrDefault<ClassesDominio>("SELECT ID, NOME FROM CLASSES WHERE ID = @ID ORDER BY ID", new { ID = Id });
                 }
             }
             catch (Exception ex)
