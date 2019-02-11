@@ -103,12 +103,28 @@ namespace Senai.Svigufo.Api.Repositories
 
         public void Alterar(TipoEventoDomain tipoEvento)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(stringDeConexao))
+            {
+                string queryASerExecutada = "UPDATE TIPOS_EVENTOS SET TITULO = @TITULO WHERE ID = @ID;";
+                SqlCommand cmd = new SqlCommand(queryASerExecutada, con);
+                cmd.Parameters.AddWithValue("@TITULO", tipoEvento.Nome);
+                cmd.Parameters.AddWithValue("@ID", tipoEvento.Id);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
         
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(stringDeConexao))
+            {
+                string comandoSQL = "DELETE FROM TIPOS_EVENTOS WHERE ID = @ID;";
+                SqlCommand cmd = new SqlCommand(comandoSQL, con);
+                cmd.Parameters.AddWithValue("@ID", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

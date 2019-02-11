@@ -100,10 +100,19 @@ namespace Senai.Svigufo.Api.Controllers
         [HttpPut]
         public IActionResult Put(TipoEventoDomain tipoEvento)
         {
-            var eventoEncontrado = eventos.Find(x => x.Id == tipoEvento.Id);
-            eventoEncontrado.Nome = tipoEvento.Nome;
+            //var eventoEncontrado = eventos.Find(x => x.Id == tipoEvento.Id);
+            //eventoEncontrado.Nome = tipoEvento.Nome;
 
-            return Ok(eventos);
+            //return Ok(eventos);
+            try
+            {
+                TipoEventoRepositorio.Alterar(tipoEvento);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
         /// <summary>
@@ -112,10 +121,11 @@ namespace Senai.Svigufo.Api.Controllers
         /// <param name="id"></param>
         /// <returns>Retorna a lista atualizada</returns>
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public void Delete(int id)
         {
-            eventos.Remove(eventos.Find(x => x.Id == id));
-            return Ok(eventos);
+            //eventos.Remove(eventos.Find(x => x.Id == id));
+            //return Ok(eventos);
+            TipoEventoRepositorio.Deletar(id);
         }
     }
 }
