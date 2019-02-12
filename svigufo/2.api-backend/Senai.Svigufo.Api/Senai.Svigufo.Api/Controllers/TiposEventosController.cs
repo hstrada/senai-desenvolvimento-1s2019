@@ -19,9 +19,12 @@ namespace Senai.Svigufo.Api.Controllers
     {
 
         private ITipoEventoRepository TipoEventoRepositorio { get; set; }
+        // private readonly ITipoEventoRepository TipoEventoRepositorio;
 
+        // public TiposEventosController(ITipoEventoRepository tipoEventoRepository)
         public TiposEventosController()
         {
+            // TipoEventoRepositorio = tipoEventoRepository;
             TipoEventoRepositorio = new TipoEventoRepository();
         }
 
@@ -104,6 +107,14 @@ namespace Senai.Svigufo.Api.Controllers
             //eventoEncontrado.Nome = tipoEvento.Nome;
 
             //return Ok(eventos);
+
+            TipoEventoDomain eventoASerAtualizado = TipoEventoRepositorio.BuscarPorId(tipoEvento.Id);
+
+            if (eventoASerAtualizado == null)
+            {
+                return NotFound();
+            }
+
             try
             {
                 TipoEventoRepositorio.Alterar(tipoEvento);
