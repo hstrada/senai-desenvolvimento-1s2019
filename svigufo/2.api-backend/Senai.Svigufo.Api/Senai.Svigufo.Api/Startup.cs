@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Senai.Svigufo.Api.Interfaces;
 using Senai.Svigufo.Api.Repositories;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Senai.Svigufo.Api
 {
@@ -29,15 +30,28 @@ namespace Senai.Svigufo.Api
                         .AllowAnyHeader()
                         .AllowCredentials());
             });
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Svigufo API", Version = "v1" });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Svigufo API V1");
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseMvc();
