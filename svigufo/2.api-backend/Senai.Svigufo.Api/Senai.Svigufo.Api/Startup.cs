@@ -18,6 +18,7 @@ namespace Senai.Svigufo.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // Adiciona o mvc e coloca a versão de compatibilidade que estamos trabalhando
             services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 
             // services.AddTransient<ITipoEventoRepository, TipoEventoRepository>();

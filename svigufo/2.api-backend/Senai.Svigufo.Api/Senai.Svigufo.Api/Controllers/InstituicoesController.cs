@@ -11,18 +11,27 @@ namespace Senai.Svigufo.Api.Controllers
     public class InstituicoesController : ControllerBase
     {
         private IInstituicaoRepository InstituicaoRepository { get; set; }
-        // repositório
+        
         public InstituicoesController()
         {
             InstituicaoRepository = new InstituicaoRepository();
         }
 
+        /// <summary>
+        /// Buscar a lista de instituições
+        /// </summary>
+        /// <returns>Lista de Instituições</returns>
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(InstituicaoRepository.Listar());
         }
 
+        /// <summary>
+        /// Buscar somente uma instituição
+        /// </summary>
+        /// <param name="id">id</param>
+        /// <returns>Apenas uma instituição</returns>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -34,6 +43,10 @@ namespace Senai.Svigufo.Api.Controllers
             return Ok(instituicao);
         }
 
+        /// <summary>
+        /// Cadastrar uma nova instituição
+        /// </summary>
+        /// <param name="instituicao">InstituicaoDomain</param>
         [HttpPost]
         public IActionResult Post(InstituicaoDomain instituicao)
         {
@@ -49,6 +62,12 @@ namespace Senai.Svigufo.Api.Controllers
             
         }
 
+        /// <summary>
+        /// Atualizar uma instituição
+        /// </summary>
+        /// <param name="id">id</param>
+        /// <param name="instituicao">InstituicaoDomain</param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, InstituicaoDomain instituicao)
         {

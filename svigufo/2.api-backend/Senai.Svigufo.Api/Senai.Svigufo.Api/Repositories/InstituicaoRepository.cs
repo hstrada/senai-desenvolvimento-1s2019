@@ -6,10 +6,17 @@ using System.Data.SqlClient;
 
 namespace Senai.Svigufo.Api.Repositories
 {
+    /// <summary>
+    /// Repositório de instituição
+    /// </summary>
     public class InstituicaoRepository : IInstituicaoRepository
     {
         private string stringDeConexao = "Data Source=localhost;Initial Catalog=SENAI_SVIGUFO;Integrated Security=True";
 
+        /// <summary>
+        /// Atualizar uma instituição
+        /// </summary>
+        /// <param name="instituicao">InstituicaoDomain</param>
         public void Alterar(InstituicaoDomain instituicao)
         {
             using (SqlConnection con = new SqlConnection(stringDeConexao))
@@ -40,6 +47,11 @@ namespace Senai.Svigufo.Api.Repositories
 
         }
 
+        /// <summary>
+        /// Buscar uma instituição
+        /// </summary>
+        /// <param name="id">Id</param>
+        /// <returns>InstituicaoDomain</returns>
         public InstituicaoDomain BuscarPorId(int id)
         {
             InstituicaoDomain instituicao = new InstituicaoDomain();
@@ -70,6 +82,10 @@ namespace Senai.Svigufo.Api.Repositories
             return null;
         }
 
+        /// <summary>
+        /// Cadastrar uma nova instituição
+        /// </summary>
+        /// <param name="instituicao">InstituicaoDomain</param>
         public void Cadastrar(InstituicaoDomain instituicao)
         {
             using (SqlConnection con = new SqlConnection(stringDeConexao))
@@ -88,6 +104,10 @@ namespace Senai.Svigufo.Api.Repositories
             }
         }
 
+        /// <summary>
+        /// Listar todas as instituições
+        /// </summary>
+        /// <returns>Uma lista de instituições</returns>
         public List<InstituicaoDomain> Listar()
         {
             string queryASerExecutada = "SELECT ID, NOME_FANTASIA, RAZAO_SOCIAL, CNPJ, CEP, LOGRADOURO, UF, CIDADE FROM INSTITUICOES";
