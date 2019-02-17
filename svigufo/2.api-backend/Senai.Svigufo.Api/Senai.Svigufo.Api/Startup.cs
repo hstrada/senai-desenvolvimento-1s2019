@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using Senai.Svigufo.Api.Interfaces;
 using Senai.Svigufo.Api.Repositories;
 using Swashbuckle.AspNetCore.Swagger;
@@ -22,7 +23,11 @@ namespace Senai.Svigufo.Api
         public void ConfigureServices(IServiceCollection services)
         {
             // Adiciona o mvc e coloca a versão de compatibilidade que estamos trabalhando
-            services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+            services.AddMvc().AddJsonOptions(options =>
+            {
+                options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            })
+            .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 
             // services.AddTransient<ITipoEventoRepository, TipoEventoRepository>();
 
@@ -93,7 +98,7 @@ namespace Senai.Svigufo.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Svigufo API V1");
             });
-            
+
             app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseMvc();
