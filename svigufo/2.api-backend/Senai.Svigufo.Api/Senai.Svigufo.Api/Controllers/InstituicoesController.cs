@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Senai.Svigufo.Api.Domains;
 using Senai.Svigufo.Api.Interfaces;
 using Senai.Svigufo.Api.Repositories;
-using System;
 
 namespace Senai.Svigufo.Api.Controllers
 {
@@ -21,6 +21,7 @@ namespace Senai.Svigufo.Api.Controllers
         /// Buscar a lista de instituições
         /// </summary>
         /// <returns>Lista de Instituições</returns>
+        [Authorize(Roles = "ADMINISTRADOR")]
         [HttpGet]
         public IActionResult Get()
         {

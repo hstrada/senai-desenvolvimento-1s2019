@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using Senai.Svigufo.Api.Interfaces;
 using Senai.Svigufo.Api.Repositories;
 using Swashbuckle.AspNetCore.Swagger;
@@ -36,10 +39,53 @@ namespace Senai.Svigufo.Api
             {
                 c.SwaggerDoc("v1", new Info { Title = "Svigufo API", Version = "v1" });
             });
+
+            services.AddAuthentication(options =>
+            {
+                // esquema de autenticação padrão
+                // Bearer - quem será o portador do jwt
+                options.DefaultAuthenticateScheme = "JwtBearer";
+                options.DefaultChallengeScheme = "JwtBearer";
+            }).AddJwtBearer("JwtBearer", options =>
+            {
+                // parâmetros para autenticar
+                options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                {
+                    // quando um token for enviado na requisição, preciso saber como será sua validação
+                    // quem está solicitando
+                    ValidateIssuer = true,
+                    // quem está realizando a audiência
+                    ValidateAudience = true,
+                    // tempo de expiração
+                    ValidateLifetime = true,
+                    // chave de assinatura que será utilizada por quem está validando
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("svigufo-chave-autenticacao")),
+                    // tempo de expiração
+                    ClockSkew = TimeSpan.FromMinutes(5),
+                    // quem está fazendo a própria validação
+                    ValidIssuer = "Svigufo.WebApi",
+                    // de onde está vindo
+                    ValidAudience = "Svigufo.WebApi"
+                };
+            });
+
+            //services.AddAuthorization(auth =>
+            //{
+            //    auth.AddPolicy("Bearer", new AuthorizationPolicyBuilder()
+            //        .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme‌​)
+            //        .RequireAuthenticatedUser().Build());
+            //});
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseAuthentication();
 
             app.UseSwagger();
 
@@ -47,11 +93,6 @@ namespace Senai.Svigufo.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Svigufo API V1");
             });
-
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
             
             app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 

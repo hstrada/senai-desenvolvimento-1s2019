@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using Senai.Svigufo.Api.Domains;
 using Senai.Svigufo.Api.Interfaces;
 using Senai.Svigufo.Api.Repositories;
