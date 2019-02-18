@@ -36,13 +36,14 @@ namespace Senai.Svigufo.Api.Controllers
         {
             try
             {
-                UsuarioDomain usuario = UsuarioRepository.BuscarPorEmailESenha(login);
+                // UsuarioDomain usuario = UsuarioRepository.BuscarPorEmailESenha(login);
+                UsuarioDomain usuario = UsuarioRepository.BuscarPorEmailESenha(login.Email, login.Senha);
                 if (usuario == null)
                 {
                     return NotFound(
                         new
                         {
-                            mensagem = "Usuário não foi encontrado."
+                            mensagem = "Usuário ou senha inválidos."
                         }
                     );
                 }

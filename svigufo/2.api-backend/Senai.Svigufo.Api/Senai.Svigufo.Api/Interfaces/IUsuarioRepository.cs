@@ -12,5 +12,6 @@ namespace Senai.Svigufo.Api.Interfaces
         void Cadastrar(UsuarioDomain usuario);
 
         UsuarioDomain BuscarPorEmailESenha(LoginViewModel login);
+        UsuarioDomain BuscarPorEmailESenha(string email, string senha);
     }
 }

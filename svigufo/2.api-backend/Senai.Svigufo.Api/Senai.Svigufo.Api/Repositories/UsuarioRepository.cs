@@ -42,6 +42,37 @@ namespace Senai.Svigufo.Api.Repositories
 
         }
 
+        public UsuarioDomain BuscarPorEmailESenha(string email, string senha)
+        {
+            string QueryEmailSenha = "SELECT ID, NOME, EMAIL, TIPO_USUARIO FROM USUARIOS WHERE EMAIL = @EMAIL AND SENHA = @SENHA";
+
+            using (SqlConnection con = new SqlConnection(stringDeConexao))
+            {
+                using (SqlCommand cmd = new SqlCommand(QueryEmailSenha, con))
+                {
+                    cmd.Parameters.AddWithValue("@EMAIL", email);
+                    cmd.Parameters.AddWithValue("@SENHA", senha);
+                    con.Open();
+
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    if (rdr.HasRows)
+                    {
+                        UsuarioDomain usuarioBuscado = new UsuarioDomain();
+                        while (rdr.Read())
+                        {
+                            usuarioBuscado.Id = Convert.ToInt32(rdr["ID"].ToString());
+                            usuarioBuscado.Email = rdr["EMAIL"].ToString();
+                            usuarioBuscado.Nome = rdr["NOME"].ToString();
+                            usuarioBuscado.TipoUsuario = rdr["TIPO_USUARIO"].ToString();
+                        }
+                        return usuarioBuscado;
+                    }
+
+                }
+                return null;
+            }
+        }
+
         public void Cadastrar(UsuarioDomain usuario)
         {
             string QueryInsert = "INSERT INTO USUARIOS (NOME, EMAIL, SENHA, TIPO_USUARIO) VALUES (@NOME, @EMAIL, @SENHA, @TIPO_USUARIO)";
