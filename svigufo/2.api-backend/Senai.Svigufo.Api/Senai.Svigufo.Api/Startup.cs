@@ -29,6 +29,7 @@ namespace Senai.Svigufo.Api
             })
             .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 
+            //Injeção de Dependência
             // services.AddTransient<ITipoEventoRepository, TipoEventoRepository>();
 
             services.AddCors(options =>

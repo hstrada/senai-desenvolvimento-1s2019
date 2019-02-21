@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Senai.Svigufo.Api.Domains;
+using Senai.Svigufo.Api.Domains.Enums;
 using Senai.Svigufo.Api.Interfaces;
 using Senai.Svigufo.Api.Repositories;
 using System;
@@ -20,12 +22,81 @@ namespace Senai.Svigufo.Api.Controllers
         {
             ConviteRepositorio = new ConviteRepository();
         }
+        
+        [Authorize(Roles = "ADMINISTRADOR")]
+        [HttpPut("{id}")]
+        public IActionResult Put(ConviteDomain convite, int id)
+        {
+            try
+            {
+                ConviteRepositorio.Alterar(convite, id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
+
+        [Authorize(Roles = "ADMINISTRADOR")]
+        [HttpGet]
+        [Route("listar")]
+        public IActionResult ListarTodos()
+        {
+            return Ok(ConviteRepositorio.Listar());
+        }
+
+        [Authorize]
+        [HttpPost("entrar/{eventoid}")]
+        public IActionResult Incricao(int eventoid)
+        {
+            try
+            {
+                int usuarioid = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+                ConviteDomain convite = new ConviteDomain
+                {
+                    EventoId = eventoid,
+                    UsuarioId = usuarioid,
+                    Situacao = EnSituacaoConvite.AGUARDANDO
+                };
+
+                ConviteRepositorio.Cadastrar(convite);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest();
+            }
+
+        }
+
+        [HttpPost]
+        [Authorize]
+        [Route("convidar")]
+        public IActionResult Convite(ConviteDomain convite)
+        {
+            try
+            {
+                ConviteRepositorio.Cadastrar(convite);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest();
+            }
+
+        }
 
         [Authorize]
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult MeusConvites()
         {
-            return Ok(ConviteRepositorio.ListarMeusConvites(Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value)));
+            int usuarioid = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+            return Ok(ConviteRepositorio.ListarMeusConvites(usuarioid));
         }
         
     }

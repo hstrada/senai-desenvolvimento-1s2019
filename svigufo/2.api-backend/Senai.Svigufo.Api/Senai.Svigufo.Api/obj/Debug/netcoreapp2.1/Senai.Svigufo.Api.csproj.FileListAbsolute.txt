@@ -26,3 +26,17 @@ C:\Users\helena.strada\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Se
 C:\Users\helena.strada\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\obj\Debug\netcoreapp2.1\Senai.Svigufo.Api.RazorTargetAssemblyInfo.cache
 C:\Users\helena.strada\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\obj\Debug\netcoreapp2.1\Senai.Svigufo.Api.dll
 C:\Users\helena.strada\Documents\senai\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\obj\Debug\netcoreapp2.1\Senai.Svigufo.Api.pdb
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\bin\Debug\netcoreapp2.1\Senai.Svigufo.Api.deps.json
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\bin\Debug\netcoreapp2.1\Senai.Svigufo.Api.runtimeconfig.json
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\bin\Debug\netcoreapp2.1\Senai.Svigufo.Api.runtimeconfig.dev.json
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\bin\Debug\netcoreapp2.1\Senai.Svigufo.Api.dll
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\bin\Debug\netcoreapp2.1\Senai.Svigufo.Api.pdb
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\obj\Debug\netcoreapp2.1\Senai.Svigufo.Api.csprojAssemblyReference.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\obj\Debug\netcoreapp2.1\Senai.Svigufo.Api.csproj.CoreCompileInputs.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\obj\Debug\netcoreapp2.1\Senai.Svigufo.Api.RazorAssemblyInfo.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\obj\Debug\netcoreapp2.1\Senai.Svigufo.Api.RazorAssemblyInfo.cs
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\obj\Debug\netcoreapp2.1\Senai.Svigufo.Api.AssemblyInfoInputs.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\obj\Debug\netcoreapp2.1\Senai.Svigufo.Api.AssemblyInfo.cs
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\obj\Debug\netcoreapp2.1\Senai.Svigufo.Api.RazorTargetAssemblyInfo.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\obj\Debug\netcoreapp2.1\Senai.Svigufo.Api.dll
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Svigufo.Api\Senai.Svigufo.Api\obj\Debug\netcoreapp2.1\Senai.Svigufo.Api.pdb
