@@ -93,6 +93,7 @@ namespace Senai.Svigufo.Api.Controllers
 
         [Authorize]
         [HttpGet]
+        [Route("meus")]
         public IActionResult MeusConvites()
         {
             int usuarioid = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
