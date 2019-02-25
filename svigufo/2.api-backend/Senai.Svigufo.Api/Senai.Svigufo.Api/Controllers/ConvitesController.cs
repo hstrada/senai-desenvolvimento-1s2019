@@ -17,10 +17,12 @@ namespace Senai.Svigufo.Api.Controllers
     {
 
         public IConviteRepository ConviteRepositorio { get; set; }
+        public IEventoRepository EventoRepositorio { get; set; }
 
         public ConvitesController()
         {
             ConviteRepositorio = new ConviteRepository();
+            EventoRepositorio = new EventoRepository();
         }
         
         [Authorize(Roles = "ADMINISTRADOR")]
@@ -54,11 +56,18 @@ namespace Senai.Svigufo.Api.Controllers
             {
                 int usuarioid = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
 
+                EventoDomain evento = EventoRepositorio.BuscarPorId(eventoid);
+
+                if(evento != null)
+                {
+                    return NotFound();
+                }
+
                 ConviteDomain convite = new ConviteDomain
                 {
                     EventoId = eventoid,
                     UsuarioId = usuarioid,
-                    Situacao = EnSituacaoConvite.AGUARDANDO
+                    Situacao = (evento.AcessoLivre ? EnSituacaoConvite.APROVADO : EnSituacaoConvite.AGUARDANDO) 
                 };
 
                 ConviteRepositorio.Cadastrar(convite);
@@ -80,6 +89,15 @@ namespace Senai.Svigufo.Api.Controllers
         {
             try
             {
+                EventoDomain evento = EventoRepositorio.BuscarPorId(convite.EventoId);
+
+                if (evento != null)
+                {
+                    return NotFound();
+                }
+
+                convite.Situacao = (evento.AcessoLivre ? EnSituacaoConvite.APROVADO : EnSituacaoConvite.AGUARDANDO);
+
                 ConviteRepositorio.Cadastrar(convite);
                 return Ok();
             }

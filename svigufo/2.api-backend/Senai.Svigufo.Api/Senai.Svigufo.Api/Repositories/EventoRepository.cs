@@ -37,6 +37,59 @@ namespace Senai.Svigufo.Api.Repositories
             }
         }
 
+        public EventoDomain BuscarPorId(int id)
+        {
+            // string queryASerExecutada = "SELECT ID, TITULO, DESCRICAO, DATA_EVENTO, ACESSO_LIVRE, ID_INSTITUICAO, ID_TIPO_EVENTO FROM EVENTOS";
+            string queryASerExecutada = "SELECT E.ID AS ID_EVENTO, E.TITULO AS TITULO_EVENTO, E.DESCRICAO, E.DATA_EVENTO, E.ACESSO_LIVRE" +
+                ", I.ID AS ID_INSTITUICAO, I.NOME_FANTASIA AS NOME_INSTITUICAO" +
+                ", TE.ID AS ID_TIPO_EVENTO ,TE.TITULO AS TIPO_EVENTO " +
+                "FROM EVENTOS E INNER JOIN INSTITUICOES I ON E.ID_INSTITUICAO = I.ID " +
+                "INNER JOIN TIPOS_EVENTOS TE ON E.ID_TIPO_EVENTO = TE.ID" +
+                "WHERE ID = @ID;";
+
+
+            using (SqlConnection con = new SqlConnection(stringDeConexao))
+            {
+
+                using (SqlCommand cmd = new SqlCommand(queryASerExecutada, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    con.Open();
+
+                    SqlDataReader rdr = cmd.ExecuteReader();
+
+                    if (rdr.HasRows)
+                    {
+                        while (rdr.Read())
+                        {
+                            EventoDomain evento = new EventoDomain
+                            {
+                                Id = Convert.ToInt32(rdr["ID_EVENTO"]),
+                                Titulo = rdr["TITULO_EVENTO"].ToString(),
+                                Descricao = rdr["DESCRICAO"].ToString(),
+                                DataEvento = Convert.ToDateTime(rdr["DATA_EVENTO"].ToString()),
+                                AcessoLivre = rdr["ACESSO_LIVRE"].ToString().Equals("True") ? true : false,
+                                Instituicao = new InstituicaoDomain
+                                {
+                                    Id = Convert.ToInt32(rdr["ID_INSTITUICAO"]),
+                                    NomeFantasia = rdr["NOME_INSTITUICAO"].ToString()
+                                },
+                                TipoEvento = new TipoEventoDomain
+                                {
+                                    Id = Convert.ToInt32(rdr["ID_TIPO_EVENTO"]),
+                                    Nome = rdr["TIPO_EVENTO"].ToString()
+                                }
+                            };
+
+                            return evento;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
         public void Cadastrar(EventoDomain evento)
         {
             using (SqlConnection con = new SqlConnection(stringDeConexao))

@@ -11,6 +11,8 @@ namespace Senai.Svigufo.Api.Interfaces
         /// <returns>Retorna uma lista de eventos</returns>
         List<EventoDomain> Listar();
 
+        EventoDomain BuscarPorId(int id);
+
         /// <summary>
         /// Cadastrar um novo evento
         /// </summary>
@@ -23,6 +25,8 @@ namespace Senai.Svigufo.Api.Interfaces
         /// <param name="id">Id</param>
         /// <param name="evento">EventoDomain</param>
         void Atualizar(int id, EventoDomain evento);
+
+
 
     }
 }
