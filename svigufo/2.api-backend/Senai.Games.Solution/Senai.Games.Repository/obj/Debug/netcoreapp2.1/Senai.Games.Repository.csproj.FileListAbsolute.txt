@@ -1,0 +1,14 @@
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Repository\bin\Debug\netcoreapp2.1\Senai.Games.Repository.deps.json
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Repository\bin\Debug\netcoreapp2.1\Senai.Games.Repository.runtimeconfig.json
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Repository\bin\Debug\netcoreapp2.1\Senai.Games.Repository.runtimeconfig.dev.json
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Repository\bin\Debug\netcoreapp2.1\Senai.Games.Repository.dll
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Repository\bin\Debug\netcoreapp2.1\Senai.Games.Repository.pdb
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Repository\bin\Debug\netcoreapp2.1\Senai.Games.Domain.dll
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Repository\bin\Debug\netcoreapp2.1\Senai.Games.Domain.pdb
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Repository\obj\Debug\netcoreapp2.1\Senai.Games.Repository.csprojAssemblyReference.cache
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Repository\obj\Debug\netcoreapp2.1\Senai.Games.Repository.csproj.CoreCompileInputs.cache
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Repository\obj\Debug\netcoreapp2.1\Senai.Games.Repository.AssemblyInfoInputs.cache
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Repository\obj\Debug\netcoreapp2.1\Senai.Games.Repository.AssemblyInfo.cs
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Repository\obj\Debug\netcoreapp2.1\Senai.Games.Repository.csproj.CopyComplete
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Repository\obj\Debug\netcoreapp2.1\Senai.Games.Repository.dll
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Repository\obj\Debug\netcoreapp2.1\Senai.Games.Repository.pdb

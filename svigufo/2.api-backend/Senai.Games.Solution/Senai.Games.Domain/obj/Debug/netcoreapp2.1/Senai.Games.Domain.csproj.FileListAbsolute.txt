@@ -1,0 +1,9 @@
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\bin\Debug\netcoreapp2.1\Senai.Games.Domain.deps.json
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\bin\Debug\netcoreapp2.1\Senai.Games.Domain.dll
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\bin\Debug\netcoreapp2.1\Senai.Games.Domain.pdb
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.csprojAssemblyReference.cache
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.csproj.CoreCompileInputs.cache
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.AssemblyInfoInputs.cache
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.AssemblyInfo.cs
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.dll
+G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.pdb
