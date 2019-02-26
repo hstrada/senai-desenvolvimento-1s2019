@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>InLock - Login</title>
+</head>
+
+<body>
+
+    <input type="text" id="login__email" />
+    <input type="text" id="login__password" />
+    <br>
+    <button id="login__btn" onclick="login()">Login</button>
+
+    <script>
+        function login() {
+
+            const a = document.getElementById("login__email").value;
+            const b = document.getElementById("login__password").value;
+            const url = "http://localhost:5000/api/login";
+            fetch(url, {
+                    method: "POST",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: a,
+                        senha: b
+                    })
+                })
+                .then(response => response.json())
+                .then(data => localStorage.setItem('token', 'Bearer ' + data.token))
+                .catch(error => console.log(error))
+
+                redirecionar();
+        };
+
+
+        function redirecionar() {
+            if (localStorage.getItem('token').length > 15) {
+                window.location = "lista.html";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

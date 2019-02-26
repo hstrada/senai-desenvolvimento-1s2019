@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>InLock - Lista</title>
+</head>
+
+<body>
+
+    <h1>Estúdios</h1>
+    <div>
+        <table id="tabela-lista">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+
+            <tbody id="tabela-lista-estudios"></tbody>
+        </table>
+
+    </div>
+
+    <h1>Jogos</h1>
+    <div>
+        <table id="tabela-lista">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Jogo</th>
+                    <th>Estúdio</th>
+                </tr>
+            </thead>
+
+            <tbody id="tabela-lista-jogos"></tbody>
+        </table>
+
+    </div>
+
+
+    <script>
+        window.onload = function () {
+
+            const urlEstudios = `http://localhost:5000/api/estudios`;
+            fetch(urlEstudios, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'Authorization': localStorage.getItem('token')
+                    },
+                })
+                .then(resposta => resposta.json())
+                .then(data => carregarDadosEstudios(data))
+                .catch(erro => console.error(erro));
+
+            const urlJogos = `http://localhost:5000/api/jogos`;
+            fetch(urlJogos, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'Authorization': localStorage.getItem('token')
+                    },
+                })
+                .then(resposta => resposta.json())
+                .then(data => carregarDadosJogos(data))
+                .catch(erro => console.error(erro));
+
+        }
+
+        function carregarDadosEstudios(informacaoApi) {
+            var objJson = informacaoApi;
+            var listing_table = document.getElementById("tabela-lista-estudios");
+
+            for (var i = 0; i < objJson.length; i++) {
+                let linha = document.createElement("tr");
+                let itemDaLinhaId = document.createElement("td");
+                itemDaLinhaId.innerText = objJson[i].estudioId;
+                let itemDaLinhaNome = document.createElement("td");
+                itemDaLinhaNome.innerText = objJson[i].nomeEstudio;
+                linha.appendChild(itemDaLinhaId);
+                linha.appendChild(itemDaLinhaNome);
+                listing_table.appendChild(linha);
+            }
+        }
+
+        function carregarDadosJogos(informacaoApi) {
+            var objJson = informacaoApi;
+            var listing_table = document.getElementById("tabela-lista-jogos");
+
+            for (var i = 0; i < objJson.length; i++) {
+                let linha = document.createElement("tr");
+                let itemDaLinhaId = document.createElement("td");
+                itemDaLinhaId.innerText = objJson[i].jogoId;
+                let itemDaLinhaNome = document.createElement("td");
+                itemDaLinhaNome.innerText = objJson[i].nome;
+                let itemDaLinhaNomeEstudio = document.createElement("td");
+                itemDaLinhaNomeEstudio.innerText = objJson[i].estudio.nomeEstudio;
+                linha.appendChild(itemDaLinhaId);
+                linha.appendChild(itemDaLinhaNome);
+                linha.appendChild(itemDaLinhaNomeEstudio);
+                listing_table.appendChild(linha);
+            }
+        }
+    </script>
+</body>
+
+</html>
