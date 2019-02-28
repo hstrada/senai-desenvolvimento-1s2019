@@ -1,0 +1,14 @@
+C:\Users\fernando.henrique\Documents\Senai\InLock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.deps.json
+C:\Users\fernando.henrique\Documents\Senai\InLock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.runtimeconfig.json
+C:\Users\fernando.henrique\Documents\Senai\InLock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.runtimeconfig.dev.json
+C:\Users\fernando.henrique\Documents\Senai\InLock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.dll
+C:\Users\fernando.henrique\Documents\Senai\InLock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.csprojAssemblyReference.cache
+C:\Users\fernando.henrique\Documents\Senai\InLock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.csproj.CoreCompileInputs.cache
+C:\Users\fernando.henrique\Documents\Senai\InLock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.RazorAssemblyInfo.cache
+C:\Users\fernando.henrique\Documents\Senai\InLock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.RazorAssemblyInfo.cs
+C:\Users\fernando.henrique\Documents\Senai\InLock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.AssemblyInfoInputs.cache
+C:\Users\fernando.henrique\Documents\Senai\InLock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.AssemblyInfo.cs
+C:\Users\fernando.henrique\Documents\Senai\InLock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.RazorTargetAssemblyInfo.cache
+C:\Users\fernando.henrique\Documents\Senai\InLock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.pdb
+C:\Users\fernando.henrique\Documents\Senai\InLock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.dll
+C:\Users\fernando.henrique\Documents\Senai\InLock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.pdb

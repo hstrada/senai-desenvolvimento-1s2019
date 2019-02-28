@@ -7,3 +7,12 @@ G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solu
 G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.AssemblyInfo.cs
 G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.dll
 G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.pdb
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\bin\Debug\netcoreapp2.1\Senai.Games.Domain.deps.json
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\bin\Debug\netcoreapp2.1\Senai.Games.Domain.dll
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\bin\Debug\netcoreapp2.1\Senai.Games.Domain.pdb
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.csprojAssemblyReference.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.csproj.CoreCompileInputs.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.AssemblyInfoInputs.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.AssemblyInfo.cs
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.dll
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.Domain\obj\Debug\netcoreapp2.1\Senai.Games.Domain.pdb

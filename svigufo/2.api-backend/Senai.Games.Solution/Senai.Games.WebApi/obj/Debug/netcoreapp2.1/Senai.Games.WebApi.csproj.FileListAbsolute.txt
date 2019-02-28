@@ -17,3 +17,13 @@ G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solu
 G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.WebApi\obj\Debug\netcoreapp2.1\Senai.Games.WebApi.pdb
 G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.WebApi\bin\Debug\netcoreapp2.1\Senai.Games.Repository.dll
 G:\Pessoal\Senai\Tecnico\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.WebApi\bin\Debug\netcoreapp2.1\Senai.Games.Repository.pdb
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.WebApi\bin\Debug\netcoreapp2.1\Senai.Games.Domain.dll
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.WebApi\bin\Debug\netcoreapp2.1\Senai.Games.Repository.dll
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.WebApi\bin\Debug\netcoreapp2.1\Senai.Games.Domain.pdb
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.WebApi\obj\Debug\netcoreapp2.1\Senai.Games.WebApi.csprojAssemblyReference.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.WebApi\obj\Debug\netcoreapp2.1\Senai.Games.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.WebApi\obj\Debug\netcoreapp2.1\Senai.Games.WebApi.RazorAssemblyInfo.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.WebApi\obj\Debug\netcoreapp2.1\Senai.Games.WebApi.RazorAssemblyInfo.cs
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.WebApi\obj\Debug\netcoreapp2.1\Senai.Games.WebApi.AssemblyInfoInputs.cache
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.WebApi\obj\Debug\netcoreapp2.1\Senai.Games.WebApi.AssemblyInfo.cs
+C:\Users\fernando.henrique\Documents\Senai\1_Semestre_2019\senai-dev-1s2019\svigufo\2.api-backend\Senai.Games.Solution\Senai.Games.WebApi\obj\Debug\netcoreapp2.1\Senai.Games.WebApi.RazorTargetAssemblyInfo.cache

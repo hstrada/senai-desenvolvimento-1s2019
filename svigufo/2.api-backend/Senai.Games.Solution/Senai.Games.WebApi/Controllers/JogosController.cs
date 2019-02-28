@@ -17,7 +17,7 @@ namespace Senai.Games.WebApi.Controllers
             JogoRepository = new JogoRepository();
         }
 
-        [HttpGet("todos")]
+        [HttpGet]
         public IActionResult Listar()
         {
             try
