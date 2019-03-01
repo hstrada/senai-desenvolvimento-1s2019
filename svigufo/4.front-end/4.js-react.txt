@@ -1,0 +1,18 @@
+TÓPICOS
+
+JavaScript
+
+DOM
+Tipos de dados
+Variáveis
+Operadores
+Estrutura de controles
+Objetos
+Arrays
+Funções
+Objetos customizados
+Clojures
+Arrow functions
+Classes (propriedades, métodos e herança e entender o "this")
+Templates literais
+let e const
