@@ -1,0 +1,29 @@
+_ ou $
+letras de a a z
+letras de A a Z
+dígitos de 0 a 9
+
+tipos primitivos
+number, string, boolean, null e undefined
+
+tipos de objetos
+todos os outros
+
+variáveis e tipos de dados
+operadores aritméticos
+operadores de igualdade e relacionais
+funções
+operadores lógicos
+operadores unários
+estrutura léxica
+instruções condicionais - if
+
+== diferente de ===
+valor : tipo
+
+var objeto = { prop1: 'valor', prop2: 10, prop3: true };
+objeto.prop1
+
+var myvar = function () { return 'variável'; }
+myvar
+myvar()

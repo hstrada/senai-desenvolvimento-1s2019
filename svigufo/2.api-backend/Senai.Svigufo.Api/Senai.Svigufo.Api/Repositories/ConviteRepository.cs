@@ -10,7 +10,7 @@ namespace Senai.Svigufo.Api.Repositories
     public class ConviteRepository : IConviteRepository
     {
 
-        private string stringDeConexao = "Data Source=.\\sqlexpress;Initial Catalog=SENAI_SVIGUFO;Integrated Security=True";
+        private string stringDeConexao = "Data Source=localhost;Initial Catalog=SENAI_SVIGUFO;Integrated Security=True";
 
         public void Alterar(ConviteDomain convite, int id)
         {

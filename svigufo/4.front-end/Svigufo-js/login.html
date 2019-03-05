@@ -33,22 +33,53 @@
               placeholder="username"
               type="text"
               name="username"
-            />
-          </div>
-          <div class="item">
-            <input
+              id="login__email"
+              />
+            </div>
+            <div class="item">
+              <input
               class="input__login"
               placeholder="password"
               type="password"
               name="password"
+              id="login__password"
             />
           </div>
           <div class="item">
-            <!-- <p class="text__login senha__login">Esqueci a senha.</p> -->
+            <button class="btn btn__login" onclick="login()">Login</button>
           </div>
-          <div class="item"><button class="btn btn__login">Login</button></div>
         </div>
       </div>
     </section>
+
+    <script>
+      function login() {
+        const a = document.getElementById("login__email").value;
+        const b = document.getElementById("login__password").value;
+        const url = "http://localhost:5000/api/login";
+        fetch(url, {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            email: a,
+            senha: b
+          })
+        })
+          .then(response => response.json())
+          .then(data => localStorage.setItem("token", "Bearer " + data.token))
+          .catch(error => console.log(error));
+
+        redirecionar();
+      }
+
+      function redirecionar() {
+        if (localStorage.getItem("token").length > 15) {
+          window.location = "dashboard.html";
+        }
+      }
+    </script>
   </body>
 </html>
