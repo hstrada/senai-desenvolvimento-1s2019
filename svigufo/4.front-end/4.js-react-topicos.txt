@@ -27,3 +27,11 @@ objeto.prop1
 var myvar = function () { return 'variável'; }
 myvar
 myvar()
+
+var pessoa = {nome : 'helena', sobrenome : 'strada', idade: 25}
+pessoa.nomeCompleto = function() {
+	return pessoa.nome + ' ' + pessoa.sobrenome
+}
+
+pessoa.nomeCompleto()
+// imprimir 'helena strada'
