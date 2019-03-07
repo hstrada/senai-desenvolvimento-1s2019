@@ -75,9 +75,9 @@ namespace Senai.Svigufo.Api.Controllers
                     token = new JwtSecurityTokenHandler().WriteToken(token)
                 });
             }
-            catch
+            catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(new { mensagem = ex.Message });
             }
 
         }

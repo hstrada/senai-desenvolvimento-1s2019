@@ -8,7 +8,7 @@ namespace Senai.Svigufo.Api.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        private string stringDeConexao = "Data Source=.\\sqlexpress;Initial Catalog=SENAI_SVIGUFO;Integrated Security=True";
+        private string stringDeConexao = "Data Source=localhost;Initial Catalog=SENAI_SVIGUFO;Integrated Security=True";
 
         public UsuarioDomain BuscarPorEmailESenha(LoginViewModel login)
         {
