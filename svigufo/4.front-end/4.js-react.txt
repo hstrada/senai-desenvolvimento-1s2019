@@ -11,7 +11,7 @@ Objetos
 Arrays
 Funções
 Objetos customizados
-Clojures
+Closures
 Arrow functions
 Classes (propriedades, métodos e herança e entender o "this")
 Templates literais
