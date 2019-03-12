@@ -50,11 +50,11 @@
             <tbody id="tabela-lista-corpo"></tbody>
           </table>
 
-          <div class="paginacao">
+          <!-- <div class="paginacao">
             <a href="javascript:prevPage()" id="btn_prev">&laquo;</a>
             <a id="page"></a>
             <a href="javascript:nextPage()" id="btn_next">&raquo;</a>
-          </div>
+          </div> -->
         </div>
 
         <div class="container" id="conteudoPrincipal-cadastro">
@@ -87,105 +87,108 @@
     </footer>
 
     <script>
-      var current_page = 1;
-      var records_per_page = 2;
 
-      var objJson = [];
+      
 
-      const URL = `http://localhost:5000/api/tiposeventos`;
-      fetch(URL)
-        .then(resposta => resposta.json())
-        .then(data => (objJson = data))
-        .catch(erro => console.error(erro));
+      // var current_page = 1;
+      // var records_per_page = 2;
 
-      console.log(objJson);
+      // var objJson = [];
 
-      function prevPage() {
-        if (current_page > 1) {
-          current_page--;
-          changePage(current_page);
-        }
-      }
+      // const URL = `http://localhost:5000/api/tiposeventos`;
+      // fetch(URL)
+      //   .then(resposta => resposta.json())
+      //   .then(data => (objJson = data))
+      //   .catch(erro => console.error(erro));
 
-      function nextPage() {
-        if (current_page < numPages()) {
-          current_page++;
-          changePage(current_page);
-        }
-      }
+      // console.log(objJson);
 
-      function changePage(page) {
-        var btn_next = document.getElementById("btn_next");
-        var btn_prev = document.getElementById("btn_prev");
-        var listing_table = document.getElementById("tabela-lista-corpo");
-        var page_span = document.getElementById("page");
+      // function prevPage() {
+      //   if (current_page > 1) {
+      //     current_page--;
+      //     changePage(current_page);
+      //   }
+      // }
 
-        // Validate page
-        if (page < 1) page = 1;
-        if (page > numPages()) page = numPages();
+      // function nextPage() {
+      //   if (current_page < numPages()) {
+      //     current_page++;
+      //     changePage(current_page);
+      //   }
+      // }
 
-        listing_table.innerHTML = "";
+      // function changePage(page) {
+      //   var btn_next = document.getElementById("btn_next");
+      //   var btn_prev = document.getElementById("btn_prev");
+      //   var listing_table = document.getElementById("tabela-lista-corpo");
+      //   var page_span = document.getElementById("page");
 
-        for (
-          var i = (page - 1) * records_per_page;
-          i < page * records_per_page;
-          i++
-        ) {
-          let linha = document.createElement("tr");
-          let itemDaLinhaId = document.createElement("td");
-          itemDaLinhaId.innerText = objJson[i].id;
-          let itemDaLinhaNome = document.createElement("td");
-          itemDaLinhaNome.innerText = objJson[i].nome;
-          let itemDaLinhaOpcao = document.createElement("td");
-          itemDaLinhaOpcao.innerText = "Edição";
-          linha.appendChild(itemDaLinhaId);
-          linha.appendChild(itemDaLinhaNome);
-          linha.appendChild(itemDaLinhaOpcao);
-          listing_table.appendChild(linha);
-          // listing_table.innerHTML += objJson[i].adName + "<br>";
-        }
-        page_span.innerHTML = page;
+      //   // Validate page
+      //   if (page < 1) page = 1;
+      //   if (page > numPages()) page = numPages();
 
-        if (page == 1) {
-          btn_prev.style.visibility = "hidden";
-        } else {
-          btn_prev.style.visibility = "visible";
-        }
+      //   listing_table.innerHTML = "";
 
-        if (page == numPages()) {
-          btn_next.style.visibility = "hidden";
-        } else {
-          btn_next.style.visibility = "visible";
-        }
-      }
+      //   for (
+      //     var i = (page - 1) * records_per_page;
+      //     i < page * records_per_page;
+      //     i++
+      //   ) {
+      //     let linha = document.createElement("tr");
+      //     let itemDaLinhaId = document.createElement("td");
+      //     itemDaLinhaId.innerText = objJson[i].id;
+      //     let itemDaLinhaNome = document.createElement("td");
+      //     itemDaLinhaNome.innerText = objJson[i].nome;
+      //     let itemDaLinhaOpcao = document.createElement("td");
+      //     itemDaLinhaOpcao.innerText = "Edição";
+      //     linha.appendChild(itemDaLinhaId);
+      //     linha.appendChild(itemDaLinhaNome);
+      //     linha.appendChild(itemDaLinhaOpcao);
+      //     listing_table.appendChild(linha);
+      //     // listing_table.innerHTML += objJson[i].adName + "<br>";
+      //   }
+      //   page_span.innerHTML = page;
 
-      function numPages() {
-        return Math.ceil(objJson.length / records_per_page);
-      }
+      //   if (page == 1) {
+      //     btn_prev.style.visibility = "hidden";
+      //   } else {
+      //     btn_prev.style.visibility = "visible";
+      //   }
 
-      function cadastrarTipoEvento() {
-        console.log(document.getElementById("nome-tipo-evento").value);
-        let objeto = {
-          nome: document.getElementById("nome-tipo-evento").value
-        };
-        fetch("http://localhost:5000/api/tiposeventos", {
-          method: "post",
-          body: JSON.stringify(objeto),
-          headers: {
-            "Content-Type": "application/json"
-          }
-        })
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(data) {
-            console.log(data);
-          });
-      }
+      //   if (page == numPages()) {
+      //     btn_next.style.visibility = "hidden";
+      //   } else {
+      //     btn_next.style.visibility = "visible";
+      //   }
+      // }
 
-      window.onload = function() {
-        changePage(1);
-      };
+      // function numPages() {
+      //   return Math.ceil(objJson.length / records_per_page);
+      // }
+
+      // function cadastrarTipoEvento() {
+      //   console.log(document.getElementById("nome-tipo-evento").value);
+      //   let objeto = {
+      //     nome: document.getElementById("nome-tipo-evento").value
+      //   };
+      //   fetch("http://localhost:5000/api/tiposeventos", {
+      //     method: "post",
+      //     body: JSON.stringify(objeto),
+      //     headers: {
+      //       "Content-Type": "application/json"
+      //     }
+      //   })
+      //     .then(function(response) {
+      //       return response.json();
+      //     })
+      //     .then(function(data) {
+      //       console.log(data);
+      //     });
+      // }
+
+      // window.onload = function() {
+      //   changePage(1);
+      // };
     </script>
 
     <script src="https://use.fontawesome.com/6597eb2fde.js"></script>
