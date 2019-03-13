@@ -88,7 +88,105 @@
 
     <script>
 
+      // let tiposEventos = ["Evento A", "Evento B", "Evento C"];
+      // console.log(tiposEventos[1]);
+      // console.log(tiposEventos.length);
+
+      // ====================================================== FOR ======================================================
+
+      // for (let i = 0; i < tiposEventos.length; i++) 
+      // {
+      //   console.log(tiposEventos[i]);
+      // }
       
+      // ====================================================== FOREACH ======================================================
+
+      // tiposEventos.forEach(element => {
+      //   console.log(element);
+      // });
+
+      // let numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      // function tabuadaDoDois(numeroRecebido) {
+      //   console.log(numeroRecebido * 2);
+      // }
+
+      // numeros.forEach(tabuadaDoDois);
+
+      // ====================================================== PUSH/POP ======================================================
+
+      // tiposEventos.push("Evento D");
+      // console.log(tiposEventos);
+
+      // tiposEventos.pop();
+      // console.log(tiposEventos);
+
+      // ====================================================== ARRAYS ======================================================
+      
+      // console.log(tiposEventos.join(" - "));
+      // console.log(tiposEventos.sort());
+      // console.log(tiposEventos.reverse());
+
+      // let numeros = [1,2,3,4,5];
+      // let numerosRetorno = [];
+
+      // ====================================================== MAP ======================================================
+
+      // for (let i = 0; i < numeros.length; i ++) {
+      //   numerosRetorno.push(numeros[i] * 2);
+      // }
+
+      // console.log(numerosRetorno);
+
+      // let numerosMap = numeros.map(function (itemDaLista) {
+      //   return itemDaLista * 2;
+      // });
+
+      // console.log(numerosMap);
+
+      // ====================================================== ARRAYS ======================================================
+
+      // let numerosComDescricao = [{ numero: 1, descricao: 'um'}, { numero: 2, descricao: 'dois' }, { numero: 3, descricao: 'tres' }];
+      // let somenteNumeros = [];
+      
+      // // utilizando for
+      // for (let i = 0; i < numerosComDescricao.length; i++) 
+      // {
+      //   somenteNumeros.push(numerosComDescricao[i].numero);
+      // }
+      // console.log(somenteNumeros);
+
+      // // começando com map
+      // somenteNumeros = numerosComDescricao.map(function(cadaNumeroDaLista) {
+      //   return cadaNumeroDaLista.numero;
+      // });
+      // console.log(somenteNumeros);
+
+      // // remover funcao
+      // somenteNumeros = numerosComDescricao.map((cadaNumeroDaLista) => {
+      //   return cadaNumeroDaLista.numero;
+      // });
+      // console.log(somenteNumeros);
+      
+      // // remover parenteses
+      // somenteNumeros = numerosComDescricao.map(cadaNumeroDaLista => {
+      //   return cadaNumeroDaLista.numero;
+      // });
+      // console.log(somenteNumeros);
+      
+      // // removendo o return
+      // somenteNumeros = numerosComDescricao.map(cadaNumeroDaLista => cadaNumeroDaLista.numero);
+      // console.log(somenteNumeros);
+
+
+      // ====================================================== FILTER ======================================================
+
+      let numeros = [10, 20, 30, 40];
+      let numerosMaiorDoQueTrinta = numeros.filter(numeroDaLista => numeroDaLista >= 30);
+      console.log(numerosMaiorDoQueTrinta);
+
+
+      // ====================================================== API ======================================================
 
       // var current_page = 1;
       // var records_per_page = 2;
