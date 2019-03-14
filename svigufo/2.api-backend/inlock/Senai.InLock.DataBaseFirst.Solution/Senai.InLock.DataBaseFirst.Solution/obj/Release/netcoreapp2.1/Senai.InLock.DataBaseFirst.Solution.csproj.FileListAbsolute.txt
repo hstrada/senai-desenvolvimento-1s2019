@@ -1,0 +1,14 @@
+C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Release\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.csprojAssemblyReference.cache
+C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Release\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.csproj.CoreCompileInputs.cache
+C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Release\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.RazorAssemblyInfo.cache
+C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Release\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.RazorAssemblyInfo.cs
+C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Release\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.AssemblyInfoInputs.cache
+C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Release\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.AssemblyInfo.cs
+C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Release\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.deps.json
+C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Release\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.runtimeconfig.json
+C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Release\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.runtimeconfig.dev.json
+C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Release\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.dll
+C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Release\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.pdb
+C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Release\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.RazorTargetAssemblyInfo.cache
+C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Release\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.dll
+C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Release\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.pdb
