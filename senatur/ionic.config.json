@@ -1,7 +1,0 @@
-{
-  "name": "senatur",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic-angular"
-}
