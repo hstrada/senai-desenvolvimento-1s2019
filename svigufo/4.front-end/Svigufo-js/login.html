@@ -51,7 +51,8 @@
             <!-- <button class="btn btn__login" onclick="minhaSegundaFuncao('teste')">Login</button> -->
             <!-- <button class="btn btn__login" onclick="minhaTerceiraFuncao()">Login</button> -->
             <!-- <button class="btn btn__login" onclick="minhaQuartaFuncao()">Login</button> -->
-            <button class="btn btn__login" onclick="minhaQuintaFuncao()">
+            <!-- <button class="btn btn__login" onclick="minhaQuintaFuncao()"> -->
+            <button class="btn btn__login" id="btn__login">
               Login
             </button>
           </div>
@@ -60,6 +61,7 @@
     </section>
 
     <script>
+
       // =========================================================== DOM - CONCEITOS GERAIS ===========================================================
 
       // DOM, capturar elementos da tela
@@ -110,9 +112,9 @@
       //   console.log(usuarioAdmin);
 
       //   var emailLogin = document.querySelector("#login__email").value;
-      //   // 1. if (emailLogin == "admin@admin.com")
+      //   if (emailLogin == "admin@admin.com")
       //   // quando troca para o objeto
-      //   if (emailLogin == usuarioAdmin.email)
+      //   // if (emailLogin == usuarioAdmin.email)
       //   {
       //     console.log('sucesso');
       //   }
@@ -121,6 +123,43 @@
       //     console.log('falha');
       //   }
       // }
+
+      // =========================================================== DECLARANDO COM AÇÃO ===========================================================
+
+      // 1
+      // var botao = document.querySelector("#btn__login");
+      // 2
+      // let botao = document.querySelector("#btn__login");
+      // 3
+      // const botao = document.querySelector("#btn__login");
+
+      // botao.addEventListener("click", function() {
+      //   console.log('eita, olha a mágica');
+      // });
+      
+      // botao.addEventListener("click", function(event) {
+      //   event.preventDefault();
+      //   console.log('eita, olha a mágica');
+      // });
+
+      // 1
+      // var botao = 2;
+      // console.log(botao);
+
+      // 2
+      // let botao = 2;
+      // console.log(botao);
+
+      // 2.1
+      // botao = 2;
+      // console.log(botao);
+
+      // 3
+      // botao = 2;
+      // console.log(botao);
+
+
+      // NÃO SERÁ UTILIZADO NESSE CENÁRIO
 
       // =========================================================== LISTA COM FOR ===========================================================
 
@@ -148,39 +187,39 @@
 
       // =========================================================== LISTA COM FOREACH ===========================================================
 
-      var usuarios = [
-        { email: "admin@admin.com", senha: "123" },
-        { email: "comum@comum.com", senha: "123" }
-      ];
+      // var usuarios = [
+      //   { email: "admin@admin.com", senha: "123" },
+      //   { email: "comum@comum.com", senha: "123" }
+      // ];
 
-      // cria um boolean para verificar se o usuário é válido
-      var autenticado = false;
+      // // cria um boolean para verificar se o usuário é válido
+      // var autenticado = false;
 
-      function minhaQuintaFuncao() {
-        var usuarioDigitado = document.querySelector("#login__email").value;
-        var senhaDigitada = document.querySelector("#login__password").value;
+      // function minhaQuintaFuncao() {
+      //   var usuarioDigitado = document.querySelector("#login__email").value;
+      //   var senhaDigitada = document.querySelector("#login__password").value;
 
-        // percorre os elementos e verifica se os valores digitdos coincidem com os valores do array, caso coincida, retorna true
-        usuarios.forEach(element => {
-          if (element.email == usuarioDigitado && element.senha == senhaDigitada) 
-          {
-            autenticado = true;
-          }
-          else 
-          {
-            autenticado = false;
-          }
-        });
+      //   // percorre os elementos e verifica se os valores digitdos coincidem com os valores do array, caso coincida, retorna true
+      //   usuarios.forEach(element => {
+      //     if (element.email == usuarioDigitado && element.senha == senhaDigitada) 
+      //     {
+      //       autenticado = true;
+      //     }
+      //     else 
+      //     {
+      //       autenticado = false;
+      //     }
+      //   });
 
-        if (autenticado == true) 
-        {
-          console.log('sucesso');
-        }
-        else 
-        {
-          console.log('falha');
-        }
-      }
+      //   if (autenticado == true) 
+      //   {
+      //     console.log('sucesso');
+      //   }
+      //   else 
+      //   {
+      //     console.log('falha');
+      //   }
+      // }
 
       // function login() {
       //   const a = document.getElementById("login__email").value;

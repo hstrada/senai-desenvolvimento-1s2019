@@ -16,3 +16,9 @@ Arrow functions
 Classes (propriedades, métodos e herança e entender o "this")
 Templates literais
 let e const
+
+https://flaviocopes.com/javascript/
+https://reactjs.org/docs/introducing-jsx.html
+https://hackernoon.com/the-2018-react-js-roadmap-4d0a43814c02
+https://medium.freecodecamp.org/learning-react-roadmap-from-scratch-to-advanced-bff7735531b6
+https://github.com/adam-golab/react-developer-roadmap

@@ -1,0 +1,23 @@
+importar tagscript
+
+// menor, porém, ainda grande
+react.createElement
+
+// react puro
+
+// recriar com react puro
+jsx
+
+depois - create react app
+
+flux
+store -> redutor -> ação
+
+criar documentos e itens visuais
+draw.io
+
+candidato a componente
+esquema para criação
+
+componente simples/componente composto
+
