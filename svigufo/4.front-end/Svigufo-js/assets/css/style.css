@@ -381,14 +381,6 @@ nav .cabecalhoPrincipal-nav-login {
   margin: 10px auto;
 }
 
-.conteudoPrincipal-dados-link:nth-child(even) a:before {
-  background: url(../img/background1.svg) no-repeat;
-}
-
-.conteudoPrincipal-dados-link:nth-child(odd) a:before {
-  background: url(../img/background2.svg) no-repeat;
-}
-
 /* RODAPÉ */
 
 .rodapePrincipal {
