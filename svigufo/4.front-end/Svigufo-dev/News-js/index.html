@@ -28,6 +28,27 @@
         </div>
     </div>
 
+    <script>
+        let newsInput = document.getElementById("newsInputEmail");
+        let newsButton = document.getElementById("news__button");
+
+        newsInput.addEventListener("keyup", function() {
+            if (newsInput.value.length < 6) {
+                newsButton.disabled = true;
+                console.log('falso');
+            }
+            else {
+                newsButton.disabled = false;
+                console.log('sucesso');
+            }
+        });
+
+        newsButton.addEventListener("click", function(event) {
+            event.preventDefault();
+            console.log("Sucesso");
+        });
+    </script>
+
     
 </body>
 </html>
