@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Svigufo - Eventos públicos e privados</title>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./assets/css/flexbox.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- Fontes -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div>
+      <header class="cabecalhoPrincipal">
+        <div class="container">
+          <img src="./assets/img/icon-login.png" />
+
+          <nav class="cabecalhoPrincipal-nav">
+            Administrador
+            <i class="fa fa-cog fa-header" aria-hidden="true"></i>
+          </nav>
+        </div>
+      </header>
+
+      <main class="conteudoPrincipal">
+        <section class="conteudoPrincipal-cadastro">
+          <h1 class="conteudoPrincipal-cadastro-titulo">Tipos de Eventos</h1>
+          <div class="container" id="conteudoPrincipal-lista">
+            <table id="tabela-lista">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Título</th>
+                  <th>Ação</th>
+                </tr>
+              </thead>
+
+              <tbody id="tabela-lista-corpo"></tbody>
+            </table>
+
+            <!-- <div class="paginacao">
+            <a href="javascript:prevPage()" id="btn_prev">&laquo;</a>
+            <a id="page"></a>
+            <a href="javascript:nextPage()" id="btn_next">&raquo;</a>
+          </div> -->
+          </div>
+
+          <div class="container" id="conteudoPrincipal-cadastro">
+            <h2 class="conteudoPrincipal-cadastro-titulo">
+              Cadastrar Tipo de Evento
+            </h2>
+            <div class="container">
+              <input
+                type="text"
+                id="nome-tipo-evento"
+                placeholder="tipo do evento"
+              />
+            </div>
+            <!-- <button
+              class="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro"
+              onclick="cadastrarTipoEvento()"
+            > -->
+            <button
+              class="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro"
+            >
+              Cadastrar
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="rodapePrincipal">
+        <section class="rodapePrincipal-patrocinadores">
+          <div class="container">
+            <p>Escola SENAI de Informática - 2019</p>
+          </div>
+        </section>
+      </footer>
+    </div>
+
+    <script>
+      // let tiposEventos = ["Evento A", "Evento B", "Evento C"];
+      // console.log(tiposEventos[1]);
+      // console.log(tiposEventos.length);
+
+      // ====================================================== FOR ======================================================
+
+      // for (let i = 0; i < tiposEventos.length; i++)
+      // {
+      //   console.log(tiposEventos[i]);
+      // }
+
+      // ====================================================== FOREACH ======================================================
+
+      // tiposEventos.forEach(element => {
+      //   console.log(element);
+      // });
+
+      // let numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      // function tabuadaDoDois(numeroRecebido) {
+      //   console.log(numeroRecebido * 2);
+      // }
+
+      // numeros.forEach(tabuadaDoDois);
+
+      // ====================================================== PUSH/POP ======================================================
+
+      // tiposEventos.push("Evento D");
+      // console.log(tiposEventos);
+
+      // tiposEventos.pop();
+      // console.log(tiposEventos);
+
+      // ====================================================== ARRAYS ======================================================
+
+      // console.log(tiposEventos.join(" - "));
+      // console.log(tiposEventos.sort());
+      // console.log(tiposEventos.reverse());
+
+      // let numeros = [1,2,3,4,5];
+      // let numerosRetorno = [];
+
+      // ====================================================== MAP ======================================================
+
+      // for (let i = 0; i < numeros.length; i ++) {
+      //   numerosRetorno.push(numeros[i] * 2);
+      // }
+
+      // console.log(numerosRetorno);
+
+      // let numerosMap = numeros.map(function (itemDaLista) {
+      //   return itemDaLista * 2;
+      // });
+
+      // console.log(numerosMap);
+
+      // ====================================================== ARRAYS ======================================================
+
+      // let numerosComDescricao = [{ numero: 1, descricao: 'um'}, { numero: 2, descricao: 'dois' }, { numero: 3, descricao: 'tres' }];
+      // let somenteNumeros = [];
+
+      // // utilizando for
+      // for (let i = 0; i < numerosComDescricao.length; i++)
+      // {
+      //   somenteNumeros.push(numerosComDescricao[i].numero);
+      // }
+      // console.log(somenteNumeros);
+
+      // // começando com map
+      // somenteNumeros = numerosComDescricao.map(function(cadaNumeroDaLista) {
+      //   return cadaNumeroDaLista.numero;
+      // });
+      // console.log(somenteNumeros);
+
+      // // remover funcao
+      // somenteNumeros = numerosComDescricao.map((cadaNumeroDaLista) => {
+      //   return cadaNumeroDaLista.numero;
+      // });
+      // console.log(somenteNumeros);
+
+      // // remover parenteses
+      // somenteNumeros = numerosComDescricao.map(cadaNumeroDaLista => {
+      //   return cadaNumeroDaLista.numero;
+      // });
+      // console.log(somenteNumeros);
+
+      // // removendo o return
+      // somenteNumeros = numerosComDescricao.map(cadaNumeroDaLista => cadaNumeroDaLista.numero);
+      // console.log(somenteNumeros);
+
+      // ====================================================== FILTER ======================================================
+
+      // let numeros = [10, 20, 30, 40];
+
+      // let numerosMaiorDoQueTrinta = numeros.filter(numeroDaLista => numeroDaLista >= 30);
+      // console.log(numerosMaiorDoQueTrinta);
+
+      // let numeroBuscado = numeros.filter(numeroEscolhido => numeroEscolhido == 10);
+      // console.log(numeroBuscado);
+
+      // ====================================================== REDUCE ======================================================
+
+      // let numeros = [10, 20, 30, 40];
+      // let soma = numeros.reduce((total, value) => total + value);
+      // console.log(soma);
+
+      // ====================================================== ARRAY DE JSON OBJECTS ======================================================
+
+      // let listaTiposEventos = [{ "id" : 1, "nome" : "Marketing Digital" }, { "id": 2, "nome": "Tecnologia" }, { "id": 3, "nome": "Design" }];
+
+      // var listing_table = document.getElementById("tabela-lista-corpo");
+
+      // listaTiposEventos.forEach(element => {
+      //   let linha = document.createElement("tr");
+      //   let itemDaLinhaId = document.createElement("td");
+      //   itemDaLinhaId.innerText = element.id;
+      //   let itemDaLinhaNome = document.createElement("td");
+      //   itemDaLinhaNome.innerText = element.nome;
+      //   let itemDaLinhaOpcao = document.createElement("td");
+      //   itemDaLinhaOpcao.innerText = "Edição";
+      //   linha.appendChild(itemDaLinhaId);
+      //   linha.appendChild(itemDaLinhaNome);
+      //   linha.appendChild(itemDaLinhaOpcao);
+      //   listing_table.appendChild(linha);
+      // });
+
+      // ====================================================== API - XMLHttpRequest ======================================================
+
+      // let listaTiposEventos = [];
+      // var listing_table = document.getElementById("tabela-lista-corpo");
+
+      // var xhttp = new XMLHttpRequest();
+      // xhttp.onreadystatechange = function() {
+      //     if (this.readyState == 4 && this.status == 200) {
+      //       listaTiposEventos = xhttp.responseText;
+      //       // console.log(JSON.parse(listaTiposEventos));
+      //       preencherDados(JSON.parse(listaTiposEventos));
+      //     }
+      // };
+
+      // xhttp.open("GET", "http://localhost:5000/api/tiposeventos", true);
+      // xhttp.send();
+
+      // function preencherDados(lista) {
+      //   console.log(lista);
+      //   lista.forEach(element => {
+      //     let linha = document.createElement("tr");
+      //     let itemDaLinhaId = document.createElement("td");
+      //     itemDaLinhaId.innerText = element.id;
+      //     let itemDaLinhaNome = document.createElement("td");
+      //     itemDaLinhaNome.innerText = element.nome;
+      //     let itemDaLinhaOpcao = document.createElement("td");
+      //     itemDaLinhaOpcao.innerText = "Edição";
+      //     linha.appendChild(itemDaLinhaId);
+      //     linha.appendChild(itemDaLinhaNome);
+      //     linha.appendChild(itemDaLinhaOpcao);
+      //     listing_table.appendChild(linha);
+      //   });
+      // }
+
+      // ====================================================== API - COM FETCH ======================================================
+
+      // var objJson = [];
+
+      // const URL = `http://localhost:5000/api/tiposeventos`;
+      // fetch(URL)
+      //   .then(resposta => resposta.json())
+      //   .then(data => preencherDados(data))
+      //   .catch(erro => console.error(erro));
+
+      // console.log(objJson);
+
+      // var listing_table = document.getElementById("tabela-lista-corpo");
+
+      // listing_table.innerHTML = "";
+
+      // function preencherDados(lista) {
+      //   console.log(lista);
+      //   lista.forEach(element => {
+      //     let linha = document.createElement("tr");
+      //     let itemDaLinhaId = document.createElement("td");
+      //     itemDaLinhaId.innerText = element.id;
+      //     let itemDaLinhaNome = document.createElement("td");
+      //     itemDaLinhaNome.innerText = element.nome;
+      //     let itemDaLinhaOpcao = document.createElement("td");
+      //     itemDaLinhaOpcao.innerText = "Edição";
+      //     linha.appendChild(itemDaLinhaId);
+      //     linha.appendChild(itemDaLinhaNome);
+      //     linha.appendChild(itemDaLinhaOpcao);
+      //     listing_table.appendChild(linha);
+      //   });
+      // }
+
+      // ====================================================== API - COM PAGINAÇÃO ======================================================
+
+      // var current_page = 1;
+      // var records_per_page = 2;
+
+      // var objJson = [];
+
+      // const URL = `http://localhost:5000/api/tiposeventos`;
+      // fetch(URL)
+      //   .then(resposta => resposta.json())
+      //   .then(data => (objJson = data))
+      //   .catch(erro => console.error(erro));
+
+      // console.log(objJson);
+
+      // function prevPage() {
+      //   if (current_page > 1) {
+      //     current_page--;
+      //     changePage(current_page);
+      //   }
+      // }
+
+      // function nextPage() {
+      //   if (current_page < numPages()) {
+      //     current_page++;
+      //     changePage(current_page);
+      //   }
+      // }
+
+      // function changePage(page) {
+      //   var btn_next = document.getElementById("btn_next");
+      //   var btn_prev = document.getElementById("btn_prev");
+      //   var listing_table = document.getElementById("tabela-lista-corpo");
+      //   var page_span = document.getElementById("page");
+
+      //   // Validate page
+      //   if (page < 1) page = 1;
+      //   if (page > numPages()) page = numPages();
+
+      //   listing_table.innerHTML = "";
+
+      //   for (
+      //     var i = (page - 1) * records_per_page;
+      //     i < page * records_per_page;
+      //     i++
+      //   ) {
+      //     let linha = document.createElement("tr");
+      //     let itemDaLinhaId = document.createElement("td");
+      //     itemDaLinhaId.innerText = objJson[i].id;
+      //     let itemDaLinhaNome = document.createElement("td");
+      //     itemDaLinhaNome.innerText = objJson[i].nome;
+      //     let itemDaLinhaOpcao = document.createElement("td");
+      //     itemDaLinhaOpcao.innerText = "Edição";
+      //     linha.appendChild(itemDaLinhaId);
+      //     linha.appendChild(itemDaLinhaNome);
+      //     linha.appendChild(itemDaLinhaOpcao);
+      //     listing_table.appendChild(linha);
+      //     // listing_table.innerHTML += objJson[i].adName + "<br>";
+      //   }
+      //   page_span.innerHTML = page;
+
+      //   if (page == 1) {
+      //     btn_prev.style.visibility = "hidden";
+      //   } else {
+      //     btn_prev.style.visibility = "visible";
+      //   }
+
+      //   if (page == numPages()) {
+      //     btn_next.style.visibility = "hidden";
+      //   } else {
+      //     btn_next.style.visibility = "visible";
+      //   }
+      // }
+
+      // function numPages() {
+      //   return Math.ceil(objJson.length / records_per_page);
+      // }
+
+      // ====================================================== API - CADASTRAR ======================================================
+
+      function cadastrarTipoEvento() {
+        console.log(document.getElementById("nome-tipo-evento").value);
+        let objeto = {
+          nome: document.getElementById("nome-tipo-evento").value
+        };
+        fetch("http://localhost:5000/api/tiposeventos", {
+          method: "post",
+          body: JSON.stringify(objeto),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(data) {
+            console.log(data);
+          });
+      }
+
+      // window.onload = function() {
+      //   changePage(1);
+      // };
+    </script>
+
+    <!-- <script type="module" src="./js/index.js"></script> -->
+
+    <script src="https://use.fontawesome.com/6597eb2fde.js"></script>
+  </body>
+</html>
