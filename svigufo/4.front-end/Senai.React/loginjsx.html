@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Index</title>
-    
+    <style>
+    .login{
+        border: 1px solid;
+    }
+    </style>
 </head>
 <body>
     <div id="app"></div>
@@ -15,16 +19,16 @@
 
     <script type="text/babel">
         ReactDOM.render(
-            <form>
+            <form className="login">
                 <label>
                 Email:
-                <input  type="email" />
+                <input  type="email"  id="email" required />
                 </label>
                 <label>
                 Senha:
-                <input type="password" />
+                <input type="password"  id="email" required />
                 </label>
-                <button value="Submit" >Entrar</button>
+                <button type="submit">Entrar</button>
             </form>,
             document.getElementById('app')
         )
