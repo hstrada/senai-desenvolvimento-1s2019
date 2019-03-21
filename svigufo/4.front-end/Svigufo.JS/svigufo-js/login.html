@@ -1,71 +1,83 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Svigufo - Eventos públicos e privados</title>
-    <!-- Estilos -->
-    <link rel="stylesheet" href="./assets/css/login.css" />
-    <!-- Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <section class="container flex">
-      <div class="img__login"><div class="img__overlay"></div></div>
+<head>
+  <meta charset="UTF-8" />
+  <title>Svigufo - Eventos públicos e privados</title>
+  <!-- Estilos -->
+  <link rel="stylesheet" href="./assets/css/login.css" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+</head>
 
-      <div class="item__login">
-        <div class="row">
-          <div class="item">
-            <img src="./assets/img/icon-login.png" class="icone__login" />
-          </div>
-          <div class="item" id="item__title">
-            <p class="text__login" id="item__description">
-              Bem-vindo! Faça login para acessar sua conta.
-            </p>
-          </div>
+<body>
+  <section class="container flex">
+    <div class="img__login">
+      <div class="img__overlay"></div>
+    </div>
 
-          <form>
-            <div class="item">
-              <input
-                class="input__login"
-                placeholder="username"
-                type="text"
-                name="username"
-                id="login__email"
-              />
-            </div>
-            <div class="item">
-              <input
-                class="input__login"
-                placeholder="password"
-                type="password"
-                name="password"
-                id="login__password"
-              />
-            </div>
-            <div class="item">
-              <button class="btn btn__login" id="btn__login">
-                Login
-              </button>
-            </div>
-          </form>
+    <div class="item__login">
+      <div class="row">
+        <div class="item">
+          <img src="./assets/img/icon-login.png" class="icone__login" />
         </div>
-      </div>
-    </section>
+        <div class="item" id="item__title">
+          <p class="text__login" id="item__description">
+            Bem-vindo! Faça login para acessar sua conta.
+          </p>
+        </div>
 
-    <script>
-      // busco a sua referência
-      var btnLogin = document.querySelector("#btn__login");
-      // adiciono um evento a ela
-      btnLogin.addEventListener("click", function(event) {
-        event.preventDefault();
-        console.log("hello world.");
-      });
-    </script>
-    
-  </body>
+        <form method="POST">
+          <div class="item">
+            <input class="input__login" placeholder="username" type="text" name="username" id="login__email" />
+          </div>
+          <div class="item">
+            <input class="input__login" placeholder="password" type="password" name="password" id="login__password" />
+          </div>
+          <div class="item">
+            <button class="btn btn__login" id="btn__login" type="submit">
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let btnLogin = document.querySelector("#btn__login");
+
+    btnLogin.addEventListener("click", function (event) {
+      event.preventDefault();
+      const a = document.getElementById("login__email").value;
+      const b = document.getElementById("login__password").value;
+      const url = "http://localhost:5000/api/login";
+      fetch(url, {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            email: a,
+            senha: b
+          })
+        })
+        .then(response => response.json())
+        .then(data => localStorage.setItem("token", data.token))
+        .catch(error => console.log(error));
+
+      redirecionar();
+    });
+
+    function redirecionar() {
+      if (localStorage.getItem("token").length > 15) {
+        window.location = "dashboard.html";
+      }
+    }
+  </script>
+
+</body>
+
 </html>

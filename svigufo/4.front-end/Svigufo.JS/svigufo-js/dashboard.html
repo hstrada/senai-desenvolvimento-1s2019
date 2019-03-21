@@ -22,8 +22,8 @@
       <img src="./assets/img/icon-login.png" />
       <!-- <h1 class="cabecalhoPrincipal-titulo">GUFO</h1> -->
 
-      <nav class="cabecalhoPrincipal-nav">
-        Administrador <i class="fa fa-cog" style="margin-left: 10px" aria-hidden="true"></i>
+      <nav class="cabecalhoPrincipal-nav" id="nav__email">
+        Usuário
       </nav>
     </div>
   </header>
@@ -39,28 +39,28 @@
               Usuários
             </h2>
             <i class="fa fa-2x fa-user-o conteudoPrincipal-icone-azul" aria-hidden="true"></i>
-            <span class="conteudoPrincipal-icone-span" id="qtdUsuarios">0</span>
+            <span class="conteudoPrincipal-icone-span" id="qtdUsuarios">10</span>
           </li>
           <li class="conteudoPrincipal-dados-link">
             <h2 class="conteudoPrincipal-dados-titulo titulo-verde">
               Eventos Públicos
             </h2>
             <i class="fa fa-2x fa-user-o conteudoPrincipal-icone-verde" aria-hidden="true"></i>
-            <span class="conteudoPrincipal-icone-span" id="qtdEventosPublicos">0</span>
+            <span class="conteudoPrincipal-icone-span" id="qtdEventosPublicos">5</span>
           </li>
           <li class="conteudoPrincipal-dados-link">
             <h2 class="conteudoPrincipal-dados-titulo titulo-roxo">
               Eventos Privados
             </h2>
             <i class="fa fa-2x fa-user-o conteudoPrincipal-icone-roxo" aria-hidden="true"></i>
-            <span class="conteudoPrincipal-icone-span" id="qtdEventosPrivados">0</span>
+            <span class="conteudoPrincipal-icone-span" id="qtdEventosPrivados">20</span>
           </li>
           <li class="conteudoPrincipal-dados-link">
             <h2 class="conteudoPrincipal-dados-titulo titulo-vermelho">
               Tipos de Eventos
             </h2>
             <i class="fa fa-2x fa-user-o conteudoPrincipal-icone-vermelho" aria-hidden="true"></i>
-            <span class="conteudoPrincipal-icone-span" id="qtdTiposEventos">0</span>
+            <span class="conteudoPrincipal-icone-span" id="qtdTiposEventos">10</span>
           </li>
         </ul>
       </nav>
@@ -75,7 +75,14 @@
     </section>
   </footer>
 
+  <script src="js/jwt.js"></script>
+
   <script>
+
+    let token = parseJwt(localStorage.getItem('token'));
+    let nav = document.querySelector("#nav__email");
+    nav.textContent = token.email;
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
