@@ -16,6 +16,7 @@
   <body>
     <section class="container flex">
       <div class="img__login"><div class="img__overlay"></div></div>
+
       <div class="item__login">
         <div class="row">
           <div class="item">
@@ -27,238 +28,44 @@
             </p>
           </div>
 
-          <div class="item">
-            <input
-              class="input__login"
-              placeholder="username"
-              type="text"
-              name="username"
-              id="login__email"
-            />
-          </div>
-          <div class="item">
-            <input
-              class="input__login"
-              placeholder="password"
-              type="password"
-              name="password"
-              id="login__password"
-            />
-          </div>
-          <div class="item">
-            <!-- <button class="btn btn__login" onclick="login()">Login</button> -->
-            <!-- <button class="btn btn__login" onclick="minhaPrimeiraFuncao()">Login</button> -->
-            <!-- <button class="btn btn__login" onclick="minhaSegundaFuncao('teste')">Login</button> -->
-            <!-- <button class="btn btn__login" onclick="minhaTerceiraFuncao()">Login</button> -->
-            <!-- <button class="btn btn__login" onclick="minhaQuartaFuncao()">Login</button> -->
-            <!-- <button class="btn btn__login" onclick="minhaQuintaFuncao()"> -->
-            <button class="btn btn__login" id="btn__login">
-              Login
-            </button>
-          </div>
+          <form>
+            <div class="item">
+              <input
+                class="input__login"
+                placeholder="username"
+                type="text"
+                name="username"
+                id="login__email"
+              />
+            </div>
+            <div class="item">
+              <input
+                class="input__login"
+                placeholder="password"
+                type="password"
+                name="password"
+                id="login__password"
+              />
+            </div>
+            <div class="item">
+              <button class="btn btn__login" id="btn__login">
+                Login
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
 
     <script>
-
-      // =========================================================== DOM - CONCEITOS GERAIS ===========================================================
-
-      // DOM, capturar elementos da tela
-      // console.log(document);
-
-      // console.log(document.getElementsByClassName("input__login"));
-      // console.log(document.getElementById("login__email"));
-      // console.log(document.querySelector("#login__email"));
-
-      // =========================================================== CRIAR ELEMENTOS ===========================================================
-
-      // criar elementos
-      // var titulo = document.createElement("h1");
-      // titulo.textContent = "Este é um título";
-      // titulo.setAttribute('style', 'color:red');
-      // var texto = document.getElementById("item__title");
-      // texto.appendChild(titulo);
-
-      // =========================================================== VERIFICAR ELEMENTOS ===========================================================
-
-      // var inputLogin = document.getElementById("login__password");
-      // inputLogin.addEventListener("keyup", function() {
-      //   if (inputLogin.value.length < 6) {
-      //     inputLogin.style.borderBottomColor = "red";
-      //   } else {
-      //     inputLogin.style.borderBottomColor = "#e6e6e6";
-      //   }
-      // });
-
-      // =========================================================== TROCAR OS VALORES DO DOM ===========================================================
-
-      // trocar valores
-      // var texto = document.getElementById("item__description");
-      // texto.textContent = "Texto alterado";
-
-      // =========================================================== LOGIN COM CONDICIONAL ===========================================================
-
-      // começar com condicionais
-
-      // function minhaPrimeiraFuncao()
-      // {
-      //   console.log('fui chamado');
-      //   console.log(document.getElementById("login__email"));
-      //   console.log(document.getElementById("login__email").value);
-      // }
-
-      // function minhaSegundaFuncao(a)
-      // {
-      //   console.log(a);
-      // }
-
-      // =========================================================== OBJETO ===========================================================
-
-      // var usuarioAdmin = { email: 'admin@admin.com', senha: '123' };
-
-      // function minhaTerceiraFuncao()
-      // {
-
-      //   console.log(usuarioAdmin);
-
-      //   var emailLogin = document.querySelector("#login__email").value;
-      //   if (emailLogin == "admin@admin.com")
-      //   // quando troca para o objeto
-      //   // if (emailLogin == usuarioAdmin.email)
-      //   {
-      //     console.log('sucesso');
-      //   }
-      //   else
-      //   {
-      //     console.log('falha');
-      //   }
-      // }
-
-      // =========================================================== DECLARANDO COM AÇÃO ===========================================================
-
-      // 1
-      // var botao = document.querySelector("#btn__login");
-      // 2
-      // let botao = document.querySelector("#btn__login");
-      // 3
-      // const botao = document.querySelector("#btn__login");
-
-      // botao.addEventListener("click", function() {
-      //   console.log('eita, olha a mágica');
-      // });
-      
-      // botao.addEventListener("click", function(event) {
-      //   event.preventDefault();
-      //   console.log('eita, olha a mágica');
-      // });
-
-      // 1
-      // var botao = 2;
-      // console.log(botao);
-
-      // 2
-      // let botao = 2;
-      // console.log(botao);
-
-      // 2.1
-      // botao = 2;
-      // console.log(botao);
-
-      // 3
-      // botao = 2;
-      // console.log(botao);
-
-
-      // NÃO SERÁ UTILIZADO NESSE CENÁRIO
-
-      // =========================================================== LISTA COM FOR ===========================================================
-
-      // var usuarios = [{ email: 'admin@admin.com', senha: '123' }, { email: 'comum@comum.com', senha: '123' }];
-
-      // function minhaQuartaFuncao()
-      // {
-
-      //   var usuarioDigitado = document.querySelector("#login__email").value;
-      //   var senhaDigitada = document.querySelector("#login__password").value;
-
-      //   for(var i=0; i < usuarios.length; i++)
-      //   {
-      //     if (usuarios[i].email == usuarioDigitado && usuarios[i].senha == senhaDigitada)
-      //     {
-      //       console.log('sucesso');
-      //       break;
-      //     }
-      //     else
-      //     {
-      //       console.log('falha');
-      //     }
-      //   }
-      // }
-
-      // =========================================================== LISTA COM FOREACH ===========================================================
-
-      // var usuarios = [
-      //   { email: "admin@admin.com", senha: "123" },
-      //   { email: "comum@comum.com", senha: "123" }
-      // ];
-
-      // // cria um boolean para verificar se o usuário é válido
-      // var autenticado = false;
-
-      // function minhaQuintaFuncao() {
-      //   var usuarioDigitado = document.querySelector("#login__email").value;
-      //   var senhaDigitada = document.querySelector("#login__password").value;
-
-      //   // percorre os elementos e verifica se os valores digitdos coincidem com os valores do array, caso coincida, retorna true
-      //   usuarios.forEach(element => {
-      //     if (element.email == usuarioDigitado && element.senha == senhaDigitada) 
-      //     {
-      //       autenticado = true;
-      //     }
-      //     else 
-      //     {
-      //       autenticado = false;
-      //     }
-      //   });
-
-      //   if (autenticado == true) 
-      //   {
-      //     console.log('sucesso');
-      //   }
-      //   else 
-      //   {
-      //     console.log('falha');
-      //   }
-      // }
-
-      // function login() {
-      //   const a = document.getElementById("login__email").value;
-      //   const b = document.getElementById("login__password").value;
-      //   const url = "http://localhost:5000/api/login";
-      //   fetch(url, {
-      //     method: "POST",
-      //     headers: {
-      //       Accept: "application/json",
-      //       "Content-Type": "application/json"
-      //     },
-      //     body: JSON.stringify({
-      //       email: a,
-      //       senha: b
-      //     })
-      //   })
-      //     .then(response => response.json())
-      //     .then(data => localStorage.setItem("token", "Bearer " + data.token))
-      //     .catch(error => console.log(error));
-
-      //   redirecionar();
-      // }
-
-      // function redirecionar() {
-      //   if (localStorage.getItem("token").length > 15) {
-      //     window.location = "dashboard.html";
-      //   }
-      // }
+      // busco a sua referência
+      var btnLogin = document.querySelector("#btn__login");
+      // adiciono um evento a ela
+      btnLogin.addEventListener("click", function(event) {
+        event.preventDefault();
+        console.log("hello world.");
+      });
     </script>
+    
   </body>
 </html>
