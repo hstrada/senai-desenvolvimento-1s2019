@@ -1,0 +1,43 @@
+﻿Roteiro de Aula - Sprint 4 - Javascript
+
+
+
+DOM
+
+Variaveis - Var, Let, Const
+Eventos e funções
+Criar elementos
+	Estático
+	foreach
+		Percorrendo Array
+		Filter, Map, Reduce
+	
+API
+	XMLHttpRequest(Get) - TiposEventos
+	Fetch(Get,Post) - TiposEventos, Eventos, Login
+		
+-------------------------
+
+React
+	Roteiro-React-Base.docx
+	Create-React-App
+		Estrutura Pastas
+	Criação Home
+		Component Rodapé
+		Component Card(Props) - Eventos
+	Criação Login
+		Component FormLogin
+		Axios
+		LocalStorage
+	React-Router
+	Criação Tipos Eventos
+		Component Lista - State
+		Component Formulário  
+		Component Botão
+	Criação Eventos
+		Component Lista - State
+		Component Select
+		Component Formulário
+	Criação NavBar
+ 
+
