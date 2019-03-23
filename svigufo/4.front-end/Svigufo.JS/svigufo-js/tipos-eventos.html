@@ -95,6 +95,19 @@
       });
     }
 
+    class TipoEvento {
+      constructor (nomeRecebido) {
+        this.nomeInterno = nomeRecebido;
+      }
+
+      get buscarNome() {
+        return this.nomeInterno;
+      }
+    }
+
+    const novoTipoEvento = new TipoEvento('Tipo Evento A');
+    console.log(novoTipoEvento.buscarNome);
+
     function cadastrarTipoEvento() {
       console.log(document.getElementById("nome-tipo-evento").value);
       let objeto = {

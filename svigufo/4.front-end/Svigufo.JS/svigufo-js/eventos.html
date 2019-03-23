@@ -104,6 +104,7 @@
         let itemDaLinhaData = document.createElement("td");
         itemDaLinhaData.innerText = element.dataEvento;
         let itemDaLinhaAcesso = document.createElement("td");
+        // element.acessoLivre ? itemDaLinhaAcesso.innerText = "Livre" : itemDaLinhaAcesso.innerText = "Privado";
         if (element.acessoLivre == true) {
           itemDaLinhaAcesso.innerText = "Livre";
         } else {
