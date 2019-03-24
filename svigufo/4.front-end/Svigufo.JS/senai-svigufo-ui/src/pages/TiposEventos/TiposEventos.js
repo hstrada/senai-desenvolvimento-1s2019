@@ -11,45 +11,68 @@ import Rodape from "../../components/Rodape/Rodape";
 class TiposEventos extends Component {
   constructor() {
     super();
-    this.state = { lista: []
-    //   lista: [
-    //     {
-    //       id: 7,
-    //       nome: "Desenvolvimento de Sistemas"
-    //     },
-    //     {
-    //       id: 2,
-    //       nome: "DESIGN"
-    //     },
-    //     {
-    //       id: 4,
-    //       nome: "LINKEDIN"
-    //     },
-    //     {
-    //       id: 3,
-    //       nome: "MARKETING"
-    //     },
-    //     {
-    //       id: 1,
-    //       nome: "TECNOLOGIA"
-    //     }
-    //   ]
+    this.state = {
+      lista: [],
+      nome: ""
+
+      //   lista: [
+      //     {
+      //       id: 7,
+      //       nome: "Desenvolvimento de Sistemas"
+      //     },
+      //     {
+      //       id: 2,
+      //       nome: "DESIGN"
+      //     },
+      //     {
+      //       id: 4,
+      //       nome: "LINKEDIN"
+      //     },
+      //     {
+      //       id: 3,
+      //       nome: "MARKETING"
+      //     },
+      //     {
+      //       id: 1,
+      //       nome: "TECNOLOGIA"
+      //     }
+      //   ]
     };
+
+    this.atualizadoEstadoNome = this.atualizadoEstadoNome.bind(this);
+    this.cadastrarTipoEvento = this.cadastrarTipoEvento.bind(this);
   }
 
+  //   handleSubmit
   cadastrarTipoEvento(evento) {
     evento.preventDefault();
-    console.log('Enviando formulário');
+
+    fetch("http://localhost:5000/api/tiposeventos", {
+      method: "POST",
+      // tem como melhorar essa parte?
+      body: JSON.stringify({nome: this.state.nome}),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => response.json())
+      // como fazer ele dar um refresh?
+      .then(this.buscarTiposEventos())
+      .catch(error => console.log(error));
+  }
+
+  atualizadoEstadoNome(event) {
+    this.setState({ nome: event.target.value });
   }
 
   buscarTiposEventos() {
     fetch("http://localhost:5000/api/tiposeventos")
-    .then(response => response.json())
-    .then(data => this.setState({ lista: data }));
+      .then(response => response.json())
+      .then(data => this.setState({ lista: data }));
   }
 
   componentDidMount() {
-      this.buscarTiposEventos();
+    this.buscarTiposEventos();
   }
 
   render() {
@@ -100,6 +123,8 @@ class TiposEventos extends Component {
                   <input
                     type="text"
                     id="nome-tipo-evento"
+                    value={this.state.nome}
+                    onChange={this.atualizadoEstadoNome}
                     placeholder="tipo do evento"
                   />
                   <button className="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro">
