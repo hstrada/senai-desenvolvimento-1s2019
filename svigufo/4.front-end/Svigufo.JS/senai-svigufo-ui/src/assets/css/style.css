@@ -35,6 +35,10 @@ body {
   color: inherit;
 }
 
+a {
+  text-decoration: none;
+}
+
 .cabecalhoPrincipal-nav-link {
   padding: 10px;
   margin-bottom: 10px;
@@ -402,6 +406,44 @@ nav .cabecalhoPrincipal-nav-login {
   padding: 20px 0;
   justify-content: center;
   align-items: center;
+}
+
+.rodape-contato-titulo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.rodape-contato-mapa {
+  margin-right: 70px;
+  background-image: linear-gradient(rgba(111, 71, 255, 0.5), rgba(111, 71, 255, 0.3)), url("https://via.placeholder.com/150");
+  width: 150px;
+  height: 150px;
+}
+
+.rodape-contato-endereco {
+  font-family:'Open Sans'; 
+  line-height: 30px;
+  letter-spacing: 2px;
+}
+
+.conteudo-contato-mapa {
+  margin-right: 70px;
+  background-image: linear-gradient(rgba(111, 71, 255, 0.5), rgba(111, 71, 255, 0.3)), url("https://via.placeholder.com/150");
+  width: 150px;
+  height: 150px;
+}
+
+.conteudo-contato-endereco {
+  font-family:'Open Sans'; 
+  line-height: 30px;
+  letter-spacing: 2px;
+}
+
+.conteudo-contato-titulo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 /* CADASTROS - GERAIS */

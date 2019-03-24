@@ -35,6 +35,10 @@ body {
   color: inherit;
 }
 
+a {
+  text-decoration: none;
+}
+
 .cabecalhoPrincipal-nav-link {
   padding: 10px;
   margin-bottom: 10px;
