@@ -77,6 +77,10 @@
         let qtdPersonagens = personagens.filter((personagem) => { return personagem.editora == 'Marvel' }).length;
         console.log(qtdPersonagens);
 
+        // 7. Mostre o nome e a idade dos personagens
+        console.log('6. Mostre o nome e a idade dos personagens');
+        let nomeIdadePersonagens = personagens.map(cadaPersonagemDaLista => cadaPersonagemDaLista.nome + ' - ' +  parseInt(2019 - cadaPersonagemDaLista.dataAparicao) + ' anos');
+        console.log(nomeIdadePersonagens);
     </script>
 
 </body>
