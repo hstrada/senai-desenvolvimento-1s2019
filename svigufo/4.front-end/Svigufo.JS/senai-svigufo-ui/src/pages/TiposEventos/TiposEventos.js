@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 
-import logo from "../../assets/img/icon-login.png";
+// import logo from "../../assets/img/icon-login.png";
 
 import "../../assets/css/flexbox.css";
 import "../../assets/css/reset.css";
 import "../../assets/css/style.css";
 
 import Rodape from "../../components/Rodape/Rodape";
+import Cabecalho from "../../components/Cabecalho/Cabecalho";
 
 class TiposEventos extends Component {
   constructor() {
@@ -50,12 +51,12 @@ class TiposEventos extends Component {
     fetch("http://localhost:5000/api/tiposeventos", {
       method: "POST",
       // tem como melhorar essa parte?
-      body: JSON.stringify({nome: this.state.nome}),
+      body: JSON.stringify({ nome: this.state.nome }),
       headers: {
         "Content-Type": "application/json"
       }
     })
-      .then(response => response.json())
+      .then(response => response)
       // como fazer ele dar um refresh?
       .then(this.buscarTiposEventos())
       .catch(error => console.log(error));
@@ -78,13 +79,7 @@ class TiposEventos extends Component {
   render() {
     return (
       <div>
-        <header className="cabecalhoPrincipal">
-          <div className="container">
-            <img src={logo} alt="Svigufo - ícone de login" />
-
-            <nav className="cabecalhoPrincipal-nav">Administrador</nav>
-          </div>
-        </header>
+        <Cabecalho />
 
         <main className="conteudoPrincipal">
           <section className="conteudoPrincipal-cadastro">
@@ -97,7 +92,6 @@ class TiposEventos extends Component {
                   <tr>
                     <th>#</th>
                     <th>Título</th>
-                    <th>Ação</th>
                   </tr>
                 </thead>
 

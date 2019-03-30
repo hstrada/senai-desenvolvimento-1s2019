@@ -4,6 +4,7 @@ import { Route, Link, BrowserRouter as Router, Switch } from "react-router-dom";
 import "./index.css";
 import App from "./pages/Home/App";
 import TiposEventos from "./pages/TiposEventos/TiposEventos";
+import Eventos from "./pages/Eventos/Eventos";
 import NaoEncontrada from "./pages/NaoEncontrada/NaoEncontrada";
 import * as serviceWorker from "./serviceWorker";
 
@@ -13,6 +14,7 @@ const routing = (
       <Switch>
         <Route exact path="/" component={App} />
         <Route path="/tiposeventos" component={TiposEventos} />
+        <Route path="/eventos" component={Eventos} />
         <Route component={NaoEncontrada} />
       </Switch>
     </div>
