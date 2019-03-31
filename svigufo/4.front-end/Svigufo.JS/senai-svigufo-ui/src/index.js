@@ -6,6 +6,7 @@ import App from "./pages/Home/App";
 import TiposEventos from "./pages/TiposEventos/TiposEventos";
 import Eventos from "./pages/Eventos/Eventos";
 import NaoEncontrada from "./pages/NaoEncontrada/NaoEncontrada";
+import Login from "./pages/Login/Login";
 import * as serviceWorker from "./serviceWorker";
 
 const routing = (
@@ -15,6 +16,7 @@ const routing = (
         <Route exact path="/" component={App} />
         <Route path="/tiposeventos" component={TiposEventos} />
         <Route path="/eventos" component={Eventos} />
+        <Route path="/login" component={Login} />
         <Route component={NaoEncontrada} />
       </Switch>
     </div>

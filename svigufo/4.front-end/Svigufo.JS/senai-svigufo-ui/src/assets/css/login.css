@@ -33,7 +33,7 @@ body {
 .img__login {
   width: 50vw;
   height: 100vh;
-  background-image: url("../img/abstract-login.jpg");
+  background-image: url("../../assets/img/abstract-login.jpg");
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;

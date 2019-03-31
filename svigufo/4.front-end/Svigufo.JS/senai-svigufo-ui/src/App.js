@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import "./assets/css/flexbox.css";
 import "./assets/css/reset.css";
 import "./assets/css/style.css";
+
 import logo from "./assets/img/icon-login.png";
 
 import Rodape from "../src/components/Rodape/Rodape";
