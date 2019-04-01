@@ -13,7 +13,9 @@ class Eventos extends Component {
     this.state = {
       lista: [],
       tiposEventos: [],
-      tipoEventoId: ""
+      tipoEvento: {
+        tipoEventoId: 0
+      }
     };
 
     this.setTipoEventoId = this.setTipoEventoId.bind(this);
@@ -38,7 +40,22 @@ class Eventos extends Component {
 
   setTipoEventoId(event) {
     console.log(event.target.value);
-    this.setState({ tipoEventoId: event.target.value });
+
+    // var tipoEvento = { ...this.state.tipoEvento };
+    // tipoEvento.tipoEventoId = 10;
+    // this.setState({ tipoEvento });
+
+    // this.setState({
+    //   tipoEvento: { ...this.state.tipoEvento, tipoEventoId: event.target.value }
+    // });
+
+    this.setState({
+      tipoEvento: { tipoEventoId: event.target.value }
+    });
+
+    console.log(this.state.tipoEventoId);
+    console.log(this.state.tipoEvento);
+    console.log(this.state.tipoEvento.tipoEventoId);
   }
 
   render() {

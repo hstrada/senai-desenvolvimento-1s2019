@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import login from "../../assets/css/login.css";
+// import login from "../../assets/css/login.css";
 
 import logo from "../../assets/img/icon-login.png";
 
