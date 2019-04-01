@@ -1,0 +1,89 @@
+https://studio3t.com/download-thank-you/?OS=win6
+
+--- inserção
+
+db.todo.insert(
+    {
+        "titulo" : "Titulo U"
+        , "descricao" : "Java"
+        , "concluida" : true    
+    }
+)
+
+db.todo.insert(
+    {
+        "titulo" : "Titulo O"
+        , "descricao" : "CSharp"
+        , "concluida" : false
+    }
+)
+
+db.todo.insert(
+    {
+        "titulo" : "Titulo P"
+        , "descricao" : "Firebase"
+    }
+)
+
+db.todo.insert(
+    {
+        "titulo" : "Titulo Y"
+        , "descricao" : "Microsoft"
+    }
+)
+
+db.todo.insert(
+    {
+        "titulo" : "Titulo R"
+        , "descricao" : "Oracle"
+        , "dataInclusao" : new Date()
+    }
+)
+
+
+--- atualização
+
+db.todo.update(
+    {
+        "_id" : ObjectId("5bfeaf04209e0fded015b1f5")
+    }, 
+    {
+        $set : { "titulo" : "Titulo Uava", "descricao" : "Java Best" }
+    }
+)
+
+db.todo.update(
+    {
+        "_id" : ObjectId("5bfeaf08209e0fded015b1f6")
+    }, 
+    {
+        $set : { "titulo" : "Titulo OSharp", "descricao" : "Shark" }
+    }
+)
+
+db.todo.update(
+    {
+        "_id" : ObjectId("5bfeaf0f209e0fded015b1f7")
+    }, 
+    {
+        $set : { "titulo" : "Titulo Pirebase", "descricao" : "Fireb4se" }
+    }
+)
+
+db.todo.update(
+    {
+        "_id" : ObjectId("5bfeaf1a209e0fded015b1f8")
+    }, 
+    {
+        $set : { "titulo" : "Titulo YMicrosoft", "descricao" : "MicroSOFT" }
+    }
+)
+
+db.todo.update(
+    {
+        "_id" : ObjectId("5bfeaf1f209e0fded015b1f9")
+    }, 
+    {
+        $set : { "titulo" : "Titulo YMicrosoft", "descricao" : "MicroSOFT" }
+    }
+)

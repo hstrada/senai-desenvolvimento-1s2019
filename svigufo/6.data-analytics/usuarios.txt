@@ -1,0 +1,234 @@
+https://docs.mongodb.com/manual/core/data-model-design/
+https://docs.mongodb.com/manual/tutorial/model-referenced-one-to-many-relationships-between-documents/
+
+. Criar coleção de usuários
+
+-- dica
+criar coleção mongodb
+create collection mongodb
+
+-- referência
+https://docs.mongodb.com/manual/reference/method/db.createCollection/
+
+-- solução
+Colocar o banco de dados em uso.
+db.createCollection('usuarios')
+
+==============================================
+
+. Inserir 5 novos registros de usuários.
+email : admin@email.com
+senha : 123456
+
+email : helena@email.com
+senha : 123456
+
+email : silvia@email.com
+senha : 123456
+
+email : comum@email.com
+senha : 123456
+
+email : carla@email.com
+senha : 123456
+
+-- dica
+inserir dados mongodb
+
+-- referência
+https://docs.mongodb.com/manual/reference/method/db.collection.insert/
+
+-- solução
+db.usuarios.insert({ "email" : "admin@email.com", "senha" : "123456" })
+
+-- insertMany({}, {}, {}, {}, {})
+
+-- insertOne()
+
+db.usuarios.insertOne({ "email" : "carla@email.com", "senha" : "123456" })
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5c002ad5352f0a8cab3a4c9b")
+}
+
+==============================================
+
+. Selecione os últimos 5 registros inseridos ordenando-os pelo id em que o mais recente apareça primeiro.
+
+-- dica
+ordenação mongodb
+
+-- solução
+db.usuarios.find().sort({ _id : 1 }).limit(5).pretty()
+
+==============================================
+
+. Atualize o registro aonde o email seja 'admin@email.com' para que o nome dele seja igual a "Administrador"
+
+-- dica
+inserir campo mongodb
+
+-- solução
+db.usuarios.update({ "email" : "admin@email.com" }, { $set : { "nome" : "Administrador" }})
+
+==============================================
+
+. Atualize o registro aonde o email seja 'comum@email.com' para que possa receber uma lista de postits
+
+-- dica
+data type mongodb
+inserir campo mongodb
+
+-- solução
+db.usuarios.update({ "email" : "helena@email.com" }, { $set : { "postits" : [] } })
+
+. Selecione todos os registros para verificar as informações inseridas
+
+==============================================
+
+. Exclua somente o campo aonde inserimos o postits, para validarmos o próximo exercício
+
+-- dica
+excluir campo mongodb
+
+-- solução
+db.usuarios.update({ "email" : "helena@email.com" }, { $unset: { postits : [] } })
+
+db.users.update({ "email" : "admin@email.com" }, { $unset: { postits : [] } })
+
+. Selecione todos os registros para verificar as informações removidas
+
+
+==============================================
+
+. Atualize todos os registros para que elas recebam também a lista de postits
+
+db.usuarios.update({} , { $set : { "postits" : [] }}, { upsert: false, multi: true })
+
+==============================================
+
+. Insira novos postits para o usuário cujo e-mail seja igual a admin@email.com e helena@email.com
+
+-- Lembrete
+Buscar o id de um postit e incluir um item para o usuário
+
+"_id" : ObjectId("5bfbc8e509467a409eb78dfa") - admin
+"_id" : ObjectId("5bfbc8e509467a409eb78df8") - helena
+"_id" : ObjectId("5bfbc8e509467a409eb78df9") - admin
+
+db.usuarios.update({
+    "email" : "admin@email.com"
+    },
+    {
+        $push : { postits: ObjectId("5bfbc8e509467a409eb78dfa") }
+    }
+)
+
+db.usuarios.update({
+    "email" : "helena@email.com"
+    },
+    {
+        $push : { postits: ObjectId("5bfbc8e509467a409eb78df8") }
+    }
+)
+
+db.usuarios.update({
+    "email" : "admin@email.com"
+    },
+    {
+        $push : { postits: ObjectId("5bfbc8e509467a409eb78df9") }
+    }
+)
+
+==============================================
+
+. Traga todos os usuários e seus respectivos postits
+
+-- referência
+https://docs.mongodb.com/manual/reference/operator/aggregation/lookup/
+
+-- solução
+db.usuarios.aggregate({
+    $lookup : {
+        from: "todo",
+        localField: "postits",
+        foreignField: "_id",
+        as: "usuarios_todo"
+    }
+}).pretty()
+
+db.usuarios.aggregate(
+    {
+        $lookup : {
+            from: "todo",
+            localField: "postits",
+            foreignField: "_id",
+            as: "usuarios_todo"
+        }
+    },
+    {
+        $project : {
+            "postits" : 0
+        }
+    }
+).pretty()
+
+
+db.users.aggregate(
+    {
+        $lookup : {
+            from: "postits",
+            localField: "postits",
+            foreignField: "_id",
+            as: "users_postits"
+        }
+    },
+    {
+        $project : {
+            "postits" : 0
+        }
+    }
+).pretty()
+
+==============================================
+
+. Atualize o usuário Administrador para que ele tenha dois endereços
+
+-- embedded documents
+
+Adicionar 2 novos endereços
+db.usuarios.update({ "email" : "admin@email.com" }, { $set: { "enderecos" : [] } })
+
+db.usuarios.update(
+    { "email" : "admin@email.com" },
+    {
+        $push : { enderecos : { "logradouro" : "Alameda Barão de Limeira", "estado" : "SP" } }
+    }
+)
+
+db.usuarios.update(
+    { "email" : "admin@email.com" },
+    {
+        $push : { enderecos : { "logradouro" : "Av. Paulista", "estado" : "RJ" } }
+    }
+)
+
+db.users.update(
+    { "email" : "admin@email.com" },
+    {
+        $push : { enderecos : { "logradouro" : "Alameda Barão de Limeira", "estado" : "SP" } }
+    }
+)
+
+db.users.update(
+    { "email" : "admin@email.com" },
+    {
+        $push : { enderecos : { "logradouro" : "Av. Paulista", "estado" : "RJ" } }
+    }
+)
+
+==============================================
+
+. Traga somente os usuários cujo endereço tenha como estado, o estado de SP.
+
+db.usuarios.find({ "enderecos.estado" : "SP" }).pretty()
