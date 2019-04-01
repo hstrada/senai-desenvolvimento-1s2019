@@ -18,10 +18,10 @@
     <script>
 
         function validarEmailSenha(){
-            alert(document.getElementById('email').value)
+            alert("document.getElementById('email').value")
         }
 
-        var form = React.createElement('form', {className : "Login"},
+        var form = React.createElement('form', null,
                 React.createElement('input', {
                     id: 'email',
                     type: 'email',
@@ -34,6 +34,7 @@
                     placeholder: 'Senha',
                     required: true
                 }),
+                // React.createElement('button', {type: 'submit', onClick: function() { validarEmailSenha() }}, "Entrar")
                 React.createElement('button', {type: 'submit', onClick: () => validarEmailSenha()}, "Entrar")
             )
         ReactDOM.render(form, document.getElementById('app'))
