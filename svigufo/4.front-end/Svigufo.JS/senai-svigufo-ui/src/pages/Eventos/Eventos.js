@@ -6,6 +6,7 @@ import "../../assets/css/style.css";
 
 import Rodape from "../../components/Rodape/Rodape";
 import Cabecalho from "../../components/Cabecalho/Cabecalho";
+import Titulo from "../../components/Titulo";
 
 class Eventos extends Component {
   constructor() {
@@ -22,7 +23,8 @@ class Eventos extends Component {
   }
 
   buscarEventos() {
-    fetch("http://localhost:5000/api/eventos")
+    // fetch("http://localhost:5000/api/eventos")
+    fetch("http://192.168.4.112:5000/api/eventos")
       .then(response => response.json())
       .then(data => this.setState({ lista: data }));
   }
@@ -65,7 +67,8 @@ class Eventos extends Component {
 
         <main className="conteudoPrincipal">
           <section className="conteudoPrincipal-cadastro">
-            <h1 className="conteudoPrincipal-cadastro-titulo">Eventos</h1>
+            {/* <h1 className="conteudoPrincipal-cadastro-titulo">Eventos</h1> */}
+            <Titulo titulo="Eventos" />
             <div className="container" id="conteudoPrincipal-lista">
               <table id="tabela-lista">
                 <thead>
@@ -85,7 +88,7 @@ class Eventos extends Component {
                         <td>{evento.id}</td>
                         <td>{evento.titulo}</td>
                         <td>{evento.dataEvento}</td>
-                        {evento.acessoLivre == true ? (
+                        {evento.acessoLivre === true ? (
                           <td>Sim</td>
                         ) : (
                           <td>Não</td>

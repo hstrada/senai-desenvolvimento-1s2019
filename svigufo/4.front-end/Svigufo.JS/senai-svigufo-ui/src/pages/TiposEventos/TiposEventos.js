@@ -8,6 +8,7 @@ import "../../assets/css/style.css";
 
 import Rodape from "../../components/Rodape/Rodape";
 import Cabecalho from "../../components/Cabecalho/Cabecalho";
+import Titulo from "../../components/Titulo";
 
 class TiposEventos extends Component {
   constructor() {
@@ -67,7 +68,8 @@ class TiposEventos extends Component {
   }
 
   buscarTiposEventos() {
-    fetch("http://localhost:5000/api/tiposeventos")
+    // fetch("http://localhost:5000/api/tiposeventos")
+    fetch("http://192.168.4.112:5000/api/tiposeventos")
       .then(response => response.json())
       .then(data => this.setState({ lista: data }));
   }
@@ -83,9 +85,10 @@ class TiposEventos extends Component {
 
         <main className="conteudoPrincipal">
           <section className="conteudoPrincipal-cadastro">
-            <h1 className="conteudoPrincipal-cadastro-titulo">
+            {/* <h1 className="conteudoPrincipal-cadastro-titulo">
               Tipos de Eventos
-            </h1>
+            </h1> */}
+            <Titulo titulo="Tipos de Eventos" />
             <div className="container" id="conteudoPrincipal-lista">
               <table id="tabela-lista">
                 <thead>
