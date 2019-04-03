@@ -7,22 +7,13 @@ a descrição do repositório;
 a data de criação;
 o tamanho (size) do repositório;
 
-Essa lista deverá conter somente os 10 registros mais recentes do usuário digitado.
+O desafio é mostrar somente os 10 registros mais recentes do usuário digitado. Ao invés de mostrar todos os repositórios (mas tudo bem se você realizar esta parte, consideraremos o seu avanço).
 https://api.github.com/
+https://api.github.com/users/{user}/repos
 
-E olha só, você deverá fazer isto, preferencialmente utilizando uma das bibliotecas/frameworks listadas abaixo:
-React (1 master das galáxias);
-VueJS (Tudo bem, Vue é show);
-Angular (Opa, vai nessa).
+E olha só, você deverá fazer isto, preferencialmente utilizando React. Caso precise de referência e/ou conteúdo, deixamos um link aqui: https://reactjs.org/
 
-Nós queremos um layout lindão! Sabemos que você é totalmente capaz de desenvolver as atividades propostas. Fica a seu critério a organização e quais arquivos você deverá me entregar, bem como, o meio. GitHub, E-mail!
+Nós queremos um layout lindão! Sabemos que você é totalmente capaz de desenvolver as atividades propostas.
 
-// mais novos
-https://api.github.com/users/{user}/repos?sort=1
-Ex.: https://api.github.com/users/hstrada/repos?sort=1
-
-// quantidade por página
-https://api.github.com/users/hstrada/repos?per_page=10
-
-// quantidade por página e os mais recentes
-https://api.github.com/users/hstrada/repos?per_page=10&sort=1
+helena.souza@sp.senai.br
+fernando.guerra@sp.senai.br

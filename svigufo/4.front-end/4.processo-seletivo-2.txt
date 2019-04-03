@@ -1,0 +1,10 @@
+
+// mais novos
+https://api.github.com/users/{user}/repos?sort=1
+Ex.: https://api.github.com/users/hstrada/repos?sort=1
+
+// quantidade por página
+https://api.github.com/users/hstrada/repos?per_page=10
+
+// quantidade por página e os mais recentes
+https://api.github.com/users/hstrada/repos?per_page=10&sort=1
