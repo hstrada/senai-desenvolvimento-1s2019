@@ -7,8 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h3>Welcome to React</h3>
+          <h3>Hello World</h3>
           <p>
              To Get started, edit src/App.js and save to reload
           </p>

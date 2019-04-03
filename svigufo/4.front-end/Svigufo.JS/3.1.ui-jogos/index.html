@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Jogos</title>
+
+    <!-- Three Line List with secondary info and action -->
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <select id="select_estudios" class="form-control"></select>
+    <table class="table  table-bordered" id="tabela-jogos">
+        
+    </table>
+
+    <script>
+        var select_estudios = document.getElementById("tabela-jogos");
+        var tabela_jogos = document.getElementById("tabela-jogos");
+
+        const UrlJogos = `https://5c9cbcf13be4e30014a7d268.mockapi.io/hroads`;
+        
+        fetch(UrlJogos + '/jogos')
+            .then(resposta => resposta.json())
+            .then(data => preencherDados(data))
+            .catch(erro => console.error(erro));
+
+        fetch(UrlJogos + '/estudios')
+            .then(resposta => resposta.json())
+            .then(data => preencherSelect(data))
+            .catch(erro => console.error(erro));
+
+        function preencherDados(lista) {
+            var tabela = "";
+                tabela += "<thead>";
+                    tabela += "<tr>";
+                            tabela += "<th scope='col'>#</th>";
+                            tabela += "<th scope='col'>Imagem</th>";
+                            tabela += "<th scope='col'>Nome</th>";
+                            tabela += "<th scope='col'>Descricao</th>";
+                            tabela += "<th scope='col'>Estudio</th>";
+                    tabela += "</tr>";    
+                tabela += "</thead>";
+                tabela += "<tbody>";
+                lista.forEach(element => {
+                    tabela += "<tr>";
+                            tabela += "<th scope='col'>"+ element.id +"</th>";
+                            tabela += "<th scope='col'><img src='"+ element.imagem +"' style='width:240px; heigth:80px'></th>";
+                            tabela += "<th scope='col'>"+ element.nome +"</th>";
+                            tabela += "<th scope='col'>"+ element.descricao +"</th>";
+                            tabela += "<th scope='col'>"+ element.estudio.nome +"</th>";
+                    tabela += "</tr>";
+                });
+                tabela += "</tbody>";
+            
+            tabela_jogos.innerHTML = tabela;
+        }
+    
+        function preencherSelect(lista){
+            var select = "";
+            select += "<select id='select_estudios' class='form-control'>";
+                lista.forEach(element => {
+                    select += "<option name='" + element.nome + "'" + " value='" + element.id+ "' >" + element.nome +"</option>";
+                });
+            select += "</select>";
+            select_estudios.innerHTML = select;
+        }
+    </script>
+
+</body>
+
+</html>
