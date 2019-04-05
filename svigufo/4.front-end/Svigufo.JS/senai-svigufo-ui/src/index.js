@@ -1,21 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Route, Link, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
 import "./index.css";
 import App from "./pages/Home/App";
+
 import TiposEventos from "./pages/TiposEventos/TiposEventos";
-import Eventos from "./pages/Eventos/Eventos";
 import NaoEncontrada from "./pages/NaoEncontrada/NaoEncontrada";
-import Login from "./pages/Login/Login";
+import Login from './pages/Login/Login';
 import * as serviceWorker from "./serviceWorker";
+
+import { usuarioAutenticado } from "./services/auth";
+
+const PermissaoAdmin = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props => usuarioAutenticado() ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{ pathname: "/login", state: { from: props.location } }}
+        />
+      )
+    }
+  />
+);
 
 const routing = (
   <Router>
     <div>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path="/tiposeventos" component={TiposEventos} />
-        <Route path="/eventos" component={Eventos} />
+        <PermissaoAdmin path="/tiposeventos" component={TiposEventos} />
         <Route path="/login" component={Login} />
         <Route component={NaoEncontrada} />
       </Switch>
@@ -23,7 +38,6 @@ const routing = (
   </Router>
 );
 
-// ReactDOM.render(<App />, document.getElementById("root"));
 ReactDOM.render(routing, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change

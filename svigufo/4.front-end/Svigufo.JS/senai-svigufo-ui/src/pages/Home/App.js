@@ -1,17 +1,13 @@
+import { Link } from "react-router-dom";
 import React, { Component } from "react";
-// import logo from "./logo.svg";
-// import "./App.css";
 
 import logo from "../../assets/img/icon-login.png";
 
-// realizar o import dos estilos e logo
 import "../../assets/css/flexbox.css";
 import "../../assets/css/reset.css";
 import "../../assets/css/style.css";
 
-import { Link } from 'react-router-dom';
-
-import Rodape from "../../components/Rodape/Rodape";
+import Rodape from '../../components/Rodape/Rodape';
 
 class App extends Component {
   render() {
@@ -19,15 +15,13 @@ class App extends Component {
       <div>
         <header className="cabecalhoPrincipal">
           <div className="container">
-            <img src={logo} alt="Svigufo - ícone de login" />
+            <img src={logo} />
 
             <nav className="cabecalhoPrincipal-nav">
-              <a>Home</a>
-              <Link to="/tiposeventos">Tipos Eventos</Link>
+              <Link to="/">Home</Link>
+              <a>Eventos</a>
               <a>Contato</a>
-              <a className="cabecalhoPrincipal-nav-login" href="login.html">
-                Login
-              </a>
+              <Link className="cabecalhoPrincipal-nav-login" to="/login">Login</Link>
             </nav>
           </div>
         </header>

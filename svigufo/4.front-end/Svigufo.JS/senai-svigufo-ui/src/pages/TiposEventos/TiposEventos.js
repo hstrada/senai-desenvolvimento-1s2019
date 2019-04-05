@@ -1,93 +1,71 @@
 import React, { Component } from "react";
 
-// import logo from "../../assets/img/icon-login.png";
+import logo from "../../assets/img/icon-login.png";
 
 import "../../assets/css/flexbox.css";
 import "../../assets/css/reset.css";
 import "../../assets/css/style.css";
 
 import Rodape from "../../components/Rodape/Rodape";
-import Cabecalho from "../../components/Cabecalho/Cabecalho";
 import Titulo from "../../components/Titulo";
 
 class TiposEventos extends Component {
-  constructor() {
-    super();
-    this.state = {
-      lista: [],
-      nome: ""
-
-      //   lista: [
-      //     {
-      //       id: 7,
-      //       nome: "Desenvolvimento de Sistemas"
-      //     },
-      //     {
-      //       id: 2,
-      //       nome: "DESIGN"
-      //     },
-      //     {
-      //       id: 4,
-      //       nome: "LINKEDIN"
-      //     },
-      //     {
-      //       id: 3,
-      //       nome: "MARKETING"
-      //     },
-      //     {
-      //       id: 1,
-      //       nome: "TECNOLOGIA"
-      //     }
-      //   ]
-    };
-
-    this.atualizadoEstadoNome = this.atualizadoEstadoNome.bind(this);
-    this.cadastrarTipoEvento = this.cadastrarTipoEvento.bind(this);
-  }
-
-  //   handleSubmit
-  cadastrarTipoEvento(evento) {
-    evento.preventDefault();
-
-    fetch("http://localhost:5000/api/tiposeventos", {
-      method: "POST",
-      // tem como melhorar essa parte?
-      body: JSON.stringify({ nome: this.state.nome }),
-      headers: {
-        "Content-Type": "application/json"
+  constructor(){
+      super();
+      this.state = {
+        lista : [],
+        nome: "",
+        titulocadastro : "Cadastro Tipo de Evento"
       }
-    })
-      .then(response => response)
-      // como fazer ele dar um refresh?
-      .then(this.buscarTiposEventos())
-      .catch(error => console.log(error));
+
+      this.atualizaEstadoNome = this.atualizaEstadoNome.bind(this);
+      this.cadastraTipoEvento = this.cadastraTipoEvento.bind(this);
   }
 
-  atualizadoEstadoNome(event) {
-    this.setState({ nome: event.target.value });
+  buscarTiposEventos(){
+      fetch('http://localhost:5000/api/tiposeventos')
+        .then(resposta => resposta.json())
+        .then(data => this.setState({lista : data}))
+        .catch((erro) => console.log(erro))
   }
 
-  buscarTiposEventos() {
-    // fetch("http://localhost:5000/api/tiposeventos")
-    fetch("http://192.168.4.112:5000/api/tiposeventos")
-      .then(response => response.json())
-      .then(data => this.setState({ lista: data }));
+  componentDidMount(){
+      this.buscarTiposEventos();
   }
 
-  componentDidMount() {
-    this.buscarTiposEventos();
+  atualizaEstadoNome(event){
+    this.setState({ nome : event.target.value });
+  }
+
+  cadastraTipoEvento(event){
+    event.preventDefault();
+    
+    fetch('http://localhost:5000/api/tiposeventos',
+        {
+          method: 'POST',
+          body : JSON.stringify({ nome : this.state.nome }),
+          headers: {
+            "Content-Type" : "application/json"
+          }
+        })
+        .then(resposta => resposta)
+        .then(this.buscarTiposEventos())
+        .catch(erro => console.log(erro))
   }
 
   render() {
     return (
       <div>
-        <Cabecalho />
+        <header className="cabecalhoPrincipal">
+          <div className="container">
+            <img src={logo} />
+
+            <nav className="cabecalhoPrincipal-nav">Administrador</nav>
+          </div>
+        </header>
 
         <main className="conteudoPrincipal">
           <section className="conteudoPrincipal-cadastro">
-            {/* <h1 className="conteudoPrincipal-cadastro-titulo">
-              Tipos de Eventos
-            </h1> */}
             <Titulo titulo="Tipos de Eventos" />
             <div className="container" id="conteudoPrincipal-lista">
               <table id="tabela-lista">
@@ -99,29 +77,29 @@ class TiposEventos extends Component {
                 </thead>
 
                 <tbody>
-                  {this.state.lista.map(function(tipoEvento) {
-                    return (
-                      <tr key={tipoEvento.id}>
-                        <td>{tipoEvento.id}</td>
-                        <td>{tipoEvento.nome}</td>
-                      </tr>
-                    );
-                  })}
+                    {
+                        this.state.lista.map(function(tipoevento){
+                            return (
+                                <tr key={tipoevento.id}>
+                                    <td>{tipoevento.id}</td>
+                                    <td>{tipoevento.nome}</td>
+                                </tr>
+                            );
+                        })
+                    }
                 </tbody>
               </table>
             </div>
 
             <div className="container" id="conteudoPrincipal-cadastro">
-              <h2 className="conteudoPrincipal-cadastro-titulo">
-                Cadastrar Tipo de Evento
-              </h2>
-              <form onSubmit={this.cadastrarTipoEvento}>
+              <Titulo titulo={this.state.titulocadastro} />
+              <form onSubmit={this.cadastraTipoEvento}>
                 <div className="container">
                   <input
                     type="text"
-                    id="nome-tipo-evento"
                     value={this.state.nome}
-                    onChange={this.atualizadoEstadoNome}
+                    onChange={this.atualizaEstadoNome}
+                    id="nome-tipo-evento"
                     placeholder="tipo do evento"
                   />
                   <button className="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro">
@@ -132,6 +110,14 @@ class TiposEventos extends Component {
             </div>
           </section>
         </main>
+
+        {/* <footer className="rodapePrincipal">
+          <section className="rodapePrincipal-patrocinadores">
+            <div className="container">
+              <p>Escola SENAI de Informática - 2019</p>
+            </div>
+          </section>
+        </footer> */}
 
         <Rodape />
       </div>
