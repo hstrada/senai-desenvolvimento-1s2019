@@ -1,0 +1,8 @@
+{
+    "name": "Documentação API - InLock",
+    "version": "1.0.0",
+    "description": "API de personagens",
+    "template": {
+        "forceLanguage": "en"
+    }
+}
