@@ -91,7 +91,7 @@ class Eventos extends Component {
                         {evento.acessoLivre === true ? (
                           <td>Sim</td>
                         ) : (
-                          <td>Não</td>
+                          <td style={{ color: "red" }}>Não</td>
                         )}
                         <td>{evento.tipoEvento.nome}</td>
                       </tr>
