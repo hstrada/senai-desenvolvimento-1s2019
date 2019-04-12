@@ -2,13 +2,21 @@
   "name": "SvigufoMobile",
   "version": "0.0.1",
   "private": true,
+  "rnpm": {
+    "assets": [
+      "./src/assets/fonts/"
+    ]
+  },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "16.8.3",
-    "react-native": "0.59.3"
+    "react-native": "0.59.4",
+    "react-native-gesture-handler": "^1.1.0",
+    "react-navigation": "^3.6.1"
   },
   "devDependencies": {
     "@babel/core": "7.4.3",
