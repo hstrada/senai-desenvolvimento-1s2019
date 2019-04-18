@@ -1,33 +1,36 @@
-import React from "react";
+import React, { Component } from "react";
 import {
-  ActivityIndicator,
-  AsyncStorage,
-  StatusBar,
   StyleSheet,
   View,
-  Button,
   Text,
   Image,
   ImageBackground,
   TextInput,
-  TouchableHighlight,
-  TouchableOpacity
+  TouchableOpacity,
+  AsyncStorage
 } from "react-native";
+import api from "../services/api";
 
-class SignIn extends React.Component {
+class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = { username: "", password: "" };
   }
 
   static navigationOptions = {
-    // title: "Please sign in"
     header: null
   };
 
-  state = {
-    username: "",
-    password: ""
+  _signInAsync = async () => {
+    const resposta = await api.post("/login", {
+      email: this.state.username,
+      senha: this.state.password
+    });
+
+    const token = resposta.data.token;
+
+    await AsyncStorage.setItem("userToken", token);
+    this.props.navigation.navigate("App");
   };
 
   render() {
@@ -40,15 +43,10 @@ class SignIn extends React.Component {
         <View style={styles.container}>
           <Image
             source={require("../assets/img/loginIcon2x.png")}
-            style={{
-              tintColor: "#FFFFFF",
-              height: 100,
-              width: 90,
-              margin: 10
-            }}
+            style={styles.imgLogin}
           />
           <TextInput
-            style={{ width: 240, marginTop: 10, fontSize: 10 }}
+            style={styles.inputLogin}
             placeholder="username"
             placeholderTextColor="#FFFFFF"
             onChangeText={username => this.setState({ username })}
@@ -56,7 +54,7 @@ class SignIn extends React.Component {
           />
 
           <TextInput
-            style={{ width: 240, marginBottom: 10, fontSize: 10 }}
+            style={styles.inputLogin}
             placeholder="password"
             placeholderTextColor="#FFFFFF"
             password="true"
@@ -70,12 +68,6 @@ class SignIn extends React.Component {
       </ImageBackground>
     );
   }
-
-  _signInAsync = async () => {
-    console.warn(this.state.username + this.state.password);
-    // await AsyncStorage.setItem("userToken", "abc");
-    // this.props.navigation.navigate("App");
-  };
 }
 
 const styles = StyleSheet.create({
@@ -111,6 +103,17 @@ const styles = StyleSheet.create({
     fontFamily: "OpenSans-Light",
     color: "#B727FF",
     letterSpacing: 4
+  },
+  inputLogin: {
+    width: 240,
+    marginBottom: 10,
+    fontSize: 10
+  },
+  imgLogin: {
+    tintColor: "#FFFFFF",
+    height: 100,
+    width: 90,
+    margin: 10
   }
 });
 

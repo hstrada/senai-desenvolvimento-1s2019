@@ -5,7 +5,6 @@ import api from "../services/api";
 
 class Main extends Component {
   static navigationOptions = {
-    // tabBarLabel: "Home",
     tabBarIcon: ({ tintColor }) => (
       <Image
         source={require("../assets/img/calendar.png")}
@@ -14,9 +13,10 @@ class Main extends Component {
     )
   };
 
-  state = {
-    listaEventos: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = { lista: [] };
+  }
 
   componentDidMount() {
     this.loadEventos();
@@ -28,33 +28,18 @@ class Main extends Component {
     const docs = response.data;
 
     this.setState({ listaEventos: docs });
-
-    console.log(docs);
   };
 
   renderItem = ({ item }) => (
-    <View
-      style={{
-        flexDirection: "row",
-        borderBottomWidth: 0.9,
-        borderBottomColor: "gray"
-        // marginBottom: 10
-      }}
-    >
+    <View style={styles.eventoLine}>
       <View style={styles.eventoContainer}>
         <Text style={styles.eventoTitle}>{item.titulo}</Text>
         <Text style={styles.eventoDate}>{item.dataEvento}</Text>
       </View>
-      <View
-        style={{
-          justifyContent: "center",
-          alignContent: "center",
-          alignItems: "center"
-        }}
-      >
+      <View style={styles.eventoImg}>
         <Image
           source={require("../assets/img/view.png")}
-          style={{ width: 22, height: 22, tintColor: "#B727FF" }}
+          style={styles.eventoImgIcon}
         />
       </View>
     </View>
@@ -62,58 +47,24 @@ class Main extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: "#F1F1F1" }}>
-        <View
-          style={{
-            flex: 1,
-            // backgroundColor: "powderblue",
-            justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
-          <View style={{ flexDirection: "row" }}>
-            {/* <View> */}
+      <View style={styles.main}>
+        <View style={styles.mainView}>
+          <View style={styles.mainViewRow}>
             <Image
               source={require("../assets/img/calendar.png")}
-              style={{
-                width: 22,
-                height: 22,
-                tintColor: "#cccccc",
-                marginRight: -9,
-                marginTop: -9
-              }}
+              style={styles.mainViewRowImg}
             />
-            {/* </View> */}
             <Text
-              style={{
-                fontSize: 16,
-                letterSpacing: 5,
-                color: "#999999",
-                fontFamily: "OpenSans-Regular"
-              }}
+              style={styles.mainViewRowText}
             >
               {"Eventos".toUpperCase()}
             </Text>
           </View>
           <View
-            style={{
-              width: 170,
-              paddingTop: 10,
-              borderBottomColor: "gray",
-              borderBottomWidth: 0.9
-            }}
+            style={styles.mainViewRowImgIcon}
           />
         </View>
-        <View
-          // style={{
-          //   flex: 4
-          //   // backgroundColor: "skyblue"
-          // }}
-          style={styles.container}
-        >
-          {/* {this.state.listaEventos.map(evento => (
-            <Text key={evento.id}>{evento.titulo}</Text>
-          ))} */}
+        <View style={styles.container}>
           <FlatList
             contentContainerStyle={styles.list}
             data={this.state.listaEventos}
@@ -136,6 +87,42 @@ const styles = StyleSheet.create({
     paddingRight: 50,
     paddingLeft: 50
   },
+  main: { 
+    flex: 1, 
+    backgroundColor: "#F1F1F1" 
+  },
+  mainViewRow: { 
+    flexDirection: "row" 
+  },
+  mainView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  mainViewRowImg: {
+    width: 22,
+    height: 22,
+    tintColor: "#cccccc",
+    marginRight: -9,
+    marginTop: -9
+  },
+  mainViewRowText: {
+    fontSize: 16,
+    letterSpacing: 5,
+    color: "#999999",
+    fontFamily: "OpenSans-Regular"
+  },
+  mainViewRowImgIcon : {
+    width: 170,
+    paddingTop: 10,
+    borderBottomColor: "gray",
+    borderBottomWidth: 0.9
+  },
+  eventoLine: {
+    flexDirection: "row",
+    borderBottomWidth: 0.9,
+    borderBottomColor: "gray"
+  },
   eventoContainer: {
     flex: 7,
     marginTop: 5
@@ -144,6 +131,16 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#333",
     fontFamily: "OpenSans-Light"
+  },
+  eventoImg: {
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center"
+  },
+  eventoImgIcon: {
+    width: 22,
+    height: 22,
+    tintColor: "#B727FF"
   },
   eventoDate: {
     fontSize: 10,
