@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
-import { Text, Image, StyleSheet, View } from "react-native";
+import { Text, Image, StyleSheet, View, AsyncStorage } from "react-native";
+
+import jwt from "jwt-decode";
 
 class Profile extends Component {
   static navigationOptions = {
@@ -11,6 +13,25 @@ class Profile extends Component {
       />
     )
   };
+
+  constructor(props) {
+    super(props);
+    this.state = { token: "", nome: "" };
+  }
+
+  _buscarDadosDoStorage = async () => {
+    try {
+      const value = await AsyncStorage.getItem("userToken");
+      if (value !== null) {
+        this.setState({ nome: jwt(value).Nome });
+        this.setState({ token: value });
+      }
+    } catch (error) {}
+  };
+
+  componentDidMount() {
+    this._buscarDadosDoStorage();
+  }
 
   render() {
     return (
@@ -25,7 +46,12 @@ class Profile extends Component {
           </View>
           <View style={styles.mainHeaderLine} />
         </View>
-        <View style={styles.mainBody} />
+        <View style={styles.mainBody}>
+          <View style={styles.mainBodyProfile}>
+            <Text>{this.state.token}</Text>
+            <Text>{this.state.nome}</Text>
+          </View>
+        </View>
       </View>
     );
   }
@@ -71,6 +97,13 @@ const styles = StyleSheet.create({
   },
   mainBody: {
     flex: 4
+  },
+  mainBodyProfile: {
+    paddingTop: 30,
+    paddingRight: 50,
+    paddingLeft: 50,
+    justifyContent: "center",
+    alignItems: "center"
   }
 });
 

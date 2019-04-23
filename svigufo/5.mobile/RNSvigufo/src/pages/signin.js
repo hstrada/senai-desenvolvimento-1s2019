@@ -7,7 +7,8 @@ import {
   Image,
   ImageBackground,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  AsyncStorage
 } from "react-native";
 
 import api from "../services/api";
@@ -33,7 +34,9 @@ class SignIn extends Component {
     });
 
     const token = resposta.data.token;
-    console.warn(token);
+    // console.warn(token);
+    await AsyncStorage.setItem("userToken", token);
+    this.props.navigation.navigate("MainNavigator");
   };
 
   render() {
