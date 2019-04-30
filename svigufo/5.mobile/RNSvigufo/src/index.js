@@ -11,6 +11,8 @@ import SignIn from "./pages/signin";
 
 const AuthStack = createStackNavigator({ SignIn });
 
+
+
 const MainNavigator = createBottomTabNavigator(
   {
     Main,
