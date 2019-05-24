@@ -17,12 +17,12 @@ namespace Senai.SviGufo.WebApi.Domains
         [BsonRequired]
         public string Latitude { get; set; }
 
-        //[BsonElement("longitude")]
+        [BsonElement("longitude")]
         [BsonRequired]
         public string Longitude { get; set; }
 
-        [BsonElement("usuario")]
-        public int UsuarioId { get; set; }
+        //[BsonElement("usuario")]
+        //public int UsuarioId { get; set; }
 
     }
 }

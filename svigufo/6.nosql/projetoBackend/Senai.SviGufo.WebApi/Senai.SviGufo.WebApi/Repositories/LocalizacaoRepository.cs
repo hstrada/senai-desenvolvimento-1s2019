@@ -21,11 +21,6 @@ namespace Senai.SviGufo.WebApi.Repositories
             _localizacoes = database.GetCollection<LocalizacaoDomain>("mapas");
         }
 
-        public List<LocalizacaoDomain> BuscarPorIdUsuario(int id)
-        {
-            return _localizacoes.Find(localizacao => localizacao.UsuarioId == id).ToList();
-        }
-
         public void Cadastrar(LocalizacaoDomain localizacao)
         {
             _localizacoes.InsertOne(localizacao);

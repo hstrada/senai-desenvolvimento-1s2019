@@ -13,6 +13,5 @@ namespace Senai.SviGufo.WebApi.Interfaces
 
         List<LocalizacaoDomain> ListarTodos();
 
-        List<LocalizacaoDomain> BuscarPorIdUsuario(int id);
     }
 }
