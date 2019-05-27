@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from "react-dom";
 import { Route, BrowserRouter as Router, Switch} from "react-router-dom";
+
 import EventosIndex from './pages/Eventos/Index';
 import EventosCadastrar from './pages/Eventos/Cadastrar';
 import EventosEditar from './pages/Eventos/Editar';
+import ContaRegistrar from './pages/Conta/Registrar';
+import ContaLogin from './pages/Conta/Login';
+
 import * as serviceWorker from './serviceWorker';
 
 const routing = (
@@ -13,6 +17,8 @@ const routing = (
           <Route exact path="/" component={EventosIndex} />
           <Route path="/Eventos/Cadastrar" component={EventosCadastrar} />
           <Route path="/Eventos/Editar/:id" component={EventosEditar} />
+          <Route path="/Conta/Registrar" component={ContaRegistrar} />
+          <Route path="/Conta/Login" component={ContaLogin} />
         </Switch>
       </div>
     </Router>
